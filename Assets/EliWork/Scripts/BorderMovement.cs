@@ -15,7 +15,6 @@ public class BorderMovement : MonoBehaviour
 
     public List<BulletMovement> inactiveBullets;//A list of all bullets which exist but aren't active, so they can be reviewed
     [SerializeField] private BulletMovement bulletPrefab;
-    [SerializeField] private BulletSpawn testSpawn;
     public List<IEnumerator> runningBulletCoroutines = new List<IEnumerator>();//A list of all bulletSpawn IEnumarators this is currently running, so it can stop them
 
     
