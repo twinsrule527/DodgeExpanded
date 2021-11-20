@@ -7,12 +7,13 @@ public class BorderTool : MonoBehaviour
     public Border myBorder;
     [Header("Attributes that need to be filled in inspector")]
     [SerializeField] private Shape myShape;
-    [SerializeField] private float mylineWidth = 0.5f;
+    [SerializeField] private float myLineWidth = 0.5f;
     
     [Header("Child objects which can be manipulated")]
     [SerializeField] private Transform myBoundingBorder;
     [SerializeField] private Transform myCheckPointBox;
     [SerializeField] private Transform myPlayerStartSpot;
+    [Header("The Number Room this Is")]
     [SerializeField] private int _number;//The number border this is in the game
     public int Number {
         get {
@@ -26,7 +27,7 @@ public class BorderTool : MonoBehaviour
         myBorder.pos = myBoundingBorder.position - myBoundingBorder.localScale / 2f;
         myBorder.size = myBoundingBorder.localScale;
         myBorder.shape = myShape;
-        myBorder.width = mylineWidth;
+        myBorder.width = myLineWidth;
         myBorder.checkpointPos = myCheckPointBox.position - myCheckPointBox.localScale / 2f;
         myBorder.checkpointSize = myCheckPointBox.localScale;
         myBorder.playerStart = myPlayerStartSpot.position;
