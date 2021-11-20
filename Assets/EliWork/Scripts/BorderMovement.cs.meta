@@ -3,7 +3,11 @@ guid: ccb5f221a97d0114f83385101894ba46
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - checkPointBox: {instanceID: 0}
+  - Player: {instanceID: 0}
+  - Level1: {instanceID: 0}
+  - bulletPrefab: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

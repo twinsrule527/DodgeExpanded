@@ -10,7 +10,7 @@ public class BorderMovement : MonoBehaviour
     private EdgeCollider2D myEdge;
     [SerializeField] private Transform checkPointBox;//The box for when a change in transition occurs
     [SerializeField] private Transform Player;//The player needs to be able to be moved around
-    public BorderLevelScriptableObject Level1;
+    public BorderLevelScriptableObject Level;
     private int curBorder;
 
     public List<BulletMovement> inactiveBullets;//A list of all bullets which exist but aren't active, so they can be reviewed
@@ -25,11 +25,11 @@ public class BorderMovement : MonoBehaviour
         curBorder = 0;
         myLine = GetComponent<LineRenderer>();
         myEdge = GetComponent<EdgeCollider2D>();
-        Level1.Borders = new List<Border>();
-        Level1.SetBordersFromTool();
-        Level1.SetBorderTransitions(Level1.transitionTimes);
+        Level.Borders = new List<Border>();
+        Level.SetBordersFromTool();
+        Level.SetBorderTransitions(Level.transitionTimes);
         //Sets the start border/player position and bullet hells, etc
-        Border gameStartB = Level1.Borders[0];
+        Border gameStartB = Level.Borders[0];
         List<Vector2> startCorners = gameStartB.BorderCorners;
         List<Vector2> currentCorners2 = new List<Vector2>();
         List<Vector3> currentCorners3 = new List<Vector3>();
@@ -51,7 +51,7 @@ public class BorderMovement : MonoBehaviour
     {
         //TEST
         if(Input.GetKeyDown(KeyCode.Space)) {
-            Level1.Borders[curBorder].EndBulletHell();
+            Level.Borders[curBorder].EndBulletHell();
         }
     }
 
@@ -129,8 +129,8 @@ public class BorderMovement : MonoBehaviour
     //Allows the checkpoint box to call when to start a new transition
     public void StartNewBorderTransition() {
         //A transition only occurs if it is able to occur
-        if(curBorder < Level1.BorderTransitions.Count) {
-            IEnumerator newMove = MoveBorder(Level1.BorderTransitions[curBorder]);
+        if(curBorder < Level.BorderTransitions.Count) {
+            IEnumerator newMove = MoveBorder(Level.BorderTransitions[curBorder]);
             StartCoroutine(newMove);
         }
     }
