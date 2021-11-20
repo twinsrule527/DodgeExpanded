@@ -1,0 +1,210 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65ef030a24305c6489335a36c37d2a1f, type: 3}
+  m_Name: TestLevel_DO_NOT_TOUCH
+  m_EditorClassIdentifier: 
+  Borders:
+  - pos: {x: 5, y: 0}
+    size: {x: 10, y: 20}
+    shape: 0
+    width: 0.5
+    checkpointPos: {x: 5, y: 0}
+    checkpointSize: {x: 3, y: 5}
+    playerStart: {x: 10, y: 18, z: -5}
+    BulletHell: []
+  - pos: {x: 0, y: 0}
+    size: {x: 8, y: 8}
+    shape: 0
+    width: 0.5
+    checkpointPos: {x: 5, y: 0}
+    checkpointSize: {x: 3, y: 8}
+    playerStart: {x: 3, y: 3, z: -5}
+    BulletHell:
+    - spawnPos: {x: 0, y: 0, z: 0}
+      spawnRotation: 0
+      startDelay: 0.5
+      delay: 0.25
+      bulletSpeed: 10
+      bulletLifetime: 5
+    - spawnPos: {x: 0, y: 0, z: 0}
+      spawnRotation: 90
+      startDelay: 0.56
+      delay: 0.25
+      bulletSpeed: 10
+      bulletLifetime: 5
+    - spawnPos: {x: 0, y: 0, z: 0}
+      spawnRotation: 180
+      startDelay: 0.62
+      delay: 0.25
+      bulletSpeed: 10
+      bulletLifetime: 5
+    - spawnPos: {x: 0, y: 0, z: 0}
+      spawnRotation: 270
+      startDelay: 0.69
+      delay: 0.25
+      bulletSpeed: 10
+      bulletLifetime: 5
+  - pos: {x: 8, y: -5}
+    size: {x: 15, y: 15}
+    shape: 0
+    width: 0.5
+    checkpointPos: {x: 20, y: -5}
+    checkpointSize: {x: 3, y: 15}
+    playerStart: {x: 10, y: 2, z: -5}
+    BulletHell: []
+  - pos: {x: -15, y: -5}
+    size: {x: 50, y: 20}
+    shape: 0
+    width: 0.5
+    checkpointPos: {x: 0, y: 0}
+    checkpointSize: {x: 0, y: 0}
+    playerStart: {x: 0, y: 0, z: 0}
+    BulletHell: []
+  - pos: {x: -20, y: -20}
+    size: {x: 15, y: 35}
+    shape: 0
+    width: 0.5
+    checkpointPos: {x: 0, y: 0}
+    checkpointSize: {x: 0, y: 0}
+    playerStart: {x: 0, y: 0, z: 0}
+    BulletHell: []
+  BorderTransitions:
+  - startBorder:
+      pos: {x: 5, y: 0}
+      size: {x: 10, y: 20}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 5, y: 0}
+      checkpointSize: {x: 3, y: 5}
+      playerStart: {x: 10, y: 18, z: -5}
+      BulletHell: []
+    endBorder:
+      pos: {x: 0, y: 0}
+      size: {x: 8, y: 8}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 5, y: 0}
+      checkpointSize: {x: 3, y: 8}
+      playerStart: {x: 3, y: 3, z: -5}
+      BulletHell:
+      - spawnPos: {x: 0, y: 0, z: 0}
+        spawnRotation: 0
+        startDelay: 0.5
+        delay: 0.25
+        bulletSpeed: 10
+        bulletLifetime: 5
+      - spawnPos: {x: 0, y: 0, z: 0}
+        spawnRotation: 90
+        startDelay: 0.56
+        delay: 0.25
+        bulletSpeed: 10
+        bulletLifetime: 5
+      - spawnPos: {x: 0, y: 0, z: 0}
+        spawnRotation: 180
+        startDelay: 0.62
+        delay: 0.25
+        bulletSpeed: 10
+        bulletLifetime: 5
+      - spawnPos: {x: 0, y: 0, z: 0}
+        spawnRotation: 270
+        startDelay: 0.69
+        delay: 0.25
+        bulletSpeed: 10
+        bulletLifetime: 5
+    changeTime: 3
+  - startBorder:
+      pos: {x: 0, y: 0}
+      size: {x: 8, y: 8}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 5, y: 0}
+      checkpointSize: {x: 3, y: 8}
+      playerStart: {x: 3, y: 3, z: -5}
+      BulletHell:
+      - spawnPos: {x: 0, y: 0, z: 0}
+        spawnRotation: 0
+        startDelay: 0.5
+        delay: 0.25
+        bulletSpeed: 10
+        bulletLifetime: 5
+      - spawnPos: {x: 0, y: 0, z: 0}
+        spawnRotation: 90
+        startDelay: 0.56
+        delay: 0.25
+        bulletSpeed: 10
+        bulletLifetime: 5
+      - spawnPos: {x: 0, y: 0, z: 0}
+        spawnRotation: 180
+        startDelay: 0.62
+        delay: 0.25
+        bulletSpeed: 10
+        bulletLifetime: 5
+      - spawnPos: {x: 0, y: 0, z: 0}
+        spawnRotation: 270
+        startDelay: 0.69
+        delay: 0.25
+        bulletSpeed: 10
+        bulletLifetime: 5
+    endBorder:
+      pos: {x: 8, y: -5}
+      size: {x: 15, y: 15}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 20, y: -5}
+      checkpointSize: {x: 3, y: 15}
+      playerStart: {x: 10, y: 2, z: -5}
+      BulletHell: []
+    changeTime: 3
+  - startBorder:
+      pos: {x: 8, y: -5}
+      size: {x: 15, y: 15}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 20, y: -5}
+      checkpointSize: {x: 3, y: 15}
+      playerStart: {x: 10, y: 2, z: -5}
+      BulletHell: []
+    endBorder:
+      pos: {x: -15, y: -5}
+      size: {x: 50, y: 20}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 0, y: 0}
+      checkpointSize: {x: 0, y: 0}
+      playerStart: {x: 0, y: 0, z: 0}
+      BulletHell: []
+    changeTime: 3
+  - startBorder:
+      pos: {x: -15, y: -5}
+      size: {x: 50, y: 20}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 0, y: 0}
+      checkpointSize: {x: 0, y: 0}
+      playerStart: {x: 0, y: 0, z: 0}
+      BulletHell: []
+    endBorder:
+      pos: {x: -20, y: -20}
+      size: {x: 15, y: 35}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 0, y: 0}
+      checkpointSize: {x: 0, y: 0}
+      playerStart: {x: 0, y: 0, z: 0}
+      BulletHell: []
+    changeTime: 3
+  transitionTimes:
+  - 3
+  - 3
+  - 3
+  - 3
+  BorderCreation: []
