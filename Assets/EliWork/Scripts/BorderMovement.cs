@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //Moves the border over a period of time - this is a test
 public class BorderMovement : MonoBehaviour
 {
@@ -15,7 +16,6 @@ public class BorderMovement : MonoBehaviour
 
     public List<BulletMovement> inactiveBullets;//A list of all bullets which exist but aren't active, so they can be reviewed
     [SerializeField] private BulletMovement bulletPrefab;
-    [SerializeField] private BulletSpawn testSpawn;
     public List<IEnumerator> runningBulletCoroutines = new List<IEnumerator>();//A list of all bulletSpawn IEnumarators this is currently running, so it can stop them
 
     
@@ -49,9 +49,15 @@ public class BorderMovement : MonoBehaviour
 
     void Update()
     {
-        //TEST
-        if(Input.GetKeyDown(KeyCode.Space)) {
-            Level.Borders[curBorder].EndBulletHell();
+        //Can press R to go back to last checkpoint
+            //Can press Shift + R to reload level
+        if(Input.GetKeyDown(KeyCode.R)) {
+            if(Input.GetKey(KeyCode.LeftShift)) {
+                SceneManager.LoadScene(0);
+            }
+            else {
+                Player.transform.position = Level.Borders[curBorder].playerStart;
+            }
         }
     }
 
@@ -73,8 +79,9 @@ public class BorderMovement : MonoBehaviour
             }
             List<Vector2> currentCorners2 = new List<Vector2>();
             List<Vector3> currentCorners3 = new List<Vector3>();
-            //Lerps between their linewidths
+            //Lerps between their linewidths NOTE: currently doesn't lerp line-width
             float lineWidth = Mathf.Lerp(startB.width, endB.width, curTime / myTransition.changeTime);
+            //myLine.widthMultiplier = lineWidth;
             for(int i = 0; i < startCorners.Count; i++) {
                 currentCorners2.Add(Vector2.Lerp(startCorners[i], endCorners[i], curTime / myTransition.changeTime));
                 currentCorners3.Add(currentCorners2[i]);
