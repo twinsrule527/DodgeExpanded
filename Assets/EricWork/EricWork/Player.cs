@@ -31,9 +31,10 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("bullet"))
+        if (collision.CompareTag("Bullet"))
         {
-
+            //When player gets hit by bullet, increases the hit tracker
+            PlayerHitTracker.Instance.PlayerHit();
         }
     }
 }
