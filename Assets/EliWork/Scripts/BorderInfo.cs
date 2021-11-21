@@ -71,6 +71,7 @@ public enum Shape {
     //Attributes added to bullets
     public float bulletSpeed;//Speed of bullets (in units per second)
     public float bulletLifetime;//How long the bullets live before self-destructing (in seconds)
+    public BulletMovement bullet;
 }
 public class BorderInfo : MonoBehaviour
 {
