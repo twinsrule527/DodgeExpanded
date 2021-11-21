@@ -21,69 +21,77 @@ MonoBehaviour:
     checkpointSize: {x: 5.73094, y: 3.152997}
     playerStart: {x: -5, y: 9.35, z: -2}
     BulletHell:
-    - spawnPos: {x: -11.46, y: -4.79, z: -1}
+    - spawnPos: {x: -11.4, y: -4.25, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
+      bullet: {fileID: 0}
     - spawnPos: {x: -8.33, y: -4.79, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
+      bullet: {fileID: 0}
     - spawnPos: {x: -5.79, y: -4.79, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
+      bullet: {fileID: 0}
     - spawnPos: {x: -3.05, y: -4.79, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-  - pos: {x: 7.49601, y: -16.953527}
-    size: {x: 17.761978, y: 18.226254}
+      bullet: {fileID: 0}
+  - pos: {x: -0.30398846, y: -18.03444}
+    size: {x: 17.761978, y: 13.507477}
     shape: 0
     width: 0.5
-    checkpointPos: {x: 7.4748297, y: -16.953598}
-    checkpointSize: {x: 5.73094, y: 3.152997}
-    playerStart: {x: 22, y: -2.4499998, z: -2}
+    checkpointPos: {x: -0.32516575, y: -18.034143}
+    checkpointSize: {x: 17.910334, y: 2.3366861}
+    playerStart: {x: 14.200001, y: -8.25, z: -2}
     BulletHell:
-    - spawnPos: {x: 15.54, y: -16.59, z: -1}
+    - spawnPos: {x: 7.7400007, y: -22.39, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-    - spawnPos: {x: 18.67, y: -16.59, z: -1}
+      bullet: {fileID: 0}
+    - spawnPos: {x: 10.870001, y: -22.39, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-    - spawnPos: {x: 21.21, y: -16.59, z: -1}
+      bullet: {fileID: 0}
+    - spawnPos: {x: 13.410001, y: -22.39, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-    - spawnPos: {x: 23.95, y: -16.59, z: -1}
+      bullet: {fileID: 0}
+    - spawnPos: {x: 16.150002, y: -22.39, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-  - pos: {x: 7.49601, y: -1.0535269}
-    size: {x: 17.761978, y: 18.226254}
+      bullet: {fileID: 0}
+  - pos: {x: 17.07473, y: -1.0535269}
+    size: {x: 8.182943, y: 18.226254}
     shape: 0
     width: 0.5
-    checkpointPos: {x: 7.4748297, y: -1.0535986}
+    checkpointPos: {x: 18.234531, y: 2.3935013}
     checkpointSize: {x: 5.73094, y: 3.152997}
-    playerStart: {x: 22, y: 13.450001, z: -2}
+    playerStart: {x: 19.07, y: 13.92, z: -2}
     BulletHell:
     - spawnPos: {x: 15.54, y: -0.69000006, z: -1}
       spawnRotation: -1
@@ -91,24 +99,28 @@ MonoBehaviour:
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
+      bullet: {fileID: 0}
     - spawnPos: {x: 18.67, y: -0.69000006, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
+      bullet: {fileID: 0}
     - spawnPos: {x: 21.21, y: -0.69000006, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
+      bullet: {fileID: 0}
     - spawnPos: {x: 23.95, y: -0.69000006, z: -1}
       spawnRotation: -1
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
+      bullet: {fileID: 0}
   BorderTransitions:
   - startBorder:
       pos: {x: -19.50399, y: -5.153527}
@@ -119,105 +131,117 @@ MonoBehaviour:
       checkpointSize: {x: 5.73094, y: 3.152997}
       playerStart: {x: -5, y: 9.35, z: -2}
       BulletHell:
-      - spawnPos: {x: -11.46, y: -4.79, z: -1}
+      - spawnPos: {x: -11.4, y: -4.25, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
       - spawnPos: {x: -8.33, y: -4.79, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
       - spawnPos: {x: -5.79, y: -4.79, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
       - spawnPos: {x: -3.05, y: -4.79, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
     endBorder:
-      pos: {x: 7.49601, y: -16.953527}
-      size: {x: 17.761978, y: 18.226254}
+      pos: {x: -0.30398846, y: -18.03444}
+      size: {x: 17.761978, y: 13.507477}
       shape: 0
       width: 0.5
-      checkpointPos: {x: 7.4748297, y: -16.953598}
-      checkpointSize: {x: 5.73094, y: 3.152997}
-      playerStart: {x: 22, y: -2.4499998, z: -2}
+      checkpointPos: {x: -0.32516575, y: -18.034143}
+      checkpointSize: {x: 17.910334, y: 2.3366861}
+      playerStart: {x: 14.200001, y: -8.25, z: -2}
       BulletHell:
-      - spawnPos: {x: 15.54, y: -16.59, z: -1}
+      - spawnPos: {x: 7.7400007, y: -22.39, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-      - spawnPos: {x: 18.67, y: -16.59, z: -1}
+        bullet: {fileID: 0}
+      - spawnPos: {x: 10.870001, y: -22.39, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-      - spawnPos: {x: 21.21, y: -16.59, z: -1}
+        bullet: {fileID: 0}
+      - spawnPos: {x: 13.410001, y: -22.39, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-      - spawnPos: {x: 23.95, y: -16.59, z: -1}
+        bullet: {fileID: 0}
+      - spawnPos: {x: 16.150002, y: -22.39, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
     changeTime: 3
   - startBorder:
-      pos: {x: 7.49601, y: -16.953527}
-      size: {x: 17.761978, y: 18.226254}
+      pos: {x: -0.30398846, y: -18.03444}
+      size: {x: 17.761978, y: 13.507477}
       shape: 0
       width: 0.5
-      checkpointPos: {x: 7.4748297, y: -16.953598}
-      checkpointSize: {x: 5.73094, y: 3.152997}
-      playerStart: {x: 22, y: -2.4499998, z: -2}
+      checkpointPos: {x: -0.32516575, y: -18.034143}
+      checkpointSize: {x: 17.910334, y: 2.3366861}
+      playerStart: {x: 14.200001, y: -8.25, z: -2}
       BulletHell:
-      - spawnPos: {x: 15.54, y: -16.59, z: -1}
+      - spawnPos: {x: 7.7400007, y: -22.39, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-      - spawnPos: {x: 18.67, y: -16.59, z: -1}
+        bullet: {fileID: 0}
+      - spawnPos: {x: 10.870001, y: -22.39, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-      - spawnPos: {x: 21.21, y: -16.59, z: -1}
+        bullet: {fileID: 0}
+      - spawnPos: {x: 13.410001, y: -22.39, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-      - spawnPos: {x: 23.95, y: -16.59, z: -1}
+        bullet: {fileID: 0}
+      - spawnPos: {x: 16.150002, y: -22.39, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
     endBorder:
-      pos: {x: 7.49601, y: -1.0535269}
-      size: {x: 17.761978, y: 18.226254}
+      pos: {x: 17.07473, y: -1.0535269}
+      size: {x: 8.182943, y: 18.226254}
       shape: 0
       width: 0.5
-      checkpointPos: {x: 7.4748297, y: -1.0535986}
+      checkpointPos: {x: 18.234531, y: 2.3935013}
       checkpointSize: {x: 5.73094, y: 3.152997}
-      playerStart: {x: 22, y: 13.450001, z: -2}
+      playerStart: {x: 19.07, y: 13.92, z: -2}
       BulletHell:
       - spawnPos: {x: 15.54, y: -0.69000006, z: -1}
         spawnRotation: -1
@@ -225,24 +249,28 @@ MonoBehaviour:
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
       - spawnPos: {x: 18.67, y: -0.69000006, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
       - spawnPos: {x: 21.21, y: -0.69000006, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
       - spawnPos: {x: 23.95, y: -0.69000006, z: -1}
         spawnRotation: -1
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
+        bullet: {fileID: 0}
     changeTime: 3
   transitionTimes:
   - 3
