@@ -13,269 +13,445 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   Borders:
-  - pos: {x: -19.50399, y: -5.153527}
+  - pos: {x: -33.903988, y: -0.45352745}
     size: {x: 17.761978, y: 18.226254}
     shape: 0
     width: 0.5
-    checkpointPos: {x: -19.52517, y: -5.153599}
+    checkpointPos: {x: -33.92517, y: -0.45359874}
     checkpointSize: {x: 5.73094, y: 3.152997}
-    playerStart: {x: -5, y: 9.35, z: -2}
+    playerStart: {x: -19.4, y: 14.05, z: -2}
     BulletHell:
-    - spawnPos: {x: -11.4, y: -4.25, z: -1}
-      spawnRotation: -1
-      startDelay: 0
+    - spawnPos: {x: -30.761395, y: 20.195244, z: -1}
+      spawnRotation: 202.86398
+      startDelay: 0.5
       delay: 1
-      bulletSpeed: 10
+      bulletSpeed: 12
       bulletLifetime: 5
-      bullet: {fileID: 0}
-    - spawnPos: {x: -8.33, y: -4.79, z: -1}
-      spawnRotation: -1
-      startDelay: 0
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -33.8, y: 19.5, z: -1}
+      spawnRotation: 202.86374
+      startDelay: 0.5
       delay: 1
-      bulletSpeed: 10
+      bulletSpeed: 12
       bulletLifetime: 5
-      bullet: {fileID: 0}
-    - spawnPos: {x: -5.79, y: -4.79, z: -1}
-      spawnRotation: -1
-      startDelay: 0
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -36.140427, y: 18.51309, z: -1}
+      spawnRotation: 202.86374
+      startDelay: 0.5
       delay: 1
-      bulletSpeed: 10
+      bulletSpeed: 12
       bulletLifetime: 5
-      bullet: {fileID: 0}
-    - spawnPos: {x: -3.05, y: -4.79, z: -1}
-      spawnRotation: -1
-      startDelay: 0
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -38.665154, y: 17.448467, z: -1}
+      spawnRotation: 202.86374
+      startDelay: 0.5
       delay: 1
-      bulletSpeed: 10
+      bulletSpeed: 12
       bulletLifetime: 5
-      bullet: {fileID: 0}
-  - pos: {x: -0.30398846, y: -18.03444}
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -14, y: 7.7, z: -1}
+      spawnRotation: 90.70561
+      startDelay: 1
+      delay: 0.57
+      bulletSpeed: 16
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+  - pos: {x: -33.403988, y: -12.134438}
     size: {x: 17.761978, y: 13.507477}
     shape: 0
     width: 0.5
-    checkpointPos: {x: -0.32516575, y: -18.034143}
+    checkpointPos: {x: -33.425167, y: -12.134142}
     checkpointSize: {x: 17.910334, y: 2.3366861}
-    playerStart: {x: 14.200001, y: -8.25, z: -2}
+    playerStart: {x: -31.3, y: -0.3000002, z: -2}
     BulletHell:
-    - spawnPos: {x: 7.7400007, y: -22.39, z: -1}
-      spawnRotation: -1
+    - spawnPos: {x: -34.8, y: -4, z: -1}
+      spawnRotation: 270
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-      bullet: {fileID: 0}
-    - spawnPos: {x: 10.870001, y: -22.39, z: -1}
-      spawnRotation: -1
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -34.8, y: -6.5, z: -1}
+      spawnRotation: 270
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-      bullet: {fileID: 0}
-    - spawnPos: {x: 13.410001, y: -22.39, z: -1}
-      spawnRotation: -1
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -34.8, y: -8.7, z: -1}
+      spawnRotation: 270
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-      bullet: {fileID: 0}
-    - spawnPos: {x: 16.150002, y: -22.39, z: -1}
-      spawnRotation: -1
-      startDelay: 0
-      delay: 1
-      bulletSpeed: 10
-      bulletLifetime: 5
-      bullet: {fileID: 0}
-  - pos: {x: 17.07473, y: -1.0535269}
-    size: {x: 8.182943, y: 18.226254}
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+  - pos: {x: -26.32512, y: -15.903572}
+    size: {x: 45.930042, y: 8.276542}
     shape: 0
     width: 0.5
-    checkpointPos: {x: 18.234531, y: 2.3935013}
-    checkpointSize: {x: 5.73094, y: 3.152997}
-    playerStart: {x: 19.07, y: 13.92, z: -2}
+    checkpointPos: {x: 14.03453, y: -16.055481}
+    checkpointSize: {x: 5.73094, y: 3.310962}
+    playerStart: {x: -24.33, y: -10.880001, z: -2}
     BulletHell:
-    - spawnPos: {x: 15.54, y: -0.69000006, z: -1}
-      spawnRotation: -1
+    - spawnPos: {x: -20.4, y: -17.300001, z: -1}
+      spawnRotation: 0
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-      bullet: {fileID: 0}
-    - spawnPos: {x: 18.67, y: -0.69000006, z: -1}
-      spawnRotation: -1
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -12.599999, y: -17, z: -1}
+      spawnRotation: 0
+      startDelay: 0.25
+      delay: 1
+      bulletSpeed: 10
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -5, y: -17.1, z: -1}
+      spawnRotation: 0
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-      bullet: {fileID: 0}
-    - spawnPos: {x: 21.21, y: -0.69000006, z: -1}
-      spawnRotation: -1
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: 2.3000011, y: -17.1, z: -1}
+      spawnRotation: 0
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-      bullet: {fileID: 0}
-    - spawnPos: {x: 23.95, y: -0.69000006, z: -1}
-      spawnRotation: -1
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: 6.1000004, y: -5.700001, z: -1}
+      spawnRotation: 180.00023
+      startDelay: 0.25
+      delay: 1
+      bulletSpeed: 10
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -1.699996, y: -6.000022, z: -1}
+      spawnRotation: 180.00023
+      startDelay: 0.75
+      delay: 1
+      bulletSpeed: 10
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -9.299997, y: -5.9000435, z: -1}
+      spawnRotation: 180.00023
+      startDelay: 0.5
+      delay: 1
+      bulletSpeed: 10
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -16.599998, y: -5.9000683, z: -1}
+      spawnRotation: 180.00023
       startDelay: 0
       delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
-      bullet: {fileID: 0}
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: 9.1, y: -17.1, z: -1}
+      spawnRotation: 0
+      startDelay: 0.5
+      delay: 1
+      bulletSpeed: 10
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: 21.699999, y: -9.200001, z: -1}
+      spawnRotation: 90.00028
+      startDelay: 0.75
+      delay: 1
+      bulletSpeed: 10
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+  - pos: {x: 11.141659, y: -18.28622}
+    size: {x: 11.842735, y: 12.152288}
+    shape: 0
+    width: 0.5
+    checkpointPos: {x: 29.251953, y: -35.634674}
+    checkpointSize: {x: 5.73094, y: 3.152997}
+    playerStart: {x: 17.217426, y: -14.358176, z: -2}
+    BulletHell: []
   BorderTransitions:
   - startBorder:
-      pos: {x: -19.50399, y: -5.153527}
+      pos: {x: -33.903988, y: -0.45352745}
       size: {x: 17.761978, y: 18.226254}
       shape: 0
       width: 0.5
-      checkpointPos: {x: -19.52517, y: -5.153599}
+      checkpointPos: {x: -33.92517, y: -0.45359874}
       checkpointSize: {x: 5.73094, y: 3.152997}
-      playerStart: {x: -5, y: 9.35, z: -2}
+      playerStart: {x: -19.4, y: 14.05, z: -2}
       BulletHell:
-      - spawnPos: {x: -11.4, y: -4.25, z: -1}
-        spawnRotation: -1
-        startDelay: 0
+      - spawnPos: {x: -30.761395, y: 20.195244, z: -1}
+        spawnRotation: 202.86398
+        startDelay: 0.5
         delay: 1
-        bulletSpeed: 10
+        bulletSpeed: 12
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: -8.33, y: -4.79, z: -1}
-        spawnRotation: -1
-        startDelay: 0
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -33.8, y: 19.5, z: -1}
+        spawnRotation: 202.86374
+        startDelay: 0.5
         delay: 1
-        bulletSpeed: 10
+        bulletSpeed: 12
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: -5.79, y: -4.79, z: -1}
-        spawnRotation: -1
-        startDelay: 0
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -36.140427, y: 18.51309, z: -1}
+        spawnRotation: 202.86374
+        startDelay: 0.5
         delay: 1
-        bulletSpeed: 10
+        bulletSpeed: 12
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: -3.05, y: -4.79, z: -1}
-        spawnRotation: -1
-        startDelay: 0
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -38.665154, y: 17.448467, z: -1}
+        spawnRotation: 202.86374
+        startDelay: 0.5
         delay: 1
-        bulletSpeed: 10
+        bulletSpeed: 12
         bulletLifetime: 5
-        bullet: {fileID: 0}
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -14, y: 7.7, z: -1}
+        spawnRotation: 90.70561
+        startDelay: 1
+        delay: 0.57
+        bulletSpeed: 16
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
     endBorder:
-      pos: {x: -0.30398846, y: -18.03444}
+      pos: {x: -33.403988, y: -12.134438}
       size: {x: 17.761978, y: 13.507477}
       shape: 0
       width: 0.5
-      checkpointPos: {x: -0.32516575, y: -18.034143}
+      checkpointPos: {x: -33.425167, y: -12.134142}
       checkpointSize: {x: 17.910334, y: 2.3366861}
-      playerStart: {x: 14.200001, y: -8.25, z: -2}
+      playerStart: {x: -31.3, y: -0.3000002, z: -2}
       BulletHell:
-      - spawnPos: {x: 7.7400007, y: -22.39, z: -1}
-        spawnRotation: -1
+      - spawnPos: {x: -34.8, y: -4, z: -1}
+        spawnRotation: 270
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: 10.870001, y: -22.39, z: -1}
-        spawnRotation: -1
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -34.8, y: -6.5, z: -1}
+        spawnRotation: 270
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: 13.410001, y: -22.39, z: -1}
-        spawnRotation: -1
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -34.8, y: -8.7, z: -1}
+        spawnRotation: 270
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: 16.150002, y: -22.39, z: -1}
-        spawnRotation: -1
-        startDelay: 0
-        delay: 1
-        bulletSpeed: 10
-        bulletLifetime: 5
-        bullet: {fileID: 0}
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
     changeTime: 3
   - startBorder:
-      pos: {x: -0.30398846, y: -18.03444}
+      pos: {x: -33.403988, y: -12.134438}
       size: {x: 17.761978, y: 13.507477}
       shape: 0
       width: 0.5
-      checkpointPos: {x: -0.32516575, y: -18.034143}
+      checkpointPos: {x: -33.425167, y: -12.134142}
       checkpointSize: {x: 17.910334, y: 2.3366861}
-      playerStart: {x: 14.200001, y: -8.25, z: -2}
+      playerStart: {x: -31.3, y: -0.3000002, z: -2}
       BulletHell:
-      - spawnPos: {x: 7.7400007, y: -22.39, z: -1}
-        spawnRotation: -1
+      - spawnPos: {x: -34.8, y: -4, z: -1}
+        spawnRotation: 270
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: 10.870001, y: -22.39, z: -1}
-        spawnRotation: -1
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -34.8, y: -6.5, z: -1}
+        spawnRotation: 270
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: 13.410001, y: -22.39, z: -1}
-        spawnRotation: -1
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -34.8, y: -8.7, z: -1}
+        spawnRotation: 270
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: 16.150002, y: -22.39, z: -1}
-        spawnRotation: -1
-        startDelay: 0
-        delay: 1
-        bulletSpeed: 10
-        bulletLifetime: 5
-        bullet: {fileID: 0}
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
     endBorder:
-      pos: {x: 17.07473, y: -1.0535269}
-      size: {x: 8.182943, y: 18.226254}
+      pos: {x: -26.32512, y: -15.903572}
+      size: {x: 45.930042, y: 8.276542}
       shape: 0
       width: 0.5
-      checkpointPos: {x: 18.234531, y: 2.3935013}
-      checkpointSize: {x: 5.73094, y: 3.152997}
-      playerStart: {x: 19.07, y: 13.92, z: -2}
+      checkpointPos: {x: 14.03453, y: -16.055481}
+      checkpointSize: {x: 5.73094, y: 3.310962}
+      playerStart: {x: -24.33, y: -10.880001, z: -2}
       BulletHell:
-      - spawnPos: {x: 15.54, y: -0.69000006, z: -1}
-        spawnRotation: -1
+      - spawnPos: {x: -20.4, y: -17.300001, z: -1}
+        spawnRotation: 0
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: 18.67, y: -0.69000006, z: -1}
-        spawnRotation: -1
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -12.599999, y: -17, z: -1}
+        spawnRotation: 0
+        startDelay: 0.25
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -5, y: -17.1, z: -1}
+        spawnRotation: 0
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: 21.21, y: -0.69000006, z: -1}
-        spawnRotation: -1
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: 2.3000011, y: -17.1, z: -1}
+        spawnRotation: 0
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
-      - spawnPos: {x: 23.95, y: -0.69000006, z: -1}
-        spawnRotation: -1
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: 6.1000004, y: -5.700001, z: -1}
+        spawnRotation: 180.00023
+        startDelay: 0.25
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -1.699996, y: -6.000022, z: -1}
+        spawnRotation: 180.00023
+        startDelay: 0.75
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -9.299997, y: -5.9000435, z: -1}
+        spawnRotation: 180.00023
+        startDelay: 0.5
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -16.599998, y: -5.9000683, z: -1}
+        spawnRotation: 180.00023
         startDelay: 0
         delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
-        bullet: {fileID: 0}
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: 9.1, y: -17.1, z: -1}
+        spawnRotation: 0
+        startDelay: 0.5
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: 21.699999, y: -9.200001, z: -1}
+        spawnRotation: 90.00028
+        startDelay: 0.75
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
     changeTime: 3
+  - startBorder:
+      pos: {x: -26.32512, y: -15.903572}
+      size: {x: 45.930042, y: 8.276542}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 14.03453, y: -16.055481}
+      checkpointSize: {x: 5.73094, y: 3.310962}
+      playerStart: {x: -24.33, y: -10.880001, z: -2}
+      BulletHell:
+      - spawnPos: {x: -20.4, y: -17.300001, z: -1}
+        spawnRotation: 0
+        startDelay: 0
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -12.599999, y: -17, z: -1}
+        spawnRotation: 0
+        startDelay: 0.25
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -5, y: -17.1, z: -1}
+        spawnRotation: 0
+        startDelay: 0
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: 2.3000011, y: -17.1, z: -1}
+        spawnRotation: 0
+        startDelay: 0
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: 6.1000004, y: -5.700001, z: -1}
+        spawnRotation: 180.00023
+        startDelay: 0.25
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -1.699996, y: -6.000022, z: -1}
+        spawnRotation: 180.00023
+        startDelay: 0.75
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -9.299997, y: -5.9000435, z: -1}
+        spawnRotation: 180.00023
+        startDelay: 0.5
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -16.599998, y: -5.9000683, z: -1}
+        spawnRotation: 180.00023
+        startDelay: 0
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: 9.1, y: -17.1, z: -1}
+        spawnRotation: 0
+        startDelay: 0.5
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: 21.699999, y: -9.200001, z: -1}
+        spawnRotation: 90.00028
+        startDelay: 0.75
+        delay: 1
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    endBorder:
+      pos: {x: 11.141659, y: -18.28622}
+      size: {x: 11.842735, y: 12.152288}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: 29.251953, y: -35.634674}
+      checkpointSize: {x: 5.73094, y: 3.152997}
+      playerStart: {x: 17.217426, y: -14.358176, z: -2}
+      BulletHell: []
+    changeTime: 1
   transitionTimes:
   - 3
   - 3
+  - 1
   BorderCreation:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

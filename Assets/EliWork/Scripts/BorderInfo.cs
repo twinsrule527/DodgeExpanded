@@ -13,6 +13,7 @@ using UnityEngine;
     public Vector2 checkpointSize;//Dimensions of the checkpoint box
     public Vector3 playerStart;//Where the player starts in this border area
     public List<BulletSpawn> BulletHell;//A list of how bullets will spawn while this Border is active
+    public TextBox RoomText;
     public List<Vector2> BorderCorners {//Gets the correct corners of the border
         get {
             List<Vector2> newBorders = new List<Vector2>();
@@ -71,7 +72,22 @@ public enum Shape {
     //Attributes added to bullets
     public float bulletSpeed;//Speed of bullets (in units per second)
     public float bulletLifetime;//How long the bullets live before self-destructing (in seconds)
-    public BulletMovement bullet;
+    public BulletMovement bullet;//The prefab which this bullet spawn summons
+}
+
+//Contains information about the textBox that appears for any level
+[System.Serializable] public struct TextBox {
+    public string text;
+    public int textSize;
+    //Both of these vector2s are set in Canvas space, rather than in world space
+    public Vector2 pos;
+    public Vector2 size;
+
+    public const float WORLD_TO_CANVAS_RATIO = 225;//When changing something from a world point to a canvas point, this is the ratio by which it needs to be changed (divided by the camera size)
+    public static float ConvertWorldToCanvas(float startFloat) {
+        float newFloat = startFloat * WORLD_TO_CANVAS_RATIO / Camera.main.orthographicSize;
+        return newFloat;
+    }
 }
 public class BorderInfo : MonoBehaviour
 {
