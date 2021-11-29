@@ -16,8 +16,13 @@ public class PlayerHitTracker : MonoBehaviour
     }
 
     //Calls this whenever the player is hit
-    public void PlayerHit() {
+    public void PlayerHit(BulletMovement hitBullet = null) {
         numTimesHit++;
         HitText.text = "Times Hit: " + numTimesHit.ToString();
+        if(hitBullet != null) {
+            if(hitBullet.DestroyOnCollision) {
+                hitBullet.Deactivate();
+            }
+        }
     }
 }
