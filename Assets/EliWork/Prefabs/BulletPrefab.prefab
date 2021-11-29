@@ -98,6 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 0
   speed: 0
+  spawnTime: 2
+  _destroyOnCollision: 1
 --- !u!61 &4892668104166099977
 BoxCollider2D:
   m_ObjectHideFlags: 0

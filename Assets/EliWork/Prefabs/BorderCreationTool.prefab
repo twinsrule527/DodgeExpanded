@@ -221,10 +221,11 @@ MonoBehaviour:
     playerStart: {x: 0, y: 0, z: 0}
     BulletHell: []
   myShape: 0
-  mylineWidth: 0.5
+  myLineWidth: 0.5
   myBoundingBorder: {fileID: 4269909297841821335}
   myCheckPointBox: {fileID: 4269909299137068666}
   myPlayerStartSpot: {fileID: 4269909297213920082}
+  _number: 0
 --- !u!1 &4269909299137068669
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,3 +407,4 @@ MonoBehaviour:
   bulletDelay: 1
   bulletSpeed: 10
   bulletLife: 5
+  Bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
