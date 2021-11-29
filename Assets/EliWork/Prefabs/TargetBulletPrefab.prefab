@@ -125,5 +125,6 @@ MonoBehaviour:
   lifeTime: 0
   speed: 0
   spawnTime: 0.5
-  timeTilTarget: 3
+  _destroyOnCollision: 0
+  timeTilTarget: 2
   timeToTurn: 1

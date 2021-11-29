@@ -6,7 +6,6 @@ public class TargetBulletMovement : BulletMovement
 {
     [SerializeField] private float timeTilTarget;//how much time passes before this changes direction and targets the player
     [SerializeField] private float timeToTurn;//How long it takes for the bullet to turn before shooting straight
-    private bool targeting;
     private float timeStartTargetting;
     private float targetRot = -360;
     private float startLife;
@@ -54,12 +53,46 @@ public class TargetBulletMovement : BulletMovement
             yield return null;
         }
         timeStartTargetting = lifeTime;
-        targetRot = 0;
+        //Gets the directional vector from this to the player
+        Vector2 pointDiff = Player.Instance.transform.position - transform.position;
+        pointDiff = pointDiff.normalized;
+        float finalAngle = 0;
+        if(pointDiff.x != 0) {
+            float tanAngle = Mathf.Atan(pointDiff.y / pointDiff.x);
+            if(pointDiff.x >  0) {
+                finalAngle = tanAngle * 360 / 2 / Mathf.PI;
+            }
+            else { 
+                finalAngle = tanAngle * 360 / 2 / Mathf.PI + 180;
+            }
+        }
+        else {
+            finalAngle = 90 * pointDiff.y;
+        }
+        //Now, need to turn it to adjust with up being vertical
+        finalAngle -=90;
+        //Now, we need to adjust it so that the object makes the fastest turn possible
+        float otherAngle = 0;
+        if(finalAngle > 0) {
+            otherAngle = -360 + finalAngle;
+        }
+        else {
+            otherAngle = 360 + finalAngle;
+        }
+        //Check to see if its faster to turn clockwise or counterclockwise
+        if(Mathf.Abs(transform.localEulerAngles.z - finalAngle) > Mathf.Abs(transform.localEulerAngles.z - otherAngle)) {
+            finalAngle = otherAngle;
+        }
+        Vector3 direction1 = new Vector3(0, 0, transform.localEulerAngles.z);
+        Vector3 direction2 = new Vector3(0, 0, finalAngle);
+        float currentTime = 0;
         //Need to figure out how to get this to work
-        transform.LookAt(Player.Instance.transform.position, Vector3.forward);
         while(lifeTime > timeStartTargetting - timeToTurn && lifeTime > 0) {
             //Needs to slowly lerp between 2 positions
             lifeTime -= Time.deltaTime;
+            currentTime += Time.deltaTime;
+            currentTime = Mathf.Min(currentTime, timeToTurn);
+            transform.rotation = Quaternion.Lerp(Quaternion.Euler(direction1), Quaternion.Euler(direction2), currentTime / timeToTurn);
             yield return null;
         }
         while(lifeTime > 0) {

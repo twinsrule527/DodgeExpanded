@@ -492,13 +492,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startDelay: 1
-  bulletDelay: 2
+  bulletDelay: 1
   bulletSpeed: 5
-  bulletLife: 4
-  Bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
-  numBullets: 24
-  timeBtwnBullets: 0.1
-  radius: 0
+  bulletLife: 8
+  Bullet: {fileID: -1298795711784348939, guid: 538c2740947d3314ea5197b7b8a339a6, type: 3}
+  numBullets: 48
+  timeBtwnBullets: 0
+  radius: 20
 --- !u!4 &222969291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 776532294203827503, guid: 50d7deadba76c1d4d9eefc8612ecb69a, type: 3}
@@ -2041,6 +2041,110 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1816256706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1816256707}
+  - component: {fileID: 1816256709}
+  - component: {fileID: 1816256708}
+  m_Layer: 0
+  m_Name: ArrayBulletSpawnTool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1816256707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816256706}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7114475, w: -0.70273936}
+  m_LocalPosition: {x: 2.3, y: 4.8, z: -1}
+  m_LocalScale: {x: 20, y: 10, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2009734732}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.706}
+--- !u!114 &1816256708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816256706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 303f8e98585ecde4b8d951443a12dc6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startDelay: 0.5
+  bulletDelay: 0.5
+  bulletSpeed: 10
+  bulletLife: 5
+  Bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+  numBullets: 8
+  startFromRight: 0
+  timeBtwnBullets: 0
+  offSetFromEdge: 0.1
+--- !u!212 &1816256709
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816256706}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 3625043607559282579, guid: 0d267bc78a0864eb48358689b29ed20a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 1
+  m_DrawMode: 0
+  m_Size: {x: 0.2, y: 0.2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1961110438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,7 +2990,7 @@ PrefabInstance:
       objectReference: {fileID: -1298795711784348939, guid: 538c2740947d3314ea5197b7b8a339a6, type: 3}
     - target: {fileID: 4355555322317831073, guid: ede3df6fade0336428f7dc89fa1c4ea1, type: 3}
       propertyPath: bulletLife
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4355555322317831073, guid: ede3df6fade0336428f7dc89fa1c4ea1, type: 3}
       propertyPath: startDelay
