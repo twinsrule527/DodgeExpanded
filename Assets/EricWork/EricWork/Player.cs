@@ -9,34 +9,60 @@ public class Player : MonoBehaviour
 
     public Rigidbody2D rigidbody;
     public float hitPoints;
+    public float hitMax;
+    SpriteRenderer renderer;
     public bool frozen;//Whether the player is frozen from the map moving
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
         rigidbody = GetComponent<Rigidbody2D>();
+        renderer = GetComponent<SpriteRenderer>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!frozen) {
+        float lerpRate = hitPoints / hitMax;
+
+        if (!frozen) {
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
 
-       
-            rigidbody.velocity = new Vector2(x * speed, y * speed);
+            //Vector3 input = new Vector3(x, y, 0);
+
+            if (!Input.GetKey(KeyCode.None))
+            {
+                rigidbody.velocity = new Vector2(x * speed, y * speed);
+                //rigidbody.MovePosition(transform.position + input * Time.deltaTime * speed);
+            } else
+            {
+                rigidbody.velocity = Vector2.zero;
+                rigidbody.position = rigidbody.position;
+            }
         }
 
-       
+
+        renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
 
 
+
+        //DEATH CHECK
+        //hitpoints tracks the number of times hit
+        if(hitPoints == hitMax)
+        {
+            //Add reset position code here
+
+            hitPoints = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
+            hitPoints++;
             //When player gets hit by bullet, increases the hit tracker
             PlayerHitTracker.Instance.PlayerHit(collision.GetComponent<BulletMovement>());
         }
