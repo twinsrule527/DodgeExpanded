@@ -130,7 +130,7 @@ public class BorderMovement : MonoBehaviour
         curBorder++;
     }
 
-    //Spawns bullets repeatadly until forcibly stopped
+    //Spawns bullets repeatedly until forcibly stopped
     public IEnumerator SpawnBullets(BulletSpawn spawnDetails) {
         yield return new WaitForSeconds(spawnDetails.startDelay);
         float curTime = 0;
@@ -192,5 +192,15 @@ public class BorderMovement : MonoBehaviour
         else {
             return points;
         }
+    }
+
+    float waitTime = 0.5f;
+    public IEnumerator writeText(string myString) {
+        string newString = "";
+        while(newString.Length < myString.Length) {
+            newString += myString[newString.Length];
+            yield return new WaitForSeconds(waitTime);
+        }
+        yield return null;
     }
 }
