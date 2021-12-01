@@ -11,6 +11,12 @@ public class BulletSpawnTool : MonoBehaviour
     [SerializeField] protected float bulletSpeed;
     [SerializeField] protected float bulletLife;
     [SerializeField] protected BulletMovement Bullet;
+    public List<BulletSpawn> myBullets;
+    public BulletSpawnType myType;
+    public virtual void Awake() {
+        myType = BulletSpawnType.normal;
+        myBullets = CreateBulletSpawnFromThis();
+    }
     public virtual List<BulletSpawn> CreateBulletSpawnFromThis() {
         //Now, creates a list of bullets, so we can have different tools that work differently
         List<BulletSpawn> myBullets = new List<BulletSpawn>();

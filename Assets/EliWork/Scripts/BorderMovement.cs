@@ -76,6 +76,9 @@ public class BorderMovement : MonoBehaviour
                 player.transform.position = Level.Borders[curBorder].playerStart;
             }
         }
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            StartCoroutine(BorderShake(2, 0.5f));
+        }
     }
 
     private IEnumerator MoveBorder(BorderTransition myTransition) {
@@ -206,6 +209,36 @@ public class BorderMovement : MonoBehaviour
             newString += myString[newString.Length];
             yield return new WaitForSeconds(waitTime);
         }
+        yield return null;
+    }
+
+    //Repeatedly shakes the screen until stopped
+    public IEnumerator repeatBorderShake(float intensity) {
+        while(true != false) {
+            StartCoroutine(BorderShake(0.1f, intensity));
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+    public IEnumerator BorderShake(float duration, float intensity) {
+        List<Vector2> borderBaseCorners = new List<Vector2>(Level.Borders[curBorder].BorderCorners);
+        float curTime = 0;
+        while(curTime < duration) {
+            curTime+= Time.deltaTime;
+            List<Vector3> currentCorners = new List<Vector3>();
+            Vector2 shakeAmt = new Vector2(Random.Range(-1f, 1f) * intensity, Random.Range(-1f, 1f) * intensity);
+            for(int i = 0; i < borderBaseCorners.Count; i++) {
+                Vector3 newPos = borderBaseCorners[i] + shakeAmt;
+                currentCorners.Add(newPos);
+            }
+            myLine.SetPositions(currentCorners.ToArray());
+            yield return null;
+        }
+        List<Vector3> curCorners = new List<Vector3>();
+        for(int i = 0; i < borderBaseCorners.Count; i++) {
+                Vector3 newPos = borderBaseCorners[i];
+                curCorners.Add(newPos);
+            }
+        myLine.SetPositions(curCorners.ToArray());
         yield return null;
     }
 }

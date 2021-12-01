@@ -12,7 +12,8 @@ using UnityEngine;
     public Vector2 checkpointPos;//Bottom left corner of the checkpoint box
     public Vector2 checkpointSize;//Dimensions of the checkpoint box
     public Vector3 playerStart;//Where the player starts in this border area
-    public List<BulletSpawn> BulletHell;//A list of how bullets will spawn while this Border is active
+    public List<BulletSpawn> BulletHell;//A list of how bullets will spawn while this Border is active - this is outdated, but I'll keep it around for posterity's sake
+    public List<BulletSpawnTool> BulletHell2;//A better list of how bullets will spawn
     public TextBox RoomText;
     public List<Vector2> BorderCorners {//Gets the correct corners of the border
         get {
@@ -37,10 +38,25 @@ using UnityEngine;
     //These two functions allow for the efficient start and ending of a bullet hell mode
     public void StartBulletHell() {
         List<IEnumerator> runningBulletCoroutines = new List<IEnumerator>();
-        foreach(BulletSpawn bullets in BulletHell) {
+        /*foreach(BulletSpawn bullets in BulletHell) {
             IEnumerator bulletCoroutine = BorderMovement.Instance.SpawnBullets(bullets);
             runningBulletCoroutines.Add(bulletCoroutine);
             BorderMovement.Instance.StartCoroutine(bulletCoroutine);
+        }*/
+        foreach(BulletSpawnTool bulletTool in BulletHell2) {
+            if(bulletTool.myType == BulletSpawnType.normal) {
+                foreach(BulletSpawn bullets in bulletTool.myBullets) {
+                    IEnumerator bulletCoroutine = BorderMovement.Instance.SpawnBullets(bullets);
+                    runningBulletCoroutines.Add(bulletCoroutine);
+                    BorderMovement.Instance.StartCoroutine(bulletCoroutine);
+                }
+            }
+            else if(bulletTool.myType == BulletSpawnType.screenShake) {
+                ScreenShakeSpawnTool attachedTool = bulletTool.GetComponent<ScreenShakeSpawnTool>();
+                IEnumerator shakeCoroutine = BorderMovement.Instance.repeatBorderShake(attachedTool.shakeIntensity);
+                runningBulletCoroutines.Add(shakeCoroutine);
+                BorderMovement.Instance.StartCoroutine(shakeCoroutine);
+            }
         }
         BorderMovement.Instance.runningBulletCoroutines = runningBulletCoroutines;
     }
@@ -61,6 +77,12 @@ using UnityEngine;
 public enum Shape {
     rect,
     other
+}
+
+//So that we can spawn bullet arrays in different ways
+public enum BulletSpawnType {
+    normal,
+    screenShake
 }
 
 //Contains information for repeatably spawning bullets

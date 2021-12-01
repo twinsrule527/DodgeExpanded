@@ -9,7 +9,10 @@ public class ArrayBulletSpawnTool : BulletSpawnTool
     [SerializeField] private float timeBtwnBullets;//How much time there should be between each bullet spawning
     [SerializeField] private float offSetFromEdge = 0.1f;//Most of the time, this is ignored - it says how far from the edge of this object is the first bullet spawned
     
-    //MATH SCALING IS CURRENTLY WRONG DO NOT USE THIS UNTIL I FIX IT
+    public override void Awake() {
+        myBullets = CreateBulletSpawnFromThis();
+        myType = BulletSpawnType.normal;
+    }
     public override List<BulletSpawn> CreateBulletSpawnFromThis() {
         List<BulletSpawn> myBullets = new List<BulletSpawn>();
         //Figures out how far apart each bullet is

@@ -39,8 +39,10 @@ public class BorderTool : MonoBehaviour
         myBorder.playerStart = myPlayerStartSpot.position;
         //Creates a list of bullets from the bullet spawns in the room
         myBorder.BulletHell = new List<BulletSpawn>();
+        myBorder.BulletHell2 = new List<BulletSpawnTool>();
         List<BulletSpawnTool> myBulletSpawners = new List<BulletSpawnTool>(GetComponentsInChildren<BulletSpawnTool>());
         foreach(BulletSpawnTool spawner in myBulletSpawners) {
+            myBorder.BulletHell2.Add(spawner);
             List<BulletSpawn> curBullets = spawner.CreateBulletSpawnFromThis();
             foreach(BulletSpawn bullet in curBullets) {
                 myBorder.BulletHell.Add(bullet);

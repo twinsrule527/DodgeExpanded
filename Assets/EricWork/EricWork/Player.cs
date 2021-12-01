@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float hitPoints;
     public float hitMax;
     SpriteRenderer renderer;
+    public bool useFixedUpdate;
     public bool frozen;//Whether the player is frozen from the map moving
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour
         
     }
 
+    private Vector3 input;
     // Update is called once per frame
     void Update()
     {
@@ -30,8 +32,9 @@ public class Player : MonoBehaviour
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
 
-            //Vector3 input = new Vector3(x, y, 0);
+            input = new Vector3(x, y, 0);
 
+            if(!useFixedUpdate) {
             if (!Input.GetKey(KeyCode.None))
             {
                 rigidbody.velocity = new Vector2(x * speed, y * speed);
@@ -40,6 +43,7 @@ public class Player : MonoBehaviour
             {
                 rigidbody.velocity = Vector2.zero;
                 rigidbody.position = rigidbody.position;
+            }
             }
         }
 
@@ -55,6 +59,12 @@ public class Player : MonoBehaviour
             //Add reset position code here
             transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;
             hitPoints = 0;
+        }
+    }
+
+    void FixedUpdate() {
+        if(useFixedUpdate) {
+        rigidbody.velocity = input * speed;
         }
     }
 
