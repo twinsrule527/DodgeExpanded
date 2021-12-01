@@ -12,7 +12,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ef030a24305c6489335a36c37d2a1f, type: 3}
   m_Name: Demo Level
   m_EditorClassIdentifier: 
-  Borders: []
-  BorderTransitions: []
-  transitionTimes: []
-  BorderCreation: []
+  Borders:
+  - pos: {x: -13.024971, y: -11.2697525}
+    size: {x: 40.818, y: 8.262}
+    shape: 0
+    width: 0.5
+    checkpointPos: {x: -13.133626, y: -11.38815}
+    checkpointSize: {x: 2.297311, y: 8.401194}
+    playerStart: {x: 25.31503, y: -6.8875523, z: 0}
+    BulletHell: []
+    RoomText:
+      text: What are you doing? The day's half gone.
+      textSize: 0
+      pos: {x: -110.193405, y: 57.41941}
+      size: {x: 426.33292, y: 133.37105}
+  - pos: {x: -17.742054, y: -10.2213}
+    size: {x: 15.51417, y: 26.207495}
+    shape: 0
+    width: 0.5
+    checkpointPos: {x: -6.403121, y: 11.992449}
+    checkpointSize: {x: 4.2367034, y: 3.9845958}
+    playerStart: {x: -10.0849695, y: -5.7691517, z: 0}
+    BulletHell:
+    - spawnPos: {x: 0.41502953, y: 8.282448, z: -1}
+      spawnRotation: 90
+      startDelay: 0
+      delay: 0.3
+      bulletSpeed: 10
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: -20.58497, y: 1.9824476, z: -1}
+      spawnRotation: 270
+      startDelay: 0
+      delay: 0.5
+      bulletSpeed: 10
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    - spawnPos: {x: 0.5150299, y: -3.3175526, z: -1}
+      spawnRotation: 90
+      startDelay: 0
+      delay: 0.7
+      bulletSpeed: 10
+      bulletLifetime: 5
+      bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+    RoomText:
+      text: You should probably get to work.
+      textSize: 0
+      pos: {x: 177.91908, y: -132.94746}
+      size: {x: 317.44748, y: 70.1437}
+  BorderTransitions:
+  - startBorder:
+      pos: {x: -13.024971, y: -11.2697525}
+      size: {x: 40.818, y: 8.262}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: -13.133626, y: -11.38815}
+      checkpointSize: {x: 2.297311, y: 8.401194}
+      playerStart: {x: 25.31503, y: -6.8875523, z: 0}
+      BulletHell: []
+      RoomText:
+        text: What are you doing? The day's half gone.
+        textSize: 0
+        pos: {x: -110.193405, y: 57.41941}
+        size: {x: 426.33292, y: 133.37105}
+    endBorder:
+      pos: {x: -17.742054, y: -10.2213}
+      size: {x: 15.51417, y: 26.207495}
+      shape: 0
+      width: 0.5
+      checkpointPos: {x: -6.403121, y: 11.992449}
+      checkpointSize: {x: 4.2367034, y: 3.9845958}
+      playerStart: {x: -10.0849695, y: -5.7691517, z: 0}
+      BulletHell:
+      - spawnPos: {x: 0.41502953, y: 8.282448, z: -1}
+        spawnRotation: 90
+        startDelay: 0
+        delay: 0.3
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: -20.58497, y: 1.9824476, z: -1}
+        spawnRotation: 270
+        startDelay: 0
+        delay: 0.5
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      - spawnPos: {x: 0.5150299, y: -3.3175526, z: -1}
+        spawnRotation: 90
+        startDelay: 0
+        delay: 0.7
+        bulletSpeed: 10
+        bulletLifetime: 5
+        bullet: {fileID: 5277609779144288772, guid: 46d7d4bcc77e7e84ea597517d33c67d9, type: 3}
+      RoomText:
+        text: You should probably get to work.
+        textSize: 0
+        pos: {x: 177.91908, y: -132.94746}
+        size: {x: 317.44748, y: 70.1437}
+    changeTime: 0
+  transitionTimes:
+  - 0
+  BorderCreation:
+  - {fileID: 0}
+  - {fileID: 0}
