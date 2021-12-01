@@ -57,6 +57,11 @@ using UnityEngine;
                 runningBulletCoroutines.Add(shakeCoroutine);
                 BorderMovement.Instance.StartCoroutine(shakeCoroutine);
             }
+            else if(bulletTool.myType == BulletSpawnType.missingSpots) {
+                IEnumerator spawnCoroutine = BorderMovement.Instance.SpawnBulletsMissingArray(bulletTool.myBullets, bulletTool.numMissing, bulletTool.numOffset, bulletTool.missLoop);
+                runningBulletCoroutines.Add(spawnCoroutine);
+                BorderMovement.Instance.StartCoroutine(spawnCoroutine);
+            }
         }
         BorderMovement.Instance.runningBulletCoroutines = runningBulletCoroutines;
     }
@@ -82,7 +87,8 @@ public enum Shape {
 //So that we can spawn bullet arrays in different ways
 public enum BulletSpawnType {
     normal,
-    screenShake
+    screenShake,
+    missingSpots//For when an array wants to miss certain values
 }
 
 //Contains information for repeatably spawning bullets

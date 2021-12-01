@@ -144,7 +144,7 @@ public class BorderMovement : MonoBehaviour
         float curTime = 0;
         //repeats infinitely, until told to stop
         while(true != false) {
-            if(curTime <= 0) {
+            //if(curTime <= 0) {
                 //Spawns a bullet, using an existing bullet if possible
                 BulletMovement newBullet;
                 //Checks to see if the inactiveBullets even contains that named bullet
@@ -168,13 +168,76 @@ public class BorderMovement : MonoBehaviour
                 newBullet.lifeTime = spawnDetails.bulletLifetime;
                 newBullet.StartCoroutine("Fire");
                 curTime = spawnDetails.delay;
-            }
+            //}
+            /*
             else {
                 curTime -= Time.deltaTime;
-            }
-            yield return null;
+            }*/
+            yield return new WaitForSeconds(spawnDetails.delay);
         }
     }
+
+    //Spawns an array (or circle) of bullets, missing a certain number in a group
+        //Automatically assumes all bullets fire simultaneously
+    public IEnumerator SpawnBulletsMissingArray(List<BulletSpawn> spawnDetails, int numMissing, int offset, bool loops) {
+        yield return new WaitForSeconds(spawnDetails[0].startDelay);
+        int firstMissing = 0;
+        if(loops) {
+            firstMissing = Random.Range(0, spawnDetails.Count - 1);
+        }
+        else {
+            firstMissing = Random.Range(0, spawnDetails.Count - 1 - numMissing);
+            Debug.Log(firstMissing);
+            Debug.Log(numMissing);
+            Debug.Log(spawnDetails.Count);
+        }
+        while(true != false) {
+            List<BulletSpawn> newSpawnDetails = new List<BulletSpawn>(spawnDetails);
+            if(!loops) {
+                newSpawnDetails.RemoveRange(firstMissing, numMissing);
+            }
+            else {
+                if(firstMissing >= spawnDetails.Count - 1 - numMissing) {
+                    newSpawnDetails.RemoveRange(firstMissing, firstMissing - spawnDetails.Count - 1 - numMissing);
+                    newSpawnDetails.RemoveRange(0, spawnDetails.Count - firstMissing);
+                }
+                else {
+                    newSpawnDetails.RemoveRange(firstMissing, numMissing);
+                }
+            }
+            foreach(BulletSpawn bullet in newSpawnDetails) {
+                BulletMovement newBullet;
+                //Checks to see if the inactiveBullets even contains that named bullet
+                if(!inactiveBullets.ContainsKey(bullet.bullet.name)) {
+                    //If it doesn't, creates the corresponding list
+                    inactiveBullets.Add(bullet.bullet.name, new List<BulletMovement>());
+                }
+                if(inactiveBullets[bullet.bullet.name].Count > 0) {
+                    newBullet = inactiveBullets[bullet.bullet.name][0];
+                    inactiveBullets[bullet.bullet.name].RemoveAt(0);
+                    newBullet.gameObject.SetActive(true);
+                }
+                else {
+                    newBullet = Instantiate(bullet.bullet, Vector3.zero, Quaternion.identity);
+                    newBullet.name = bullet.bullet.name;
+                }
+                activeBullets.Add(newBullet);
+                newBullet.transform.position = bullet.spawnPos;
+                newBullet.transform.rotation = Quaternion.Euler(0, 0, bullet.spawnRotation);
+                newBullet.speed = bullet.bulletSpeed;
+                newBullet.lifeTime = bullet.bulletLifetime;
+                newBullet.StartCoroutine("Fire");
+            }
+            if(loops) {
+                firstMissing = Random.Range(0, spawnDetails.Count - 1);
+            }
+            else {
+                firstMissing = Random.Range(0, spawnDetails.Count - 1 - numMissing);
+            }
+            yield return new WaitForSeconds(spawnDetails[0].delay);
+        }
+    }
+
 
     //Allows the checkpoint box to call when to start a new transition
     public void StartNewBorderTransition() {
