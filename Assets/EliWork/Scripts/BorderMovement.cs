@@ -15,6 +15,11 @@ public class BorderMovement : MonoBehaviour
     [SerializeField] private Player player;//The player needs to be able to be moved around
     public BorderLevelScriptableObject Level;
     private int curBorder;
+    public int CurBorder {
+        get {
+            return curBorder;
+        }
+    }
 
     public Dictionary<string, List<BulletMovement>> inactiveBullets;//A Dictionary of all bullets which exist but aren't active, so they can be reviewed - Each string is the name of a BulletPrefab Type
     private List<BulletMovement> activeBullets;//A List of all bullets being fired - deactivates them when the map changes
