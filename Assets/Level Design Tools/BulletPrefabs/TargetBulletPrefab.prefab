@@ -125,7 +125,8 @@ MonoBehaviour:
   lifeTime: 5
   speed: 10
   spawnTime: 0.5
-  invisibleOutsideBox: 1
+  _playerDamage: 0
+  invisibleOutsideBox: 0
   _destroyOnCollision: 1
   timeTilTarget: 2
   timeToTurn: 1
