@@ -99,7 +99,9 @@ MonoBehaviour:
   lifeTime: 5
   speed: 10
   spawnTime: 1
-  _destroyOnCollision: 0
+  _playerDamage: 1
+  invisibleOutsideBox: 1
+  _destroyOnCollision: 1
 --- !u!61 &4892668104166099977
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -477,6 +477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScreenShakeTool
       objectReference: {fileID: 0}
+    - target: {fileID: 4223757808106318825, guid: 9364af0180f4ac841a11c605b472a3ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8962542975273205318, guid: 9364af0180f4ac841a11c605b472a3ac, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1275,6 +1279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8341096651407109640, guid: 077c56bba6410bb4db18002ac432de4b, type: 3}
+      propertyPath: wallKills
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8341096651407109642, guid: 077c56bba6410bb4db18002ac432de4b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1826,6 +1834,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpiralCircleBulletSpawnTool
       objectReference: {fileID: 0}
+    - target: {fileID: 4300108769225204291, guid: 079d17cf1fe9ed64dac044520f99a29a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7141657885551552106, guid: 079d17cf1fe9ed64dac044520f99a29a, type: 3}
       propertyPath: numBullets
       value: 36
@@ -2246,6 +2258,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1369917920}
     m_Modifications:
+    - target: {fileID: 1867882976976838646, guid: 6858b7a25515b01408a951d3924ee123, type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: -1298795711784348939, guid: 538c2740947d3314ea5197b7b8a339a6, type: 3}
     - target: {fileID: 6292949585722244348, guid: 6858b7a25515b01408a951d3924ee123, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3040,6 +3056,22 @@ PrefabInstance:
     - target: {fileID: 615885876949034221, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_Name
       value: RoomCreationTool
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846614730929501421, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 16.456
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846614730929501421, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 26.639341
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846614730929501421, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.472
+      objectReference: {fileID: 0}
+    - target: {fileID: 3846614730929501421, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.6199
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}

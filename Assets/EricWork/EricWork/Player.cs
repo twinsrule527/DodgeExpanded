@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public float hitMax;
     SpriteRenderer renderer;
     public bool useFixedUpdate;
+    [SerializeField] private bool wallKills;//A bool for whether the wall resets the player's position
     public bool frozen;//Whether the player is frozen from the map moving
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,9 @@ public class Player : MonoBehaviour
         Instance = this;
         rigidbody = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
-        
+        if(wallKills) {
+            BorderMovement.Instance.MyLine.GetComponent<EdgeCollider2D>().isTrigger = true;
+        }
     }
 
     private Vector3 input;
@@ -75,6 +78,12 @@ public class Player : MonoBehaviour
             hitPoints++;
             //When player gets hit by bullet, increases the hit tracker
             PlayerHitTracker.Instance.PlayerHit(collision.GetComponent<BulletMovement>());
+            collision.GetComponent<BulletMovement>().DealDamage(this);
+        }
+        //If the wall is supposed to kill the player, it resets their position
+        if(wallKills && collision.CompareTag("Border")) {
+            transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;
+            hitPoints = 0;
         }
     }
 }

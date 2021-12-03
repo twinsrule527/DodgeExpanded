@@ -10,6 +10,11 @@ public class BorderMovement : MonoBehaviour
     public static BorderMovement Instance;//Allows every object to access this (basically a singleton)
     public float timeToChange;
     private LineRenderer myLine;
+    public LineRenderer MyLine {
+        get {
+            return myLine;
+        }
+    }
     private EdgeCollider2D myEdge;
     [SerializeField] private Transform checkPointBox;//The box for when a change in transition occurs
     [SerializeField] private Player player;//The player needs to be able to be moved around
@@ -28,13 +33,17 @@ public class BorderMovement : MonoBehaviour
     [SerializeField] private TMP_Text GameTextBox;
     private RectTransform TextBoxTransform;
     
-    void Start()
-    {
+    //Needs to immediately become the singleton - and set some objects
+    void Awake() {
         Instance = this;
-        curBorder = 0;
         myLine = GetComponent<LineRenderer>();
         myEdge = GetComponent<EdgeCollider2D>();
         TextBoxTransform = GameTextBox.GetComponent<RectTransform>();
+    }
+
+    void Start()
+    {
+        curBorder = 0;
         Level.Borders = new List<Border>();
         Level.SetBordersFromTool();
         Level.SetBorderTransitions(Level.transitionTimes);
@@ -282,7 +291,7 @@ public class BorderMovement : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
-    public IEnumerator BorderShake(float duration, float intensity) {
+    public IEnumerator BorderShake(float duration, float intensity = 0.5f) {
         List<Vector2> borderBaseCorners = new List<Vector2>(Level.Borders[curBorder].BorderCorners);
         float curTime = 0;
         while(curTime < duration) {
