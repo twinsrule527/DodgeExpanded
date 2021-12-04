@@ -7,20 +7,25 @@ public class Player : MonoBehaviour
     public static Player Instance;
     public float speed;
 
-    public Rigidbody2D rigidbody;
-    public float hitPoints;
+    [HideInInspector] public Rigidbody2D rigidbody;
+    [HideInInspector] public float hitPoints;
     public float hitMax;
     SpriteRenderer renderer;
-    public bool frozen;//Whether the player is frozen from the map moving
+    public bool useFixedUpdate;
+    [SerializeField] private bool wallKills;//A bool for whether the wall resets the player's position
+    [HideInInspector] public bool frozen;//Whether the player is frozen from the map moving
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
         rigidbody = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
-        
+        if(wallKills) {
+            BorderMovement.Instance.MyLine.GetComponent<EdgeCollider2D>().isTrigger = true;
+        }
     }
 
+    private Vector3 input;
     // Update is called once per frame
     void Update()
     {
@@ -30,8 +35,9 @@ public class Player : MonoBehaviour
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
 
-            //Vector3 input = new Vector3(x, y, 0);
+            input = new Vector3(x, y, 0);
 
+            if(!useFixedUpdate) {
             if (!Input.GetKey(KeyCode.None))
             {
                 rigidbody.velocity = new Vector2(x * speed, y * speed);
@@ -40,6 +46,7 @@ public class Player : MonoBehaviour
             {
                 rigidbody.velocity = Vector2.zero;
                 rigidbody.position = rigidbody.position;
+            }
             }
         }
 
@@ -53,8 +60,14 @@ public class Player : MonoBehaviour
         if(hitPoints == hitMax)
         {
             //Add reset position code here
-
+            transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;
             hitPoints = 0;
+        }
+    }
+
+    void FixedUpdate() {
+        if(useFixedUpdate) {
+        rigidbody.velocity = input * speed;
         }
     }
 
@@ -65,6 +78,12 @@ public class Player : MonoBehaviour
             hitPoints++;
             //When player gets hit by bullet, increases the hit tracker
             PlayerHitTracker.Instance.PlayerHit(collision.GetComponent<BulletMovement>());
+            collision.GetComponent<BulletMovement>().DealDamage(this);
+        }
+        //If the wall is supposed to kill the player, it resets their position
+        if(wallKills && collision.CompareTag("Border")) {
+            transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;
+            hitPoints = 0;
         }
     }
 }
