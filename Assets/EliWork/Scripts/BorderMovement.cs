@@ -10,11 +10,21 @@ public class BorderMovement : MonoBehaviour
     public static BorderMovement Instance;//Allows every object to access this (basically a singleton)
     public float timeToChange;
     private LineRenderer myLine;
+    public LineRenderer MyLine {
+        get {
+            return myLine;
+        }
+    }
     private EdgeCollider2D myEdge;
     [SerializeField] private Transform checkPointBox;//The box for when a change in transition occurs
     [SerializeField] private Player player;//The player needs to be able to be moved around
     public BorderLevelScriptableObject Level;
     private int curBorder;
+    public int CurBorder {
+        get {
+            return curBorder;
+        }
+    }
 
     public Dictionary<string, List<BulletMovement>> inactiveBullets;//A Dictionary of all bullets which exist but aren't active, so they can be reviewed - Each string is the name of a BulletPrefab Type
     private List<BulletMovement> activeBullets;//A List of all bullets being fired - deactivates them when the map changes
@@ -23,13 +33,17 @@ public class BorderMovement : MonoBehaviour
     [SerializeField] private TMP_Text GameTextBox;
     private RectTransform TextBoxTransform;
     
-    void Start()
-    {
+    //Needs to immediately become the singleton - and set some objects
+    void Awake() {
         Instance = this;
-        curBorder = 0;
         myLine = GetComponent<LineRenderer>();
         myEdge = GetComponent<EdgeCollider2D>();
         TextBoxTransform = GameTextBox.GetComponent<RectTransform>();
+    }
+
+    void Start()
+    {
+        curBorder = 0;
         Level.Borders = new List<Border>();
         Level.SetBordersFromTool();
         Level.SetBorderTransitions(Level.transitionTimes);
@@ -70,6 +84,9 @@ public class BorderMovement : MonoBehaviour
             else {
                 player.transform.position = Level.Borders[curBorder].playerStart;
             }
+        }
+        if(Input.GetKeyDown(KeyCode.Space)) {
+            StartCoroutine(BorderShake(2, 0.5f));
         }
     }
 
@@ -130,13 +147,13 @@ public class BorderMovement : MonoBehaviour
         curBorder++;
     }
 
-    //Spawns bullets repeatadly until forcibly stopped
+    //Spawns bullets repeatedly until forcibly stopped
     public IEnumerator SpawnBullets(BulletSpawn spawnDetails) {
         yield return new WaitForSeconds(spawnDetails.startDelay);
         float curTime = 0;
         //repeats infinitely, until told to stop
         while(true != false) {
-            if(curTime <= 0) {
+            //if(curTime <= 0) {
                 //Spawns a bullet, using an existing bullet if possible
                 BulletMovement newBullet;
                 //Checks to see if the inactiveBullets even contains that named bullet
@@ -160,13 +177,76 @@ public class BorderMovement : MonoBehaviour
                 newBullet.lifeTime = spawnDetails.bulletLifetime;
                 newBullet.StartCoroutine("Fire");
                 curTime = spawnDetails.delay;
-            }
+            //}
+            /*
             else {
                 curTime -= Time.deltaTime;
-            }
-            yield return null;
+            }*/
+            yield return new WaitForSeconds(spawnDetails.delay);
         }
     }
+
+    //Spawns an array (or circle) of bullets, missing a certain number in a group
+        //Automatically assumes all bullets fire simultaneously
+    public IEnumerator SpawnBulletsMissingArray(List<BulletSpawn> spawnDetails, int numMissing, int offset, bool loops) {
+        yield return new WaitForSeconds(spawnDetails[0].startDelay);
+        int firstMissing = 0;
+        if(loops) {
+            firstMissing = Random.Range(0, spawnDetails.Count - 1);
+        }
+        else {
+            firstMissing = Random.Range(0, spawnDetails.Count - 1 - numMissing);
+            Debug.Log(firstMissing);
+            Debug.Log(numMissing);
+            Debug.Log(spawnDetails.Count);
+        }
+        while(true != false) {
+            List<BulletSpawn> newSpawnDetails = new List<BulletSpawn>(spawnDetails);
+            if(!loops) {
+                newSpawnDetails.RemoveRange(firstMissing, numMissing);
+            }
+            else {
+                if(firstMissing >= spawnDetails.Count - 1 - numMissing) {
+                    newSpawnDetails.RemoveRange(firstMissing, firstMissing - spawnDetails.Count - 1 - numMissing);
+                    newSpawnDetails.RemoveRange(0, spawnDetails.Count - firstMissing);
+                }
+                else {
+                    newSpawnDetails.RemoveRange(firstMissing, numMissing);
+                }
+            }
+            foreach(BulletSpawn bullet in newSpawnDetails) {
+                BulletMovement newBullet;
+                //Checks to see if the inactiveBullets even contains that named bullet
+                if(!inactiveBullets.ContainsKey(bullet.bullet.name)) {
+                    //If it doesn't, creates the corresponding list
+                    inactiveBullets.Add(bullet.bullet.name, new List<BulletMovement>());
+                }
+                if(inactiveBullets[bullet.bullet.name].Count > 0) {
+                    newBullet = inactiveBullets[bullet.bullet.name][0];
+                    inactiveBullets[bullet.bullet.name].RemoveAt(0);
+                    newBullet.gameObject.SetActive(true);
+                }
+                else {
+                    newBullet = Instantiate(bullet.bullet, Vector3.zero, Quaternion.identity);
+                    newBullet.name = bullet.bullet.name;
+                }
+                activeBullets.Add(newBullet);
+                newBullet.transform.position = bullet.spawnPos;
+                newBullet.transform.rotation = Quaternion.Euler(0, 0, bullet.spawnRotation);
+                newBullet.speed = bullet.bulletSpeed;
+                newBullet.lifeTime = bullet.bulletLifetime;
+                newBullet.StartCoroutine("Fire");
+            }
+            if(loops) {
+                firstMissing = Random.Range(0, spawnDetails.Count - 1);
+            }
+            else {
+                firstMissing = Random.Range(0, spawnDetails.Count - 1 - numMissing);
+            }
+            yield return new WaitForSeconds(spawnDetails[0].delay);
+        }
+    }
+
 
     //Allows the checkpoint box to call when to start a new transition
     public void StartNewBorderTransition() {
@@ -192,5 +272,45 @@ public class BorderMovement : MonoBehaviour
         else {
             return points;
         }
+    }
+
+    float waitTime = 0.5f;
+    public IEnumerator writeText(string myString) {
+        string newString = "";
+        while(newString.Length < myString.Length) {
+            newString += myString[newString.Length];
+            yield return new WaitForSeconds(waitTime);
+        }
+        yield return null;
+    }
+
+    //Repeatedly shakes the screen until stopped
+    public IEnumerator repeatBorderShake(float intensity) {
+        while(true != false) {
+            StartCoroutine(BorderShake(0.1f, intensity));
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+    public IEnumerator BorderShake(float duration, float intensity = 0.5f) {
+        List<Vector2> borderBaseCorners = new List<Vector2>(Level.Borders[curBorder].BorderCorners);
+        float curTime = 0;
+        while(curTime < duration) {
+            curTime+= Time.deltaTime;
+            List<Vector3> currentCorners = new List<Vector3>();
+            Vector2 shakeAmt = new Vector2(Random.Range(-1f, 1f) * intensity, Random.Range(-1f, 1f) * intensity);
+            for(int i = 0; i < borderBaseCorners.Count; i++) {
+                Vector3 newPos = borderBaseCorners[i] + shakeAmt;
+                currentCorners.Add(newPos);
+            }
+            myLine.SetPositions(currentCorners.ToArray());
+            yield return null;
+        }
+        List<Vector3> curCorners = new List<Vector3>();
+        for(int i = 0; i < borderBaseCorners.Count; i++) {
+                Vector3 newPos = borderBaseCorners[i];
+                curCorners.Add(newPos);
+            }
+        myLine.SetPositions(curCorners.ToArray());
+        yield return null;
     }
 }

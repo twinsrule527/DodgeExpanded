@@ -11,6 +11,16 @@ public class BulletSpawnTool : MonoBehaviour
     [SerializeField] protected float bulletSpeed;
     [SerializeField] protected float bulletLife;
     [SerializeField] protected BulletMovement Bullet;
+    public List<BulletSpawn> myBullets;
+    public BulletSpawnType myType;
+    [Header("Only use these if in a 'Missing' type of bullet spawner")]
+    public int numMissing;//How many bullets are ignored each time
+    public int numOffset;//How much each time can be offset from each other
+    public bool missLoop;//Whether the next missing spot can loop around
+    public virtual void Awake() {
+        myType = BulletSpawnType.normal;
+        myBullets = CreateBulletSpawnFromThis();
+    }
     public virtual List<BulletSpawn> CreateBulletSpawnFromThis() {
         //Now, creates a list of bullets, so we can have different tools that work differently
         List<BulletSpawn> myBullets = new List<BulletSpawn>();
@@ -24,4 +34,5 @@ public class BulletSpawnTool : MonoBehaviour
         myBullets.Add(myBulletSpawn);
         return myBullets;
     }
+
 }

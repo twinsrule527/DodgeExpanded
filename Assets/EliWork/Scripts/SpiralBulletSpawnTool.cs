@@ -7,6 +7,11 @@ public class SpiralBulletSpawnTool : BulletSpawnTool
     [SerializeField] private int numBullets;//How many bullets should be in the circle
     [SerializeField] private float timeBtwnBullets;//How much time there should be between each bullet spawning
     [SerializeField] private float radius;//Set to 0 for a typical spiral - if you want to have a circle shooting inwards, set this larger
+    
+    public override void Awake() {
+        myBullets = CreateBulletSpawnFromThis();
+        myType = BulletSpawnType.normal;
+    }
     public override List<BulletSpawn> CreateBulletSpawnFromThis() {
         float initialDirection = transform.localEulerAngles.z % 360;
         float degreesPerBullet = 360f / numBullets;
