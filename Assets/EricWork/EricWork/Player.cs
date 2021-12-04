@@ -7,13 +7,13 @@ public class Player : MonoBehaviour
     public static Player Instance;
     public float speed;
 
-    public Rigidbody2D rigidbody;
-    public float hitPoints;
+    [HideInInspector] public Rigidbody2D rigidbody;
+    [HideInInspector] public float hitPoints;
     public float hitMax;
     SpriteRenderer renderer;
     public bool useFixedUpdate;
     [SerializeField] private bool wallKills;//A bool for whether the wall resets the player's position
-    public bool frozen;//Whether the player is frozen from the map moving
+    [HideInInspector] public bool frozen;//Whether the player is frozen from the map moving
     // Start is called before the first frame update
     void Start()
     {
