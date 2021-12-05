@@ -17,9 +17,15 @@ public class BulletSpawnTool : MonoBehaviour
     public int numMissing;//How many bullets are ignored each time
     public int numOffset;//How much each time can be offset from each other
     public bool missLoop;//Whether the next missing spot can loop around
+
+    [Header("Only use this List if this is a 'changingShape' type")]
+    public List<Transform> shapeChildren;
+    public List<float> shapeTimesToChange;
     public virtual void Awake() {
-        myType = BulletSpawnType.normal;
         myBullets = CreateBulletSpawnFromThis();
+        if(shapeChildren == null) {
+            shapeChildren = new List<Transform>(GetComponentsInChildren<Transform>());
+        }
     }
     public virtual List<BulletSpawn> CreateBulletSpawnFromThis() {
         //Now, creates a list of bullets, so we can have different tools that work differently

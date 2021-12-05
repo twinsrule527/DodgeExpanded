@@ -63,6 +63,28 @@ using UnityEngine;
                 runningBulletCoroutines.Add(spawnCoroutine);
                 BorderMovement.Instance.StartCoroutine(spawnCoroutine);
             }
+            //If its the changing shape type, it needs to get all the information from the different boundaries its changing shape to
+            else if(bulletTool.myType == BulletSpawnType.changingShape) {
+                List<List<Vector3>> roomShapes = new List<List<Vector3>>();
+                for(int i = 0; i < bulletTool.shapeChildren.Count; i++) {
+                    Transform curShape = bulletTool.shapeChildren[i];
+                    List<Vector3> newBorders = new List<Vector3>();
+                    Vector2 currentPos = curShape.position - curShape.localScale / 2f;
+                    newBorders.Add(currentPos);
+                    currentPos += new Vector2(0, curShape.localScale.y);
+                    newBorders.Add(currentPos);
+                    currentPos += new Vector2(curShape.localScale.x, 0);
+                    newBorders.Add(currentPos);
+                    currentPos -= new Vector2(0, curShape.localScale.y);
+                    newBorders.Add(currentPos);
+                    currentPos -= new Vector2(curShape.localScale.x, 0);
+                    newBorders.Add(currentPos);
+                    roomShapes.Add(newBorders);
+                }
+                IEnumerator moveCoroutine = BorderMovement.Instance.ChangingShapeRoom(roomShapes, bulletTool.shapeTimesToChange);
+                runningBulletCoroutines.Add(moveCoroutine);
+                BorderMovement.Instance.StartCoroutine(moveCoroutine);
+            }
         }
         BorderMovement.Instance.runningBulletCoroutines = runningBulletCoroutines;
     }
@@ -89,7 +111,8 @@ public enum Shape {
 public enum BulletSpawnType {
     normal,
     screenShake,
-    missingSpots//For when an array wants to miss certain values
+    missingSpots,//For when an array wants to miss certain 
+    changingShape//For when the room is meant to change shapes
 }
 
 //Contains information for repeatably spawning bullets
