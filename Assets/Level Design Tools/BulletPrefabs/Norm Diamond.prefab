@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5277609779144288772}
   - component: {fileID: 4892668104166099977}
   m_Layer: 0
-  m_Name: BulletPrefab
+  m_Name: Norm Diamond
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   speed: 10
   spawnTime: 1
   _playerDamage: 0
-  invisibleOutsideBox: 0
+  invisibleOutsideBox: 1
   _destroyOnCollision: 1
   spawnAnimation: 1
   deathAnimation: 1

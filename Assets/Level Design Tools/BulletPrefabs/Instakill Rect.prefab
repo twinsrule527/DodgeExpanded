@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4003578123531652340}
   - component: {fileID: -8299608159945590105}
   m_Layer: 0
-  m_Name: WallBullet
+  m_Name: Instakill Rect
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,10 +96,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93322779d3c54b749abaece59f4442d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 5
+  lifeTime: 15
   speed: 10
-  spawnTime: 1
+  spawnTime: 0.1
+  _playerDamage: 2
+  invisibleOutsideBox: 0
   _destroyOnCollision: 0
+  spawnAnimation: 0
+  deathAnimation: 0
 --- !u!61 &-8299608159945590105
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,5 +128,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
