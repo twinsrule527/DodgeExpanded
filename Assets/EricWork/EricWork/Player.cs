@@ -77,14 +77,13 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
-            hitPoints++;
             //When player gets hit by bullet, increases the hit tracker
             PlayerHitTracker.Instance.PlayerHit(collision.GetComponent<BulletMovement>());
             collision.GetComponent<BulletMovement>().DealDamage(this);
         }
         //If the wall is supposed to kill the player, it resets their position
         if(wallKills && collision.CompareTag("Border")) {
-            transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;
+            BorderMovement.Instance.ResetRoom();
             hitPoints = 0;
         }
     }
