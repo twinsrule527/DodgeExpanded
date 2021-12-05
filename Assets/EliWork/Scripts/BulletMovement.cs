@@ -88,6 +88,7 @@ public class BulletMovement : MonoBehaviour
     //If the bullet fades out on death, this Coroutine does that
     public IEnumerator DeathFade() {
         float curTime = 0;
+        myHitBox.enabled = false;
         while(curTime < spawnTime) {
             curTime += Time.deltaTime;
             mySprite.color = Color.Lerp(Color.white, Color.black, curTime / spawnTime);
@@ -97,6 +98,7 @@ public class BulletMovement : MonoBehaviour
         if(!BorderMovement.Instance.inactiveBullets.ContainsKey(name)) {
             BorderMovement.Instance.inactiveBullets.Add(name, new List<BulletMovement>());
         }
+        myHitBox.enabled = true;
         BorderMovement.Instance.inactiveBullets[name].Add(this);
     }
     
@@ -124,6 +126,9 @@ public class BulletMovement : MonoBehaviour
             //Has to deal knockback over a certain amt of time
                 //NEED TO ATTACH COROUTINE TO THE PLAYER, rather than the bullet
             //StartCoroutine(DealKnockback(player));
+            IEnumerator knockbackCoroutine = player.DealtKnockback(transform.up);
+            player.StopAllCoroutines();
+            player.StartCoroutine(knockbackCoroutine);
         }
     }
 

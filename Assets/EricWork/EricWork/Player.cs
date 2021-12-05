@@ -86,4 +86,14 @@ public class Player : MonoBehaviour
             hitPoints = 0;
         }
     }
+
+    private const float NORMAL_KNOCKBACK_TIME = 0.25f;
+    private const float NORMAL_KNOCKBACK_AMT = 10f;
+    //This coroutine is called whenever the player is dealt knockback
+    public IEnumerator DealtKnockback(Vector2 direction, float knockTime = NORMAL_KNOCKBACK_TIME, float knockbackAmt = NORMAL_KNOCKBACK_AMT) {
+        frozen = true;
+        rigidbody.velocity = direction.normalized * knockbackAmt;
+        yield return new WaitForSeconds(knockTime);
+        frozen = false;
+    }
 }

@@ -36,6 +36,7 @@ public class BorderTool : MonoBehaviour
         myBorder.width = myLineWidth;
         myBorder.checkpointPos = myCheckPointBox.position - myCheckPointBox.localScale / 2f;
         myBorder.checkpointSize = myCheckPointBox.localScale;
+        myBorder.checkpointSprite = myCheckPointBox.GetComponent<SpriteRenderer>().sprite;
         myBorder.playerStart = myPlayerStartSpot.position;
         //Creates a list of bullets from the bullet spawns in the room
         myBorder.BulletHell = new List<BulletSpawn>();
