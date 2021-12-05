@@ -99,7 +99,7 @@ MonoBehaviour:
   lifeTime: 5
   speed: 10
   spawnTime: 1
-  _playerDamage: 0
+  _playerDamage: 3
   invisibleOutsideBox: 1
   _destroyOnCollision: 0
   spawnAnimation: 0

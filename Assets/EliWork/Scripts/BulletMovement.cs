@@ -130,6 +130,12 @@ public class BulletMovement : MonoBehaviour
             player.StopAllCoroutines();
             player.StartCoroutine(knockbackCoroutine);
         }
+        else if(PlayerDamage == DmgType.OneShot_ResetRoom) {
+            BorderMovement.Instance.ResetRoom();
+        }
+        else {
+            player.hitPoints++;
+        }
     }
 
     /*private IEnumerator DealKnockback(Player player) {
@@ -144,7 +150,8 @@ public class BulletMovement : MonoBehaviour
 public enum DmgType {
     Normal, //Doesn't really do anything except increase hit counter
     Knockback, //Deals knockback to the player
-    OneShot //Kills the player and sends them back to the beginning of this room
+    OneShot, //Kills the player and sends them back to the beginning of this room
+    OneShot_ResetRoom//Sends the player back to the beginning of the room and resets the room
 }
 
 //Type of animation the bullet has on spawn/destroy
