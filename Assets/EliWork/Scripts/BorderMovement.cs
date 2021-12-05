@@ -142,6 +142,7 @@ public class BorderMovement : MonoBehaviour
         checkPointBox.transform.localScale = endB.checkpointSize;
         checkPointBox.transform.position = endB.checkpointPos + endB.checkpointSize / 2f;
         checkPointBox.transform.position += Vector3.forward;
+        checkPointBox.GetComponent<SpriteRenderer>().sprite = endB.checkpointSprite;
         endB.StartBulletHell();
         player.frozen = false;
         curBorder++;

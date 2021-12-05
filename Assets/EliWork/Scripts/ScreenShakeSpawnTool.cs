@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScreenShakeSpawnTool : BulletSpawnTool
 {
+    [Header("Used in ScreenShakeTool")]
     public float shakeIntensity;
     public override void Awake() {
         myType = BulletSpawnType.screenShake;
