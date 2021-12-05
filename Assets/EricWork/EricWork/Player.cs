@@ -67,8 +67,9 @@ public class Player : MonoBehaviour
 
     void FixedUpdate() {
         if(useFixedUpdate) {
-        rigidbody.velocity = input * speed;
+            rigidbody.velocity = input * speed;
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
