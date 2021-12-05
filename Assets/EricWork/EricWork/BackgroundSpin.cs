@@ -19,10 +19,15 @@ public class BackgroundSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float lerpRate = GetComponentInParent<Player>().hitPoints / GetComponentInParent<Player>().hitMax;
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
 
         //transform.position = transform.position + new Vector3(Mathf.Sin(Time.time * floatingRate), 0,0);
         transform.Rotate(0f, 0, rotationSpeed, Space.Self);
 
+
+        renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
+
     }
-    
+
 }
