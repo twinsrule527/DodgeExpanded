@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     {
         Instance = this;
         rigidbody = GetComponent<Rigidbody2D>();
-        renderer = GetComponent<SpriteRenderer>();
+        //renderer = GetComponent<SpriteRenderer>();
+        renderer = GetComponentInChildren<SpriteRenderer>();
         if(wallKills) {
             BorderMovement.Instance.MyLine.GetComponent<EdgeCollider2D>().isTrigger = true;
         }
@@ -51,13 +52,13 @@ public class Player : MonoBehaviour
         }
 
 
-        renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
+        //renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
 
 
 
         //DEATH CHECK
         //hitpoints tracks the number of times hit
-        if(hitPoints == hitMax)
+        if(hitPoints >= hitMax)
         {
             //Add reset position code here
             transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;

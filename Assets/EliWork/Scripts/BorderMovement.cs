@@ -83,6 +83,22 @@ public class BorderMovement : MonoBehaviour
             }
             else {
                 player.transform.position = Level.Borders[curBorder].playerStart;
+                //Ends the current bullet hell
+                Level.Borders[curBorder].EndBulletHell();
+                //Removes all bullets from the current bullet hell and deactivates them
+                while(activeBullets.Count > 0) {
+                    if(activeBullets[0].gameObject.activeInHierarchy) {
+                        activeBullets[0].Deactivate();
+                    }
+                    activeBullets.RemoveAt(0);
+                }
+                List<Vector2> curCorners = Level.Borders[curBorder].BorderCorners;
+                List<Vector3> curCorners3 = new List<Vector3>();
+                for(int i = 0; i < curCorners.Count; i++) {
+                    curCorners3.Add(curCorners[i]);
+                }
+                myLine.SetPositions(curCorners3.ToArray());
+                Level.Borders[curBorder].StartBulletHell();
             }
         }
         if(Input.GetKeyDown(KeyCode.Space)) {
@@ -93,13 +109,22 @@ public class BorderMovement : MonoBehaviour
     private IEnumerator MoveBorder(BorderTransition myTransition) {
         //Player becomes frozen for the length of the transition
         player.frozen = true;
+        //They also regain their health
+        player.hitPoints = 0;
         //Deactivates the checkpoint box until the end of the transition
         checkPointBox.gameObject.SetActive(false);
         Vector3 playerPos = player.transform.position;
         float curTime = 0f;
         Border startB = myTransition.startBorder;
         Border endB  = myTransition.endBorder;
-        List<Vector2> startCorners = startB.BorderCorners;
+        //Trying to just take current position
+
+        List<Vector2> startCorners = new List<Vector2>();// = startB.BorderCorners;
+        Vector3[] startPos = new Vector3[5];
+        myLine.GetPositions(startPos);
+        for(int i = 0; i < startPos.Length; i++) {
+            startCorners.Add(startPos[i]);
+        }
         List<Vector2> endCorners = endB.BorderCorners;
         //Ends the current bullet hell
         startB.EndBulletHell();
@@ -246,6 +271,50 @@ public class BorderMovement : MonoBehaviour
             }
             yield return new WaitForSeconds(spawnDetails[0].delay);
         }
+    }
+
+    //If the room is meant to change while the player is able to move, it is done through this coroutine
+    public IEnumerator ChangingShapeRoom(List<List<Vector3>> roomShapes, List<float> timesToChange, bool loops = true) {
+        if(loops) {//Whether or not it should loop back to the same shape
+            Vector3[] startPos = new Vector3[5];
+            myLine.GetPositions(startPos);
+            List<Vector3> startPoses = new List<Vector3>(startPos);
+            roomShapes.Add(startPoses);
+        }
+        int curRoom = -1;
+        while(curRoom < roomShapes.Count) {
+            if(!loops && curRoom == roomShapes.Count - 1) {
+                break;
+            }
+            float curTime = 0;
+            //Gets the current room position
+            Vector3[] startPos = new Vector3[5];
+            myLine.GetPositions(startPos);
+            List<Vector3> startCorners = new List<Vector3>(startPos);
+            List<Vector3> endCorners = new List<Vector3>(roomShapes[(curRoom + 1) % roomShapes.Count]);
+            while(curTime < timesToChange[(curRoom + 1) % timesToChange.Count]) {
+                curTime += Time.deltaTime;
+                curTime = Mathf.Min(curTime, timesToChange[(curRoom + 1) % timesToChange.Count]);
+                List<Vector2> currentCorners2 = new List<Vector2>();
+                List<Vector3> currentCorners3 = new List<Vector3>();
+                //myLine.widthMultiplier = lineWidth;
+                for(int i = 0; i < startCorners.Count; i++) {
+                    currentCorners2.Add(Vector2.Lerp(startCorners[i], endCorners[i], curTime / timesToChange[(curRoom + 1) % timesToChange.Count]));
+                    currentCorners3.Add(currentCorners2[i]);
+                }
+                currentCorners2 = EdgeColliderOffset(currentCorners2, 1, Shape.rect);
+                myLine.SetPositions(currentCorners3.ToArray());
+                myEdge.SetPoints(currentCorners2);
+                yield return null;
+            }
+            yield return null;
+            curRoom++;
+            //If it loops, it will go back to the beginning
+            if(loops) {
+                curRoom = curRoom % roomShapes.Count;
+            }
+        }
+        yield return null;
     }
 
 
