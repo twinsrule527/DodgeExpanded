@@ -21,9 +21,13 @@ public class BulletMovement : MonoBehaviour
             return _destroyOnCollision;
         }
     }
+    [SerializeField] private BulletAnimType spawnAnimation;
+    [SerializeField] private BulletAnimType deathAnimation;
+    private SpriteRenderer mySprite;
 
     protected void Awake() {
         myHitBox = GetComponent<Collider2D>();
+        mySprite = GetComponent<SpriteRenderer>();
     }
     /*protected virtual void Update()
     {
@@ -38,11 +42,16 @@ public class BulletMovement : MonoBehaviour
     public void Deactivate() {
         //Deactivates Coroutine if its running
         StopCoroutine("Fire");
-        gameObject.SetActive(false);
-        if(!BorderMovement.Instance.inactiveBullets.ContainsKey(name)) {
-            BorderMovement.Instance.inactiveBullets.Add(name, new List<BulletMovement>());
+        if(deathAnimation == BulletAnimType.Fade) {
+            StartCoroutine("DeathFade");
         }
-        BorderMovement.Instance.inactiveBullets[name].Add(this);
+        else {
+            gameObject.SetActive(false);
+            if(!BorderMovement.Instance.inactiveBullets.ContainsKey(name)) {
+                BorderMovement.Instance.inactiveBullets.Add(name, new List<BulletMovement>());
+            }
+            BorderMovement.Instance.inactiveBullets[name].Add(this);
+        }
     }
 
     //Whenever a bullet is created, it will be fired, following this IEnumerator until it deactivates or is destroyed
@@ -53,7 +62,17 @@ public class BulletMovement : MonoBehaviour
         if(invisibleOutsideBox) {
             InvisOnBox();
         }
-        yield return new WaitForSeconds(spawnTime);
+        if(spawnAnimation == BulletAnimType.Fade) {
+            float curTime = 0;
+            while(curTime < spawnTime) {
+                curTime+= Time.deltaTime;
+                mySprite.color = Color.Lerp(Color.black, Color.white, curTime / spawnTime);
+                yield return null;
+            }
+        }
+        else {
+            yield return new WaitForSeconds(spawnTime);
+        }
         myHitBox.enabled = true;
         while(lifeTime > 0) {
             transform.position += transform.up * speed * Time.deltaTime;
@@ -64,6 +83,23 @@ public class BulletMovement : MonoBehaviour
             yield return null;
         }
         Deactivate();
+    }
+
+    //If the bullet fades out on death, this Coroutine does that
+    public IEnumerator DeathFade() {
+        float curTime = 0;
+        myHitBox.enabled = false;
+        while(curTime < spawnTime) {
+            curTime += Time.deltaTime;
+            mySprite.color = Color.Lerp(Color.white, Color.black, curTime / spawnTime);
+            yield return null;
+        }
+        gameObject.SetActive(false);
+        if(!BorderMovement.Instance.inactiveBullets.ContainsKey(name)) {
+            BorderMovement.Instance.inactiveBullets.Add(name, new List<BulletMovement>());
+        }
+        myHitBox.enabled = true;
+        BorderMovement.Instance.inactiveBullets[name].Add(this);
     }
     
     //Checks to see if its outside the bounding box - if it is, it becomes invisible (only if bool is active)
@@ -90,6 +126,9 @@ public class BulletMovement : MonoBehaviour
             //Has to deal knockback over a certain amt of time
                 //NEED TO ATTACH COROUTINE TO THE PLAYER, rather than the bullet
             //StartCoroutine(DealKnockback(player));
+            IEnumerator knockbackCoroutine = player.DealtKnockback(transform.up);
+            player.StopAllCoroutines();
+            player.StartCoroutine(knockbackCoroutine);
         }
     }
 
@@ -106,4 +145,11 @@ public enum DmgType {
     Normal, //Doesn't really do anything except increase hit counter
     Knockback, //Deals knockback to the player
     OneShot //Kills the player and sends them back to the beginning of this room
+}
+
+//Type of animation the bullet has on spawn/destroy
+public enum BulletAnimType {
+    None,
+    Fade,
+    Animation
 }

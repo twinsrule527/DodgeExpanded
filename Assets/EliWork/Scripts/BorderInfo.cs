@@ -11,6 +11,7 @@ using UnityEngine;
     public float width;//The width of the edge of the border (if it changes, it will Lerp)
     public Vector2 checkpointPos;//Bottom left corner of the checkpoint box
     public Vector2 checkpointSize;//Dimensions of the checkpoint box
+    public Sprite checkpointSprite;//Sprite of the checkpoint
     public Vector3 playerStart;//Where the player starts in this border area
     public List<BulletSpawn> BulletHell;//A list of how bullets will spawn while this Border is active - this is outdated, but I'll keep it around for posterity's sake
     public List<BulletSpawnTool> BulletHell2;//A better list of how bullets will spawn

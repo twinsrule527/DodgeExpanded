@@ -7,13 +7,13 @@ public class Player : MonoBehaviour
     public static Player Instance;
     public float speed;
 
-    public Rigidbody2D rigidbody;
-    public float hitPoints;
+    [HideInInspector] public Rigidbody2D rigidbody;
+    [HideInInspector] public float hitPoints;
     public float hitMax;
     SpriteRenderer renderer;
     public bool useFixedUpdate;
     [SerializeField] private bool wallKills;//A bool for whether the wall resets the player's position
-    public bool frozen;//Whether the player is frozen from the map moving
+    [HideInInspector] public bool frozen;//Whether the player is frozen from the map moving
     // Start is called before the first frame update
     void Start()
     {
@@ -67,8 +67,9 @@ public class Player : MonoBehaviour
 
     void FixedUpdate() {
         if(useFixedUpdate) {
-        rigidbody.velocity = input * speed;
+            rigidbody.velocity = input * speed;
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -85,5 +86,15 @@ public class Player : MonoBehaviour
             transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;
             hitPoints = 0;
         }
+    }
+
+    private const float NORMAL_KNOCKBACK_TIME = 0.25f;
+    private const float NORMAL_KNOCKBACK_AMT = 10f;
+    //This coroutine is called whenever the player is dealt knockback
+    public IEnumerator DealtKnockback(Vector2 direction, float knockTime = NORMAL_KNOCKBACK_TIME, float knockbackAmt = NORMAL_KNOCKBACK_AMT) {
+        frozen = true;
+        rigidbody.velocity = direction.normalized * knockbackAmt;
+        yield return new WaitForSeconds(knockTime);
+        frozen = false;
     }
 }
