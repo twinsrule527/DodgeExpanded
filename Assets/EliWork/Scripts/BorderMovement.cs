@@ -83,6 +83,22 @@ public class BorderMovement : MonoBehaviour
             }
             else {
                 player.transform.position = Level.Borders[curBorder].playerStart;
+                //Ends the current bullet hell
+                Level.Borders[curBorder].EndBulletHell();
+                //Removes all bullets from the current bullet hell and deactivates them
+                while(activeBullets.Count > 0) {
+                    if(activeBullets[0].gameObject.activeInHierarchy) {
+                        activeBullets[0].Deactivate();
+                    }
+                    activeBullets.RemoveAt(0);
+                }
+                List<Vector2> curCorners = Level.Borders[curBorder].BorderCorners;
+                List<Vector3> curCorners3 = new List<Vector3>();
+                for(int i = 0; i < curCorners.Count; i++) {
+                    curCorners3.Add(curCorners[i]);
+                }
+                myLine.SetPositions(curCorners3.ToArray());
+                Level.Borders[curBorder].StartBulletHell();
             }
         }
         if(Input.GetKeyDown(KeyCode.Space)) {
