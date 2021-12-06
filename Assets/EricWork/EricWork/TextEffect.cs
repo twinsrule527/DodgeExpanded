@@ -12,14 +12,13 @@ public class TextEffect : MonoBehaviour
     public float sineSET;
     public float cosSet;
 
-    public float timeLapse;
+    public float timeLapse = 0.05f;
     //public string str;
     // Start is called before the first frame update
     void Start()
     {
         textmesh = GetComponent<TMP_Text>();
         //str = textmesh.text;
-        timeLapse = 0.05f;
         //StartCoroutine(BuildText(textmesh, "SHAMALAYA BANG BANG ERIC TEST"));
         
         
@@ -52,7 +51,7 @@ public class TextEffect : MonoBehaviour
         return new Vector2(Mathf.Sin(time * sineSET), Mathf.Cos(time * cosSet));
     }
 
-    private IEnumerator BuildText(TMP_Text ts, string str = "")
+    public IEnumerator BuildText(TMP_Text ts, string str = "")
     {
         ts.text = "";
         for (int i = 0; i < str.Length; i++)

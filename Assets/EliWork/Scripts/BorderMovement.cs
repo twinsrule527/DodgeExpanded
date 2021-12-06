@@ -32,6 +32,7 @@ public class BorderMovement : MonoBehaviour
     public List<IEnumerator> runningBulletCoroutines = new List<IEnumerator>();//A list of all bulletSpawn IEnumarators this is currently running, so it can stop them
     [SerializeField] private TMP_Text GameTextBox;
     private RectTransform TextBoxTransform;
+    [SerializeField] private TextEffect myTextEffect;
     
     //Needs to immediately become the singleton - and set some objects
     void Awake() {
@@ -69,7 +70,8 @@ public class BorderMovement : MonoBehaviour
         TextBox gameStartText = gameStartB.RoomText;
         TextBoxTransform.anchoredPosition = gameStartText.pos;
         TextBoxTransform.sizeDelta = gameStartText.size;
-        GameTextBox.text = gameStartText.text;
+        IEnumerator myEffect = myTextEffect.BuildText(GameTextBox, gameStartText.text);
+        myTextEffect.StartCoroutine(myEffect);
         gameStartB.StartBulletHell();
     }
 
