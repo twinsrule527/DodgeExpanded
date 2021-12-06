@@ -126,6 +126,7 @@ public class BorderMovement : MonoBehaviour
         TextBox endTextBox = endB.RoomText;
         TextBoxTransform.anchoredPosition = endTextBox.pos;
         TextBoxTransform.sizeDelta = endTextBox.size;
+        GameTextBox.text = "";
         //TODO: Have the text be gradually written out
         if(writeTextAsMoveStarts) {
             IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
