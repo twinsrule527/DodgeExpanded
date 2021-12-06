@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public static Player Instance;
     public float speed;
 
+    public AudioSource hitSound;
+
     [HideInInspector] public Rigidbody2D rigidbody;
     [HideInInspector] public float hitPoints;
     public float hitMax;
@@ -24,6 +26,8 @@ public class Player : MonoBehaviour
         if(wallKills) {
             BorderMovement.Instance.MyLine.GetComponent<EdgeCollider2D>().isTrigger = true;
         }
+
+        hitSound.GetComponent<AudioSource>();
     }
 
     private Vector3 input;
@@ -77,6 +81,7 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
+            hitSound.Play();
             hitPoints++;
             //When player gets hit by bullet, increases the hit tracker
             PlayerHitTracker.Instance.PlayerHit(collision.GetComponent<BulletMovement>());
