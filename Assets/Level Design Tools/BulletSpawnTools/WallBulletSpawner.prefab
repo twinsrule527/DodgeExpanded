@@ -99,4 +99,11 @@ MonoBehaviour:
   bulletDelay: 8
   bulletSpeed: 0.5
   bulletLife: 8
-  Bullet: {fileID: 4003578123531652340, guid: 20ca9628f6e4244709a3f1cfc246eb83, type: 3}
+  Bullet: {fileID: 4003578123531652340, guid: 836d3a78ace4745728365815b5cb8cc9, type: 3}
+  myBullets: []
+  myType: 0
+  numMissing: 0
+  numOffset: 0
+  missLoop: 0
+  shapeChildren: []
+  shapeTimesToChange: []
