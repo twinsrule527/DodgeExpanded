@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public AudioSource hitSound;
 
     [HideInInspector] public Rigidbody2D rigidbody;
+    private BoxCollider2D myCollider;
     public float hitPoints;
     public float hitMax;
     SpriteRenderer renderer;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Instance = this;
+        myCollider = GetComponent<BoxCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
         //renderer = GetComponent<SpriteRenderer>();
         renderer = GetComponentInChildren<SpriteRenderer>();
@@ -41,7 +43,7 @@ public class Player : MonoBehaviour
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
 
-            input = new Vector3(x, y, 0);
+            input = new Vector3(x, y, 0).normalized;
 
             if (wallKills == false)
             {
@@ -61,8 +63,19 @@ public class Player : MonoBehaviour
                     }
                 }
             } else {
-
+                RaycastHit2D[] boxHits = Physics2D.BoxCastAll(transform.position, myCollider.size, 0, input, speed * Time.deltaTime);
+                bool hitsWall = false;
+                foreach(RaycastHit2D hit in boxHits) {
+                    if(hit.collider.CompareTag("Border")) {
+                        hitsWall = true;
+                    }
+                }
                 transform.position += input * speed * Time.deltaTime;
+                if(hitsWall) {
+                    BorderMovement.Instance.ResetRoom();
+                    hitPoints = 0;
+                }
+
             }
         }
 
