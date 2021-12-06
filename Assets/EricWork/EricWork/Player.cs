@@ -81,7 +81,9 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
-            hitSound.Play();
+            if(hitSound != null) {
+                hitSound.Play();
+            }
             hitPoints++;
             //When player gets hit by bullet, increases the hit tracker
             PlayerHitTracker.Instance.PlayerHit(collision.GetComponent<BulletMovement>());
