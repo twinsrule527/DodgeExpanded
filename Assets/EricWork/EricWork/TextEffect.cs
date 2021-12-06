@@ -20,7 +20,7 @@ public class TextEffect : MonoBehaviour
         textmesh = GetComponent<TMP_Text>();
         //str = textmesh.text;
         timeLapse = 0.05f;
-        StartCoroutine(BuildText(textmesh));
+        //StartCoroutine(BuildText(textmesh, "SHAMALAYA BANG BANG ERIC TEST"));
         
         
 
