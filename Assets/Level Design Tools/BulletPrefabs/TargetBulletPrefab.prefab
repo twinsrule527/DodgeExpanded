@@ -126,7 +126,9 @@ MonoBehaviour:
   speed: 10
   spawnTime: 0.5
   _playerDamage: 0
-  invisibleOutsideBox: 0
+  invisibleOutsideBox: 1
   _destroyOnCollision: 1
+  spawnAnimation: 0
+  deathAnimation: 0
   timeTilTarget: 2
   timeToTurn: 1

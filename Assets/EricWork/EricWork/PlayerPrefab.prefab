@@ -196,13 +196,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35b709c8eb6902f4ba55abad0d109f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  hitSound: {fileID: 0}
+  speed: 20
+  hitSound: {fileID: 3443883665212069314}
   rigidbody: {fileID: 0}
   hitPoints: 0
   hitMax: 5
-  useFixedUpdate: 0
-  wallKills: 0
+  useFixedUpdate: 1
+  wallKills: 1
   frozen: 0
 --- !u!50 &8341096651407109641
 Rigidbody2D:
@@ -261,7 +261,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4bee867fc3e4b4e68a26c94937465ae0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

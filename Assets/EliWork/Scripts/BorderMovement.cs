@@ -82,23 +82,7 @@ public class BorderMovement : MonoBehaviour
                 SceneManager.LoadScene(0);
             }
             else {
-                player.transform.position = Level.Borders[curBorder].playerStart;
-                //Ends the current bullet hell
-                Level.Borders[curBorder].EndBulletHell();
-                //Removes all bullets from the current bullet hell and deactivates them
-                while(activeBullets.Count > 0) {
-                    if(activeBullets[0].gameObject.activeInHierarchy) {
-                        activeBullets[0].Deactivate();
-                    }
-                    activeBullets.RemoveAt(0);
-                }
-                List<Vector2> curCorners = Level.Borders[curBorder].BorderCorners;
-                List<Vector3> curCorners3 = new List<Vector3>();
-                for(int i = 0; i < curCorners.Count; i++) {
-                    curCorners3.Add(curCorners[i]);
-                }
-                myLine.SetPositions(curCorners3.ToArray());
-                Level.Borders[curBorder].StartBulletHell();
+                ResetRoom();
             }
         }
         if(Input.GetKeyDown(KeyCode.Space)) {
@@ -325,6 +309,28 @@ public class BorderMovement : MonoBehaviour
             IEnumerator newMove = MoveBorder(Level.BorderTransitions[curBorder]);
             StartCoroutine(newMove);
         }
+    }
+
+    //Resets the current room
+    public void ResetRoom() {
+        player.hitPoints = 0;
+        player.transform.position = Level.Borders[curBorder].playerStart;
+        //Ends the current bullet hell
+        Level.Borders[curBorder].EndBulletHell();
+        //Removes all bullets from the current bullet hell and deactivates them
+        while(activeBullets.Count > 0) {
+            if(activeBullets[0].gameObject.activeInHierarchy) {
+                activeBullets[0].Deactivate();
+            }
+            activeBullets.RemoveAt(0);
+        }
+        List<Vector2> curCorners = Level.Borders[curBorder].BorderCorners;
+        List<Vector3> curCorners3 = new List<Vector3>();
+        for(int i = 0; i < curCorners.Count; i++) {
+            curCorners3.Add(curCorners[i]);
+        }
+        myLine.SetPositions(curCorners3.ToArray());
+        Level.Borders[curBorder].StartBulletHell();
     }
 
     //Makes it so the edge colliders all occur on the inside of the box
