@@ -176,8 +176,8 @@ MonoBehaviour:
   textmesh: {fileID: 0}
   mesh: {fileID: 0}
   vertices1: []
-  sineSET: 0
-  cosSet: 0
+  sineSET: 0.4
+  cosSet: 0.3
   timeLapse: 0.05
   str: 
 --- !u!114 &47248220
