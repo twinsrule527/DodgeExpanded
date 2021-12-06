@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public AudioSource hitSound;
 
     [HideInInspector] public Rigidbody2D rigidbody;
-    [HideInInspector] public float hitPoints;
+    public float hitPoints;
     public float hitMax;
     SpriteRenderer renderer;
     public bool useFixedUpdate;
@@ -37,21 +37,32 @@ public class Player : MonoBehaviour
         float lerpRate = hitPoints / hitMax;
 
         if (!frozen) {
+
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
 
             input = new Vector3(x, y, 0);
 
-            if(!useFixedUpdate) {
-            if (!Input.GetKey(KeyCode.None))
+            if (wallKills == false)
             {
-                rigidbody.velocity = new Vector2(x * speed, y * speed);
-                //rigidbody.MovePosition(transform.position + input * Time.deltaTime * speed);
-            } else
-            {
-                rigidbody.velocity = Vector2.zero;
-                rigidbody.position = rigidbody.position;
-            }
+                
+
+                if (!useFixedUpdate)
+                {
+                    if (!Input.GetKey(KeyCode.None))
+                    {
+                        rigidbody.velocity = new Vector2(x * speed, y * speed);
+                        //rigidbody.MovePosition(transform.position + input * Time.deltaTime * speed);
+                    }
+                    else
+                    {
+                        rigidbody.velocity = Vector2.zero;
+                        rigidbody.position = rigidbody.position;
+                    }
+                }
+            } else {
+
+                transform.position += input * speed * Time.deltaTime;
             }
         }
 
