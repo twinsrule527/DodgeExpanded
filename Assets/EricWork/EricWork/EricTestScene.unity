@@ -179,6 +179,7 @@ MonoBehaviour:
   sineSET: 0
   cosSet: 0
   timeLapse: 0
+  str: 
 --- !u!114 &47248220
 MonoBehaviour:
   m_ObjectHideFlags: 0
