@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4204475345081628595}
   - component: {fileID: 416453172395195552}
+  - component: {fileID: 5277609779144288772}
   - component: {fileID: 4892668104166099977}
-  - component: {fileID: -1298795711784348939}
   m_Layer: 0
-  m_Name: TargetBulletPrefab
+  m_Name: Knockback Diamond
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,6 +84,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5277609779144288772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2494640728241298054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93322779d3c54b749abaece59f4442d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 5
+  speed: 10
+  spawnTime: 0
+  _playerDamage: 0
+  invisibleOutsideBox: 1
+  _destroyOnCollision: 1
+  spawnAnimation: 1
+  deathAnimation: 1
 --- !u!61 &4892668104166099977
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -110,25 +130,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.44}
   m_EdgeRadius: 0
---- !u!114 &-1298795711784348939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2494640728241298054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de748a9a8d4be1346ba747d28ba63192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 5
-  speed: 10
-  spawnTime: 0.5
-  _playerDamage: 0
-  invisibleOutsideBox: 1
-  _destroyOnCollision: 1
-  spawnAnimation: 0
-  deathAnimation: 0
-  timeTilTarget: 2
-  timeToTurn: 1
