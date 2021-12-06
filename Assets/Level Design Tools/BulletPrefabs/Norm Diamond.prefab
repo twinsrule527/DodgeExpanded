@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 5
   speed: 10
-  spawnTime: 1
+  spawnTime: 0.5
   _playerDamage: 0
   invisibleOutsideBox: 1
   _destroyOnCollision: 1
