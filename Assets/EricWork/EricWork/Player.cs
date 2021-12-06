@@ -44,9 +44,10 @@ public class Player : MonoBehaviour
             float y = Input.GetAxis("Vertical");
 
             input = new Vector3(x, y, 0).normalized;
+            Debug.Log(input);
 
-            if (wallKills == false)
-            {
+            /*if (wallKills == false)
+            {*/
                 
 
                 if (!useFixedUpdate)
@@ -62,7 +63,7 @@ public class Player : MonoBehaviour
                         rigidbody.position = rigidbody.position;
                     }
                 }
-            } else {
+            /*} else {
                 RaycastHit2D[] boxHits = Physics2D.BoxCastAll(transform.position, myCollider.size, 0, input, speed * Time.deltaTime);
                 bool hitsWall = false;
                 foreach(RaycastHit2D hit in boxHits) {
@@ -71,12 +72,13 @@ public class Player : MonoBehaviour
                     }
                 }
                 transform.position += input * speed * Time.deltaTime;
+                Debug.Log(speed * Time.deltaTime);
                 if(hitsWall) {
                     BorderMovement.Instance.ResetRoom();
                     hitPoints = 0;
                 }
 
-            }
+            }*/
         }
 
 

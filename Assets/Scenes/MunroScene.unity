@@ -1102,7 +1102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8341096651407109640, guid: 077c56bba6410bb4db18002ac432de4b, type: 3}
       propertyPath: useFixedUpdate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8341096651407109642, guid: 077c56bba6410bb4db18002ac432de4b, type: 3}
       propertyPath: m_RootOrder
@@ -2110,6 +2110,8 @@ MonoBehaviour:
   Level: {fileID: 11400000, guid: c45067aae147443f2aa3263638acf9fc, type: 2}
   bulletPrefab: {fileID: -1298795711784348939, guid: 538c2740947d3314ea5197b7b8a339a6, type: 3}
   GameTextBox: {fileID: 2053512269}
+  myTextEffect: {fileID: 2053512271}
+  writeTextAsMoveStarts: 0
 --- !u!68 &664102006
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -4347,8 +4349,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Times Hit: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e5b9f63f621895648985a08e66431e79, type: 2}
+  m_sharedMaterial: {fileID: -1409581483017582956, guid: e5b9f63f621895648985a08e66431e79, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6517,8 +6519,8 @@ MonoBehaviour:
   m_text: Welcome to Dodge! Press A to continue.Welcome to Dodge! Press A to continue.Welcome
     to Dodge! Press A to continue.Welcome to Dodge! Press A to continue.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e5b9f63f621895648985a08e66431e79, type: 2}
+  m_sharedMaterial: {fileID: -1409581483017582956, guid: e5b9f63f621895648985a08e66431e79, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6604,12 +6606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628e24b3153cc734fa90da3cee5bf2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textmesh: {fileID: 0}
+  textmesh: {fileID: 2053512269}
   mesh: {fileID: 0}
   vertices1: []
-  sineSET: 0
-  cosSet: 0
-  timeLapse: 0
+  sineSET: 0.4
+  cosSet: 0.3
+  timeLapse: 0.1
 --- !u!4 &2099386331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8265119849574470708, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
