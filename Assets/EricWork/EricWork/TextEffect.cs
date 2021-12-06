@@ -21,7 +21,7 @@ public class TextEffect : MonoBehaviour
     {
         textmesh = GetComponent<TMP_Text>();
         //str = textmesh.text;
-        StartCoroutine(BuildText(textmesh, "SHAMALAYA BANG. BANG? ERIC TEST"));
+        //StartCoroutine(BuildText(textmesh, "SHAMALAYA BANG. BANG? ERIC TEST"));
         
         
 
