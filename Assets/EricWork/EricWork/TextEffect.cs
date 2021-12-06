@@ -19,8 +19,9 @@ public class TextEffect : MonoBehaviour
     {
         textmesh = GetComponent<TMP_Text>();
         str = textmesh.text;
+        timeLapse = 0.05f;
         StartCoroutine(BuildText(textmesh));
-
+        
 
     }
 
@@ -33,10 +34,11 @@ public class TextEffect : MonoBehaviour
         mesh = textmesh.mesh;
         vertices1 = mesh.vertices;
 
+
+
         for (int i = 0; i < vertices1.Length; i++)
         {
             Vector3 offset = Wobble(Time.time + i);
-
             vertices1[i] = vertices1[i] + offset;
         }
 
