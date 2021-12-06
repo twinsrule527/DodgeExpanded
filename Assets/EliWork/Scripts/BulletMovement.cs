@@ -88,6 +88,7 @@ public class BulletMovement : MonoBehaviour
     //If the bullet fades out on death, this Coroutine does that
     public IEnumerator DeathFade() {
         float curTime = 0;
+        myHitBox.enabled = false;
         while(curTime < spawnTime) {
             curTime += Time.deltaTime;
             mySprite.color = Color.Lerp(Color.white, Color.black, curTime / spawnTime);
@@ -97,6 +98,7 @@ public class BulletMovement : MonoBehaviour
         if(!BorderMovement.Instance.inactiveBullets.ContainsKey(name)) {
             BorderMovement.Instance.inactiveBullets.Add(name, new List<BulletMovement>());
         }
+        myHitBox.enabled = true;
         BorderMovement.Instance.inactiveBullets[name].Add(this);
     }
     
@@ -124,6 +126,15 @@ public class BulletMovement : MonoBehaviour
             //Has to deal knockback over a certain amt of time
                 //NEED TO ATTACH COROUTINE TO THE PLAYER, rather than the bullet
             //StartCoroutine(DealKnockback(player));
+            IEnumerator knockbackCoroutine = player.DealtKnockback(transform.up);
+            player.StopAllCoroutines();
+            player.StartCoroutine(knockbackCoroutine);
+        }
+        else if(PlayerDamage == DmgType.OneShot_ResetRoom) {
+            BorderMovement.Instance.ResetRoom();
+        }
+        else {
+            player.hitPoints++;
         }
     }
 
@@ -139,7 +150,8 @@ public class BulletMovement : MonoBehaviour
 public enum DmgType {
     Normal, //Doesn't really do anything except increase hit counter
     Knockback, //Deals knockback to the player
-    OneShot //Kills the player and sends them back to the beginning of this room
+    OneShot, //Kills the player and sends them back to the beginning of this room
+    OneShot_ResetRoom//Sends the player back to the beginning of the room and resets the room
 }
 
 //Type of animation the bullet has on spawn/destroy

@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     {
         Instance = this;
         rigidbody = GetComponent<Rigidbody2D>();
-        renderer = GetComponent<SpriteRenderer>();
+        //renderer = GetComponent<SpriteRenderer>();
+        renderer = GetComponentInChildren<SpriteRenderer>();
         if(wallKills) {
             BorderMovement.Instance.MyLine.GetComponent<EdgeCollider2D>().isTrigger = true;
         }
@@ -51,13 +52,13 @@ public class Player : MonoBehaviour
         }
 
 
-        renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
+        //renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
 
 
 
         //DEATH CHECK
         //hitpoints tracks the number of times hit
-        if(hitPoints == hitMax)
+        if(hitPoints >= hitMax)
         {
             //Add reset position code here
             transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;
@@ -67,23 +68,33 @@ public class Player : MonoBehaviour
 
     void FixedUpdate() {
         if(useFixedUpdate) {
-        rigidbody.velocity = input * speed;
+            rigidbody.velocity = input * speed;
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
-            hitPoints++;
             //When player gets hit by bullet, increases the hit tracker
             PlayerHitTracker.Instance.PlayerHit(collision.GetComponent<BulletMovement>());
             collision.GetComponent<BulletMovement>().DealDamage(this);
         }
         //If the wall is supposed to kill the player, it resets their position
         if(wallKills && collision.CompareTag("Border")) {
-            transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;
+            BorderMovement.Instance.ResetRoom();
             hitPoints = 0;
         }
+    }
+
+    private const float NORMAL_KNOCKBACK_TIME = 0.25f;
+    private const float NORMAL_KNOCKBACK_AMT = 10f;
+    //This coroutine is called whenever the player is dealt knockback
+    public IEnumerator DealtKnockback(Vector2 direction, float knockTime = NORMAL_KNOCKBACK_TIME, float knockbackAmt = NORMAL_KNOCKBACK_AMT) {
+        frozen = true;
+        rigidbody.velocity = direction.normalized * knockbackAmt;
+        yield return new WaitForSeconds(knockTime);
+        frozen = false;
     }
 }
