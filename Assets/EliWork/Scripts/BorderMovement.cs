@@ -133,12 +133,15 @@ public class BorderMovement : MonoBehaviour
         TextBoxTransform.anchoredPosition = endTextBox.pos;
         TextBoxTransform.sizeDelta = endTextBox.size;
         GameTextBox.text = "";
-        myTextEffect.enabled = false;
+       //   myTextEffect.enabled = false;
         //TODO: Have the text be gradually written out
         if(writeTextAsMoveStarts) {
             myTextEffect.enabled = true;
-            IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
-            StartCoroutine(writeTextCoroutine);
+            GameTextBox.enabled = true;
+            if(endB.RoomText.text != "") {
+                IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
+                StartCoroutine(writeTextCoroutine);
+            }
         }
         //Moves the Border as needed
         while(curTime < myTransition.changeTime) {
@@ -173,8 +176,15 @@ public class BorderMovement : MonoBehaviour
         //Writes text out at the end if that's what it's supposed to do
         if(!writeTextAsMoveStarts) {    
             myTextEffect.enabled = true;
-            IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
-            StartCoroutine(writeTextCoroutine);
+            GameTextBox.enabled = true;
+            if(endB.RoomText.text != "") {
+                IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
+                StartCoroutine(writeTextCoroutine);
+            }
+            else {
+                myTextEffect.enabled = false;
+                GameTextBox.enabled = false;
+            }
         }
         curBorder++;
         yield return new WaitForSeconds(endB.playerFreezeTime);
