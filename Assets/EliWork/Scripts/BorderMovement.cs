@@ -165,6 +165,7 @@ public class BorderMovement : MonoBehaviour
             IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
             StartCoroutine(writeTextCoroutine);
         }
+        yield return new WaitForSeconds(endB.playerFreezeTime);
         player.frozen = false;
         curBorder++;
     }
@@ -217,15 +218,27 @@ public class BorderMovement : MonoBehaviour
             firstMissing = Random.Range(0, spawnDetails.Count - 1);
         }
         else {
-            firstMissing = Random.Range(0, spawnDetails.Count - 1 - numMissing);
-            Debug.Log(firstMissing);
-            Debug.Log(numMissing);
-            Debug.Log(spawnDetails.Count);
+            //If there's only 1 not missing, it chooses which one to not remove
+            if(numMissing == spawnDetails.Count - 1) {
+                firstMissing = Random.Range(0, spawnDetails.Count - 1);
+            }
+            else {
+                firstMissing = Random.Range(0, spawnDetails.Count - numMissing);
+            }
+            //Debug.Log(firstMissing);
+            //Debug.Log(spawnDetails.Count);
         }
         while(true != false) {
             List<BulletSpawn> newSpawnDetails = new List<BulletSpawn>(spawnDetails);
             if(!loops) {
-                newSpawnDetails.RemoveRange(firstMissing, numMissing);
+                if(numMissing == spawnDetails.Count - 1) {
+                    BulletSpawn onlyBullet = spawnDetails[firstMissing];
+                    newSpawnDetails = new List<BulletSpawn>();
+                    newSpawnDetails.Add(onlyBullet);
+                }
+                else {
+                    firstMissing = Random.Range(0, spawnDetails.Count - 1);
+                }
             }
             else {
                 if(firstMissing >= spawnDetails.Count - 1 - numMissing) {
@@ -263,7 +276,12 @@ public class BorderMovement : MonoBehaviour
                 firstMissing = Random.Range(0, spawnDetails.Count - 1);
             }
             else {
-                firstMissing = Random.Range(0, spawnDetails.Count - 1 - numMissing);
+                if(numMissing == spawnDetails.Count - 1) {
+                    firstMissing = Random.Range(0, spawnDetails.Count - 1);
+                }
+                else {
+                    firstMissing = Random.Range(0, spawnDetails.Count - numMissing);
+                }
             }
             yield return new WaitForSeconds(spawnDetails[0].delay);
         }
@@ -344,8 +362,14 @@ public class BorderMovement : MonoBehaviour
         myLine.SetPositions(curCorners3.ToArray());
         Level.Borders[curBorder].StartBulletHell();
         StartCoroutine(BorderShake(0.25f, 0.25f));
+        StartCoroutine(FreezePlayer(Level.Borders[curBorder].playerFreezeTime));
     }
 
+    private IEnumerator FreezePlayer(float timeToFreeze) {
+        player.frozen = true;
+        yield return new WaitForSeconds(timeToFreeze);
+        player.frozen = false;
+    }
     //Makes it so the edge colliders all occur on the inside of the box
     private List<Vector2> EdgeColliderOffset(List<Vector2> points, float lineWidth = 0.5f, Shape shape = Shape.rect) {
         //Only does something if the shape is a rectangle
