@@ -8,7 +8,11 @@ public class BackgroundSpin : MonoBehaviour
     public Vector2 startPosition;
     //public float floatingRate;
     public float rotationSpeed;
-    private SpriteRenderer renderer;
+    public  SpriteRenderer renderer;
+    public  SpriteRenderer rendererface;
+
+
+
 
     // Start is called before the first frame update
     void Start()
