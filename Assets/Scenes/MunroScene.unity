@@ -7159,8 +7159,8 @@ MonoBehaviour:
   m_text: Welcome to Dodge! Press A to continue.Welcome to Dodge! Press A to continue.Welcome
     to Dodge! Press A to continue.Welcome to Dodge! Press A to continue.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e5b9f63f621895648985a08e66431e79, type: 2}
-  m_sharedMaterial: {fileID: -1409581483017582956, guid: e5b9f63f621895648985a08e66431e79, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4d3553e73b0247342b8cb0b4282d70bc, type: 2}
+  m_sharedMaterial: {fileID: 5229401145721929409, guid: 4d3553e73b0247342b8cb0b4282d70bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
