@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public float speed;
 
     public AudioSource hitSound;
+    public List<Sprite> arraySprites;
+    
 
     [HideInInspector] public Rigidbody2D rigidbody;
     private BoxCollider2D myCollider;
@@ -30,6 +32,8 @@ public class Player : MonoBehaviour
         }
 
         hitSound.GetComponent<AudioSource>();
+
+        //arraySprites.Add
     }
 
     private Vector3 input;
@@ -132,5 +136,16 @@ public class Player : MonoBehaviour
         rigidbody.velocity = direction.normalized * knockbackAmt;
         yield return new WaitForSeconds(knockTime);
         frozen = false;
+    }
+
+    public IEnumerator doAnimation()
+    {
+        List<Sprite> spritearray = arraySprites;
+        for (int i = 0; i < spritearray.Count; i++)
+        {
+            yield return new WaitForSeconds(0.03F);
+            renderer.sprite = spritearray[i];
+        }
+
     }
 }
