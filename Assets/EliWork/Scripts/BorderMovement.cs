@@ -165,9 +165,9 @@ public class BorderMovement : MonoBehaviour
             IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
             StartCoroutine(writeTextCoroutine);
         }
+        curBorder++;
         yield return new WaitForSeconds(endB.playerFreezeTime);
         player.frozen = false;
-        curBorder++;
     }
 
     //Spawns bullets repeatedly until forcibly stopped
