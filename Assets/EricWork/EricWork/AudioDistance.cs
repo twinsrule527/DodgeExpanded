@@ -16,7 +16,6 @@ public class AudioDistance : MonoBehaviour
     void Start()
     {
         Source = GetComponent<AudioSource>();
-        Source.Play();
     }
 
     // Update is called once per frame
