@@ -178,8 +178,8 @@ MonoBehaviour:
   vertices1: []
   sineSET: 0.4
   cosSet: 0.3
-  timeLapse: 0.05
-  str: 
+  timeLapse: 0.07
+  spaceLapse: 0.7
 --- !u!114 &47248220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,8 +202,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Eric Ni shamalaya bang bang
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4c437cfffda6c8d49ac34bb7106edf14, type: 2}
+  m_sharedMaterial: {fileID: -6207122144247816787, guid: 4c437cfffda6c8d49ac34bb7106edf14, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1652,6 +1652,7 @@ MonoBehaviour:
   Level: {fileID: 11400000, guid: 13c23543c543ce946a5d55fa3b3e136b, type: 2}
   bulletPrefab: {fileID: -1298795711784348939, guid: 538c2740947d3314ea5197b7b8a339a6, type: 3}
   GameTextBox: {fileID: 0}
+  myTextEffect: {fileID: 0}
 --- !u!68 &1709505589
 EdgeCollider2D:
   m_ObjectHideFlags: 0

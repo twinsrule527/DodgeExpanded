@@ -12,14 +12,16 @@ public class TextEffect : MonoBehaviour
     public float sineSET;
     public float cosSet;
 
-    public float timeLapse = 0.05f;
+    public float timeLapse = 0.07f;
+    public float spaceLapse = 0.7f;
+
     //public string str;
     // Start is called before the first frame update
     void Start()
     {
         textmesh = GetComponent<TMP_Text>();
         //str = textmesh.text;
-        //StartCoroutine(BuildText(textmesh, "SHAMALAYA BANG BANG ERIC TEST"));
+        //StartCoroutine(BuildText(textmesh, "SHAMALAYA BANG. BANG? ERIC TEST"));
         
         
 
@@ -56,6 +58,13 @@ public class TextEffect : MonoBehaviour
         ts.text = "";
         for (int i = 0; i < str.Length; i++)
         {
+            if (i > 0)
+            {
+                if (str[i - 1] == '.' || str[i - 1] == '?')
+                {
+                    yield return new WaitForSeconds(spaceLapse);
+                }
+            }
             ts.text = string.Concat(ts.text, str[i]);
             //Wait a certain amount of time, then continue with the for loop
             yield return new WaitForSeconds(timeLapse);
