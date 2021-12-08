@@ -10,7 +10,8 @@ public class Player : MonoBehaviour
     public AudioSource hitSound;
 
     [HideInInspector] public Rigidbody2D rigidbody;
-    [HideInInspector] public float hitPoints;
+    private BoxCollider2D myCollider;
+    public float hitPoints;
     public float hitMax;
     SpriteRenderer renderer;
     public bool useFixedUpdate;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         Instance = this;
+        myCollider = GetComponent<BoxCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
         //renderer = GetComponent<SpriteRenderer>();
         renderer = GetComponentInChildren<SpriteRenderer>();
@@ -37,22 +39,46 @@ public class Player : MonoBehaviour
         float lerpRate = hitPoints / hitMax;
 
         if (!frozen) {
+
             float x = Input.GetAxis("Horizontal");
             float y = Input.GetAxis("Vertical");
 
-            input = new Vector3(x, y, 0);
+            input = new Vector3(x, y, 0).normalized;
+            Debug.Log(input);
 
-            if(!useFixedUpdate) {
-            if (!Input.GetKey(KeyCode.None))
-            {
-                rigidbody.velocity = new Vector2(x * speed, y * speed);
-                //rigidbody.MovePosition(transform.position + input * Time.deltaTime * speed);
-            } else
-            {
-                rigidbody.velocity = Vector2.zero;
-                rigidbody.position = rigidbody.position;
-            }
-            }
+            /*if (wallKills == false)
+            {*/
+                
+
+                if (!useFixedUpdate)
+                {
+                    if (!Input.GetKey(KeyCode.None))
+                    {
+                        rigidbody.velocity = new Vector2(x * speed, y * speed);
+                        //rigidbody.MovePosition(transform.position + input * Time.deltaTime * speed);
+                    }
+                    else
+                    {
+                        rigidbody.velocity = Vector2.zero;
+                        rigidbody.position = rigidbody.position;
+                    }
+                }
+            /*} else {
+                RaycastHit2D[] boxHits = Physics2D.BoxCastAll(transform.position, myCollider.size, 0, input, speed * Time.deltaTime);
+                bool hitsWall = false;
+                foreach(RaycastHit2D hit in boxHits) {
+                    if(hit.collider.CompareTag("Border")) {
+                        hitsWall = true;
+                    }
+                }
+                transform.position += input * speed * Time.deltaTime;
+                Debug.Log(speed * Time.deltaTime);
+                if(hitsWall) {
+                    BorderMovement.Instance.ResetRoom();
+                    hitPoints = 0;
+                }
+
+            }*/
         }
 
 

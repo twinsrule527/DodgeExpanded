@@ -12,15 +12,16 @@ public class TextEffect : MonoBehaviour
     public float sineSET;
     public float cosSet;
 
-    public float timeLapse;
-    public string str;
+    public float timeLapse = 0.05f;
+    //public string str;
     // Start is called before the first frame update
     void Start()
     {
         textmesh = GetComponent<TMP_Text>();
-        str = textmesh.text;
-        StartCoroutine(BuildText(textmesh));
-
+        //str = textmesh.text;
+        //StartCoroutine(BuildText(textmesh, "SHAMALAYA BANG BANG ERIC TEST"));
+        
+        
 
     }
 
@@ -33,10 +34,11 @@ public class TextEffect : MonoBehaviour
         mesh = textmesh.mesh;
         vertices1 = mesh.vertices;
 
+
+
         for (int i = 0; i < vertices1.Length; i++)
         {
             Vector3 offset = Wobble(Time.time + i);
-
             vertices1[i] = vertices1[i] + offset;
         }
 
@@ -49,11 +51,12 @@ public class TextEffect : MonoBehaviour
         return new Vector2(Mathf.Sin(time * sineSET), Mathf.Cos(time * cosSet));
     }
 
-    private IEnumerator BuildText(TMP_Text ts)
+    public IEnumerator BuildText(TMP_Text ts, string str = "")
     {
+        ts.text = "";
         for (int i = 0; i < str.Length; i++)
         {
-            ts.text = string.Concat(ts.text, ts.text[i]);
+            ts.text = string.Concat(ts.text, str[i]);
             //Wait a certain amount of time, then continue with the for loop
             yield return new WaitForSeconds(timeLapse);
         }

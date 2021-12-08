@@ -32,6 +32,8 @@ public class BorderMovement : MonoBehaviour
     public List<IEnumerator> runningBulletCoroutines = new List<IEnumerator>();//A list of all bulletSpawn IEnumarators this is currently running, so it can stop them
     [SerializeField] private TMP_Text GameTextBox;
     private RectTransform TextBoxTransform;
+    [SerializeField] private TextEffect myTextEffect;
+    [SerializeField] private bool writeTextAsMoveStarts;
     
     //Needs to immediately become the singleton - and set some objects
     void Awake() {
@@ -69,7 +71,8 @@ public class BorderMovement : MonoBehaviour
         TextBox gameStartText = gameStartB.RoomText;
         TextBoxTransform.anchoredPosition = gameStartText.pos;
         TextBoxTransform.sizeDelta = gameStartText.size;
-        GameTextBox.text = gameStartText.text;
+        IEnumerator myEffect = myTextEffect.BuildText(GameTextBox, gameStartText.text);
+        myTextEffect.StartCoroutine(myEffect);
         gameStartB.StartBulletHell();
     }
 
@@ -123,8 +126,12 @@ public class BorderMovement : MonoBehaviour
         TextBox endTextBox = endB.RoomText;
         TextBoxTransform.anchoredPosition = endTextBox.pos;
         TextBoxTransform.sizeDelta = endTextBox.size;
+        GameTextBox.text = "";
         //TODO: Have the text be gradually written out
-        GameTextBox.text = endTextBox.text;
+        if(writeTextAsMoveStarts) {
+            IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
+            StartCoroutine(writeTextCoroutine);
+        }
         //Moves the Border as needed
         while(curTime < myTransition.changeTime) {
             curTime += Time.deltaTime;
@@ -140,7 +147,7 @@ public class BorderMovement : MonoBehaviour
                 currentCorners2.Add(Vector2.Lerp(startCorners[i], endCorners[i], curTime / myTransition.changeTime));
                 currentCorners3.Add(currentCorners2[i]);
             }
-            currentCorners2 = EdgeColliderOffset(currentCorners2, lineWidth, Shape.rect);
+            //currentCorners2 = EdgeColliderOffset(currentCorners2, lineWidth, Shape.rect);
             myLine.SetPositions(currentCorners3.ToArray());
             myEdge.SetPoints(currentCorners2);
             //Player's position is lerped between start and finish
@@ -153,6 +160,11 @@ public class BorderMovement : MonoBehaviour
         checkPointBox.transform.position += Vector3.forward;
         checkPointBox.GetComponent<SpriteRenderer>().sprite = endB.checkpointSprite;
         endB.StartBulletHell();
+        //Writes text out at the end if that's what it's supposed to do
+        if(!writeTextAsMoveStarts) {
+            IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
+            StartCoroutine(writeTextCoroutine);
+        }
         player.frozen = false;
         curBorder++;
     }

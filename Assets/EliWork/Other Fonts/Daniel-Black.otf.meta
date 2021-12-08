@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 29486fb124977554eb3737e959bdbffa
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Daniel
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 09ede86e1195d2b4cbdec89224590a3e, type: 3}
+  - {fileID: 12800000, guid: 40d1ee4cc1f509748b78a52d9ad74ed3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
