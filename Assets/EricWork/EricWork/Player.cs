@@ -15,18 +15,23 @@ public class Player : MonoBehaviour
     private BoxCollider2D myCollider;
     public float hitPoints;
     public float hitMax;
-    SpriteRenderer renderer;
+    public SpriteRenderer renderer;
     public bool useFixedUpdate;
     [SerializeField] private bool wallKills;//A bool for whether the wall resets the player's position
     [HideInInspector] public bool frozen;//Whether the player is frozen from the map moving
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        renderer = GetComponent<SpriteRenderer>();
+
+    }
     void Start()
     {
         Instance = this;
         myCollider = GetComponent<BoxCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
-        //renderer = GetComponent<SpriteRenderer>();
-        renderer = GetComponentInChildren<SpriteRenderer>();
+        renderer = GetComponent<SpriteRenderer>();
         if(wallKills) {
             BorderMovement.Instance.MyLine.GetComponent<EdgeCollider2D>().isTrigger = true;
         }
@@ -41,6 +46,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         float lerpRate = hitPoints / hitMax;
+        renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
+
 
         if (!frozen) {
 
