@@ -58,6 +58,12 @@ public class CheckpointTransition : MonoBehaviour
                 timeInCheckpoint = Mathf.Max(timeInCheckpoint, 0);
                 mySprite.color = Color.Lerp(emptyColor, fullColor, timeInCheckpoint / maxTimeInCheckpoint);
             }
+            if(timeInCheckpoint >= timeToChangeSprite) {
+                mySprite.sprite = endSprite;
+            }
+            else {
+                mySprite.sprite = startSprite;
+            }
         }
     }
 }
