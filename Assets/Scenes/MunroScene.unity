@@ -4884,6 +4884,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2887872782537131772, guid: 753ddc33312bfea46ab876d4c665ba8a, type: 3}
+      propertyPath: shapeTimesToChange.Array.data[0]
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2887872782657060365, guid: 753ddc33312bfea46ab876d4c665ba8a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
