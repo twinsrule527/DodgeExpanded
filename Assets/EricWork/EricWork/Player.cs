@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
             float y = Input.GetAxis("Vertical");
 
             input = new Vector3(x, y, 0).normalized;
-            Debug.Log(input);
 
             /*if (wallKills == false)
             {*/
