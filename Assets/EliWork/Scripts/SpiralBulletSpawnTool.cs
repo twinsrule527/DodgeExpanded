@@ -19,7 +19,7 @@ public class SpiralBulletSpawnTool : BulletSpawnTool
         List<BulletSpawn> myBullets = new List<BulletSpawn>();
         for(int i = 0; i < numBullets; i++) {
             //Sets this obj rotation to give the bullet spawn its rotation
-            transform.rotation = Quaternion.Euler(0, 0, initialDirection + i * degreesPerBullet);
+            transform.rotation = Quaternion.Euler(0, 0, initialDirection - i * degreesPerBullet);
             myBulletSpawn.spawnPos = transform.position - transform.up * radius;
             myBulletSpawn.spawnRotation = transform.localEulerAngles.z % 360;
             myBulletSpawn.startDelay = startDelay + i * timeBtwnBullets;
