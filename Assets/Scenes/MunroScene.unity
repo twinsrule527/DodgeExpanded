@@ -325,7 +325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8102252497400837143, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: _number
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8102252497400837143, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: textSize
@@ -2493,7 +2493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7141657885551552106, guid: 079d17cf1fe9ed64dac044520f99a29a, type: 3}
       propertyPath: timeBtwnBullets
-      value: 0.1
+      value: 0.13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079d17cf1fe9ed64dac044520f99a29a, type: 3}
@@ -4952,7 +4952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7141657885551552106, guid: 079d17cf1fe9ed64dac044520f99a29a, type: 3}
       propertyPath: timeBtwnBullets
-      value: 0.1
+      value: 0.13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 079d17cf1fe9ed64dac044520f99a29a, type: 3}
@@ -5316,7 +5316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8102252497400837143, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: _number
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8102252497400837143, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: textSize
@@ -6743,6 +6743,7 @@ MonoBehaviour:
   sineSET: 0.4
   cosSet: 0.3
   timeLapse: 0.1
+  spaceLapse: 0.7
 --- !u!4 &2099386331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8265119849574470708, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
