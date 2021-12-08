@@ -83,6 +83,9 @@ public class Player : MonoBehaviour
 
             }*/
         }
+        else {
+            rigidbody.velocity = Vector2.zero;
+        }
 
 
         //renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
