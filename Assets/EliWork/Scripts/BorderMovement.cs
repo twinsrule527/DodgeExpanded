@@ -127,8 +127,10 @@ public class BorderMovement : MonoBehaviour
         TextBoxTransform.anchoredPosition = endTextBox.pos;
         TextBoxTransform.sizeDelta = endTextBox.size;
         GameTextBox.text = "";
+        myTextEffect.enabled = false;
         //TODO: Have the text be gradually written out
         if(writeTextAsMoveStarts) {
+            myTextEffect.enabled = true;
             IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
             StartCoroutine(writeTextCoroutine);
         }
@@ -161,7 +163,8 @@ public class BorderMovement : MonoBehaviour
         checkPointBox.GetComponent<SpriteRenderer>().sprite = endB.checkpointSprite;
         endB.StartBulletHell();
         //Writes text out at the end if that's what it's supposed to do
-        if(!writeTextAsMoveStarts) {
+        if(!writeTextAsMoveStarts) {    
+            myTextEffect.enabled = true;
             IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
             StartCoroutine(writeTextCoroutine);
         }
