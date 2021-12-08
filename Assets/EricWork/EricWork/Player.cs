@@ -117,6 +117,9 @@ public class Player : MonoBehaviour
         }
         //If the wall is supposed to kill the player, it resets their position
         if(wallKills && collision.CompareTag("Border")) {
+            if(hitSound != null) {
+                hitSound.Play();
+            }
             BorderMovement.Instance.ResetRoom();
             hitPoints = 0;
         }

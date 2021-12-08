@@ -343,6 +343,7 @@ public class BorderMovement : MonoBehaviour
         }
         myLine.SetPositions(curCorners3.ToArray());
         Level.Borders[curBorder].StartBulletHell();
+        StartCoroutine(BorderShake(0.25f, 0.25f));
     }
 
     //Makes it so the edge colliders all occur on the inside of the box
