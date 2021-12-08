@@ -11,6 +11,10 @@ public class CheckpointTransition : MonoBehaviour
     //Two colors to signify transitioning when the player is in its box
     [SerializeField] private Color emptyColor;
     [SerializeField] private Color fullColor;
+    [SerializeField] private float timeToChangeSprite = 1.5f;
+    public Sprite startSprite;
+    public Sprite endSprite;
+
 
     private SpriteRenderer mySprite;
     void Start()
@@ -34,6 +38,12 @@ public class CheckpointTransition : MonoBehaviour
         if(playerInBox) {
             timeInCheckpoint += Time.deltaTime;
             mySprite.color = Color.Lerp(emptyColor, fullColor, timeInCheckpoint / maxTimeInCheckpoint);
+            if(timeInCheckpoint >= timeToChangeSprite) {
+                mySprite.sprite = endSprite;
+            }
+            else {
+                mySprite.sprite = startSprite;
+            }
             if(timeInCheckpoint >= maxTimeInCheckpoint) {
                 mySprite.color = fullColor;
                 //Goes to the next transition

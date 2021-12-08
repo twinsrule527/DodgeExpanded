@@ -17,6 +17,7 @@ public class BorderMovement : MonoBehaviour
     }
     private EdgeCollider2D myEdge;
     [SerializeField] private Transform checkPointBox;//The box for when a change in transition occurs
+    private SpriteRenderer CheckpointSprite;
     [SerializeField] private Player player;//The player needs to be able to be moved around
     public BorderLevelScriptableObject Level;
     private int curBorder;
@@ -40,6 +41,8 @@ public class BorderMovement : MonoBehaviour
         Instance = this;
         myLine = GetComponent<LineRenderer>();
         myEdge = GetComponent<EdgeCollider2D>();
+        CheckpointSprite = checkPointBox.GetComponent<SpriteRenderer>();
+        Debug.Log(CheckpointSprite.sprite.name);
         TextBoxTransform = GameTextBox.GetComponent<RectTransform>();
     }
 
@@ -67,6 +70,9 @@ public class BorderMovement : MonoBehaviour
         checkPointBox.transform.localScale = gameStartB.checkpointSize;
         checkPointBox.transform.position = gameStartB.checkpointPos + gameStartB.checkpointSize / 2f;
         checkPointBox.transform.position += Vector3.forward;
+        CheckpointSprite.sprite = gameStartB.checkpointSprite;
+        checkPointBox.GetComponent<CheckpointTransition>().endSprite = gameStartB.checkpointFinalSprite;
+        checkPointBox.GetComponent<CheckpointTransition>().startSprite = gameStartB.checkpointSprite;
         //Sets the starting TextBox
         TextBox gameStartText = gameStartB.RoomText;
         TextBoxTransform.anchoredPosition = gameStartText.pos;
@@ -160,7 +166,9 @@ public class BorderMovement : MonoBehaviour
         checkPointBox.transform.localScale = endB.checkpointSize;
         checkPointBox.transform.position = endB.checkpointPos + endB.checkpointSize / 2f;
         checkPointBox.transform.position += Vector3.forward;
-        checkPointBox.GetComponent<SpriteRenderer>().sprite = endB.checkpointSprite;
+        CheckpointSprite.sprite = endB.checkpointSprite;
+        checkPointBox.GetComponent<CheckpointTransition>().endSprite = endB.checkpointFinalSprite;
+        checkPointBox.GetComponent<CheckpointTransition>().startSprite = endB.checkpointSprite;
         endB.StartBulletHell();
         //Writes text out at the end if that's what it's supposed to do
         if(!writeTextAsMoveStarts) {    
