@@ -42,6 +42,10 @@ public class BulletMovement : MonoBehaviour
     public void Deactivate() {
         //Deactivates Coroutine if its running
         StopCoroutine("Fire");
+        AudioDistance source = GetComponent<AudioDistance>();
+        if(source != null) {
+            source.Source.Pause();
+        }
         if(deathAnimation == BulletAnimType.Fade) {
             StartCoroutine("DeathFade");
         }
@@ -58,6 +62,10 @@ public class BulletMovement : MonoBehaviour
     public virtual IEnumerator Fire() {
         //Spawn animation happens prior to everything else
             //Can't damage anyone while it's spawning
+        AudioDistance source = GetComponent<AudioDistance>();
+        if(source != null) {
+            source.Source.Play();
+        }
         myHitBox.enabled = false;
         if(invisibleOutsideBox) {
             InvisOnBox();

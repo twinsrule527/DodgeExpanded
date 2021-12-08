@@ -13,7 +13,7 @@ public class AudioDistance : MonoBehaviour
 
     public float volumeMax = 0.5f;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Source = GetComponent<AudioSource>();
     }
