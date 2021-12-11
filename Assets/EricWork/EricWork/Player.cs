@@ -9,13 +9,17 @@ public class Player : MonoBehaviour
 
     public AudioSource hitSound;
     public List<Sprite> arraySprites;
+
+    public Sprite face1;
+    public Sprite face2;
+    public Sprite face3;
     
 
     [HideInInspector] public Rigidbody2D rigidbody;
     private BoxCollider2D myCollider;
     public float hitPoints;
     public float hitMax;
-    SpriteRenderer renderer;
+    public SpriteRenderer renderer;
     public bool useFixedUpdate;
     [SerializeField] private bool wallKills;//A bool for whether the wall resets the player's position
     public bool WallKills {
@@ -25,20 +29,25 @@ public class Player : MonoBehaviour
     }
     [HideInInspector] public bool frozen;//Whether the player is frozen from the map moving
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        renderer = GetComponent<SpriteRenderer>();
+
+    }
     void Start()
     {
         Instance = this;
         myCollider = GetComponent<BoxCollider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
-        //renderer = GetComponent<SpriteRenderer>();
-        renderer = GetComponentInChildren<SpriteRenderer>();
         if(wallKills) {
             BorderMovement.Instance.MyLine.GetComponent<EdgeCollider2D>().isTrigger = true;
         }
 
         hitSound.GetComponent<AudioSource>();
+        Debug.Log(arraySprites.Count);
 
-        //arraySprites.Add
+        StartCoroutine(DoAnimation());
     }
 
     private Vector3 input;
@@ -46,6 +55,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         float lerpRate = hitPoints / hitMax;
+        renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
+
 
         if (!frozen) {
 
@@ -146,13 +157,20 @@ public class Player : MonoBehaviour
         frozen = false;
     }
 
-    public IEnumerator doAnimation()
+    public IEnumerator DoAnimation()
     {
+        Debug.Log("SNOW");
         List<Sprite> spritearray = arraySprites;
         for (int i = 0; i < spritearray.Count; i++)
         {
-            yield return new WaitForSeconds(0.03F);
+
+            yield return new WaitForSeconds(0.5F);
             renderer.sprite = spritearray[i];
+
+            if(i == spritearray.Count - 1)
+            {
+                i = 0;
+            }
         }
 
     }
