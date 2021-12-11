@@ -9,10 +9,12 @@ public class BorderTool : MonoBehaviour
     [Header("Attributes that need to be filled in inspector")]
     [SerializeField] private Shape myShape;
     [SerializeField] private float myLineWidth = 0.5f;
+    [SerializeField] private float playerStartFreezeTime = 0.5f;//How long the player is frozen for when the level starts
     
     [Header("Child objects which can be manipulated")]
     [SerializeField] private Transform myBoundingBorder;
     [SerializeField] private Transform myCheckPointBox;
+    [SerializeField] private SpriteRenderer checkPointEndSprite;
     [SerializeField] private Transform myPlayerStartSpot;
     [Header("The Number Room this Is")]
     [SerializeField] private int _number;//The number border this is in the game
@@ -37,7 +39,10 @@ public class BorderTool : MonoBehaviour
         myBorder.checkpointPos = myCheckPointBox.position - myCheckPointBox.localScale / 2f;
         myBorder.checkpointSize = myCheckPointBox.localScale;
         myBorder.checkpointSprite = myCheckPointBox.GetComponent<SpriteRenderer>().sprite;
+        myBorder.checkpointFinalSprite = checkPointEndSprite.sprite;
+        Debug.Log(myBorder.checkpointSprite.name);
         myBorder.playerStart = myPlayerStartSpot.position;
+        myBorder.playerFreezeTime = playerStartFreezeTime;
         //Creates a list of bullets from the bullet spawns in the room
         myBorder.BulletHell = new List<BulletSpawn>();
         myBorder.BulletHell2 = new List<BulletSpawnTool>();

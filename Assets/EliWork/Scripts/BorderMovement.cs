@@ -17,6 +17,7 @@ public class BorderMovement : MonoBehaviour
     }
     private EdgeCollider2D myEdge;
     [SerializeField] private Transform checkPointBox;//The box for when a change in transition occurs
+    private SpriteRenderer CheckpointSprite;
     [SerializeField] private Player player;//The player needs to be able to be moved around
     public BorderLevelScriptableObject Level;
     private int curBorder;
@@ -40,6 +41,8 @@ public class BorderMovement : MonoBehaviour
         Instance = this;
         myLine = GetComponent<LineRenderer>();
         myEdge = GetComponent<EdgeCollider2D>();
+        CheckpointSprite = checkPointBox.GetComponent<SpriteRenderer>();
+        Debug.Log(CheckpointSprite.sprite.name);
         TextBoxTransform = GameTextBox.GetComponent<RectTransform>();
     }
 
@@ -67,6 +70,9 @@ public class BorderMovement : MonoBehaviour
         checkPointBox.transform.localScale = gameStartB.checkpointSize;
         checkPointBox.transform.position = gameStartB.checkpointPos + gameStartB.checkpointSize / 2f;
         checkPointBox.transform.position += Vector3.forward;
+        CheckpointSprite.sprite = gameStartB.checkpointSprite;
+        checkPointBox.GetComponent<CheckpointTransition>().endSprite = gameStartB.checkpointFinalSprite;
+        checkPointBox.GetComponent<CheckpointTransition>().startSprite = gameStartB.checkpointSprite;
         //Sets the starting TextBox
         TextBox gameStartText = gameStartB.RoomText;
         TextBoxTransform.anchoredPosition = gameStartText.pos;
@@ -127,10 +133,15 @@ public class BorderMovement : MonoBehaviour
         TextBoxTransform.anchoredPosition = endTextBox.pos;
         TextBoxTransform.sizeDelta = endTextBox.size;
         GameTextBox.text = "";
+       //   myTextEffect.enabled = false;
         //TODO: Have the text be gradually written out
         if(writeTextAsMoveStarts) {
-            IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
-            StartCoroutine(writeTextCoroutine);
+            myTextEffect.enabled = true;
+            GameTextBox.enabled = true;
+            if(endB.RoomText.text != "") {
+                IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
+                StartCoroutine(writeTextCoroutine);
+            }
         }
         //Moves the Border as needed
         while(curTime < myTransition.changeTime) {
@@ -158,15 +169,27 @@ public class BorderMovement : MonoBehaviour
         checkPointBox.transform.localScale = endB.checkpointSize;
         checkPointBox.transform.position = endB.checkpointPos + endB.checkpointSize / 2f;
         checkPointBox.transform.position += Vector3.forward;
-        checkPointBox.GetComponent<SpriteRenderer>().sprite = endB.checkpointSprite;
+        CheckpointSprite.sprite = endB.checkpointSprite;
+        checkPointBox.GetComponent<CheckpointTransition>().endSprite = endB.checkpointFinalSprite;
+        checkPointBox.GetComponent<CheckpointTransition>().startSprite = endB.checkpointSprite;
+        //CurBorder needs to happen before bullet hell, bc Bullet Hell depends on current border
+        curBorder++;
         endB.StartBulletHell();
         //Writes text out at the end if that's what it's supposed to do
-        if(!writeTextAsMoveStarts) {
-            IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
-            StartCoroutine(writeTextCoroutine);
+        if(!writeTextAsMoveStarts) {    
+            myTextEffect.enabled = true;
+            GameTextBox.enabled = true;
+            if(endB.RoomText.text != "") {
+                IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
+                StartCoroutine(writeTextCoroutine);
+            }
+            else {
+                myTextEffect.enabled = false;
+                GameTextBox.enabled = false;
+            }
         }
+        yield return new WaitForSeconds(endB.playerFreezeTime);
         player.frozen = false;
-        curBorder++;
     }
 
     //Spawns bullets repeatedly until forcibly stopped
@@ -217,15 +240,27 @@ public class BorderMovement : MonoBehaviour
             firstMissing = Random.Range(0, spawnDetails.Count - 1);
         }
         else {
-            firstMissing = Random.Range(0, spawnDetails.Count - 1 - numMissing);
-            Debug.Log(firstMissing);
-            Debug.Log(numMissing);
-            Debug.Log(spawnDetails.Count);
+            //If there's only 1 not missing, it chooses which one to not remove
+            if(numMissing == spawnDetails.Count - 1) {
+                firstMissing = Random.Range(0, spawnDetails.Count - 1);
+            }
+            else {
+                firstMissing = Random.Range(0, spawnDetails.Count - numMissing);
+            }
+            //Debug.Log(firstMissing);
+            //Debug.Log(spawnDetails.Count);
         }
         while(true != false) {
             List<BulletSpawn> newSpawnDetails = new List<BulletSpawn>(spawnDetails);
             if(!loops) {
-                newSpawnDetails.RemoveRange(firstMissing, numMissing);
+                if(numMissing == spawnDetails.Count - 1) {
+                    BulletSpawn onlyBullet = spawnDetails[firstMissing];
+                    newSpawnDetails = new List<BulletSpawn>();
+                    newSpawnDetails.Add(onlyBullet);
+                }
+                else {
+                    firstMissing = Random.Range(0, spawnDetails.Count - 1);
+                }
             }
             else {
                 if(firstMissing >= spawnDetails.Count - 1 - numMissing) {
@@ -263,7 +298,12 @@ public class BorderMovement : MonoBehaviour
                 firstMissing = Random.Range(0, spawnDetails.Count - 1);
             }
             else {
-                firstMissing = Random.Range(0, spawnDetails.Count - 1 - numMissing);
+                if(numMissing == spawnDetails.Count - 1) {
+                    firstMissing = Random.Range(0, spawnDetails.Count - 1);
+                }
+                else {
+                    firstMissing = Random.Range(0, spawnDetails.Count - numMissing);
+                }
             }
             yield return new WaitForSeconds(spawnDetails[0].delay);
         }
@@ -344,8 +384,14 @@ public class BorderMovement : MonoBehaviour
         myLine.SetPositions(curCorners3.ToArray());
         Level.Borders[curBorder].StartBulletHell();
         StartCoroutine(BorderShake(0.25f, 0.25f));
+        StartCoroutine(FreezePlayer(Level.Borders[curBorder].playerFreezeTime));
     }
 
+    private IEnumerator FreezePlayer(float timeToFreeze) {
+        player.frozen = true;
+        yield return new WaitForSeconds(timeToFreeze);
+        player.frozen = false;
+    }
     //Makes it so the edge colliders all occur on the inside of the box
     private List<Vector2> EdgeColliderOffset(List<Vector2> points, float lineWidth = 0.5f, Shape shape = Shape.rect) {
         //Only does something if the shape is a rectangle
@@ -379,6 +425,12 @@ public class BorderMovement : MonoBehaviour
             StartCoroutine(BorderShake(0.1f, intensity));
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    //Waits a certain amount of time, then turns off the wall kill
+    public IEnumerator endWallKill(float timeToWait) {
+        yield return new WaitForSeconds(timeToWait);
+        Player.Instance.EndWallKills();
     }
     public IEnumerator BorderShake(float duration, float intensity = 0.5f) {
         List<Vector2> borderBaseCorners = new List<Vector2>(Level.Borders[curBorder].BorderCorners);

@@ -22,6 +22,11 @@ public class Player : MonoBehaviour
     public SpriteRenderer renderer;
     public bool useFixedUpdate;
     [SerializeField] private bool wallKills;//A bool for whether the wall resets the player's position
+    public bool WallKills {
+        get {
+            return wallKills;
+        }
+    }
     [HideInInspector] public bool frozen;//Whether the player is frozen from the map moving
     // Start is called before the first frame update
 
@@ -94,6 +99,9 @@ public class Player : MonoBehaviour
 
             }*/
         }
+        else {
+            rigidbody.velocity = Vector2.zero;
+        }
 
 
         //renderer.color = Color.Lerp(Color.white, Color.black, lerpRate);
@@ -165,5 +173,10 @@ public class Player : MonoBehaviour
             }
         }
 
+    }
+
+    //Ends the wall kill property
+    public void EndWallKills() {
+        wallKills = false;
     }
 }

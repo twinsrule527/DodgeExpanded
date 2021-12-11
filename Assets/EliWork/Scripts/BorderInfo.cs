@@ -12,7 +12,9 @@ using UnityEngine;
     public Vector2 checkpointPos;//Bottom left corner of the checkpoint box
     public Vector2 checkpointSize;//Dimensions of the checkpoint box
     public Sprite checkpointSprite;//Sprite of the checkpoint
+    public Sprite checkpointFinalSprite;
     public Vector3 playerStart;//Where the player starts in this border area
+    public float playerFreezeTime;
     public List<BulletSpawn> BulletHell;//A list of how bullets will spawn while this Border is active - this is outdated, but I'll keep it around for posterity's sake
     public List<BulletSpawnTool> BulletHell2;//A better list of how bullets will spawn
     public TextBox RoomText;
@@ -85,6 +87,12 @@ using UnityEngine;
                 runningBulletCoroutines.Add(moveCoroutine);
                 BorderMovement.Instance.StartCoroutine(moveCoroutine);
             }
+            else if(bulletTool.myType == BulletSpawnType.endWallKill) {
+                StopWallKillBulletTool tool = bulletTool.GetComponent<StopWallKillBulletTool>();
+                IEnumerator flickerCoroutine = BorderMovement.Instance.endWallKill(tool.timeToStop);
+                runningBulletCoroutines.Add(flickerCoroutine);
+                BorderMovement.Instance.StartCoroutine(flickerCoroutine);
+            }
         }
         BorderMovement.Instance.runningBulletCoroutines = runningBulletCoroutines;
     }
@@ -112,7 +120,8 @@ public enum BulletSpawnType {
     normal,
     screenShake,
     missingSpots,//For when an array wants to miss certain 
-    changingShape//For when the room is meant to change shapes
+    changingShape,//For when the room is meant to change shapes
+    endWallKill//For when the tool is used to end the wall kill property
 }
 
 //Contains information for repeatably spawning bullets
