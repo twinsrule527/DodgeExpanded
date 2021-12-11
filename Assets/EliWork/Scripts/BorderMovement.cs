@@ -172,6 +172,8 @@ public class BorderMovement : MonoBehaviour
         CheckpointSprite.sprite = endB.checkpointSprite;
         checkPointBox.GetComponent<CheckpointTransition>().endSprite = endB.checkpointFinalSprite;
         checkPointBox.GetComponent<CheckpointTransition>().startSprite = endB.checkpointSprite;
+        //CurBorder needs to happen before bullet hell, bc Bullet Hell depends on current border
+        curBorder++;
         endB.StartBulletHell();
         //Writes text out at the end if that's what it's supposed to do
         if(!writeTextAsMoveStarts) {    
@@ -186,7 +188,6 @@ public class BorderMovement : MonoBehaviour
                 GameTextBox.enabled = false;
             }
         }
-        curBorder++;
         yield return new WaitForSeconds(endB.playerFreezeTime);
         player.frozen = false;
     }
@@ -424,6 +425,12 @@ public class BorderMovement : MonoBehaviour
             StartCoroutine(BorderShake(0.1f, intensity));
             yield return new WaitForSeconds(0.1f);
         }
+    }
+
+    //Waits a certain amount of time, then turns off the wall kill
+    public IEnumerator endWallKill(float timeToWait) {
+        yield return new WaitForSeconds(timeToWait);
+        Player.Instance.EndWallKills();
     }
     public IEnumerator BorderShake(float duration, float intensity = 0.5f) {
         List<Vector2> borderBaseCorners = new List<Vector2>(Level.Borders[curBorder].BorderCorners);

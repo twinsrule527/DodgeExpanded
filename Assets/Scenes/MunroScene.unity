@@ -245,7 +245,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615885876949034221, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalScale.x
@@ -818,7 +818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8102252497400837143, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: _number
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8102252497400837143, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: textSize
@@ -976,7 +976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615885876949034221, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalScale.x
@@ -2220,7 +2220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615885876949034221, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalScale.x
@@ -2469,6 +2469,7 @@ GameObject:
   - component: {fileID: 664102007}
   - component: {fileID: 664102006}
   - component: {fileID: 664102005}
+  - component: {fileID: 664102009}
   m_Layer: 0
   m_Name: Line1
   m_TagString: Border
@@ -2495,7 +2496,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: -1298795711784348939, guid: 538c2740947d3314ea5197b7b8a339a6, type: 3}
   GameTextBox: {fileID: 2053512269}
   myTextEffect: {fileID: 2053512271}
-  writeTextAsMoveStarts: 0
+  writeTextAsMoveStarts: 1
 --- !u!68 &664102006
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -2636,6 +2637,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &664102009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664102004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762e55a7ed6346149987626e3beffa68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flickerTime: 0.5
+  baseColor: {r: 1, g: 1, b: 1, a: 1}
+  flickerColor: {r: 1, g: 1, b: 1, a: 0}
+  flickerChangeTime: 0
 --- !u!4 &717570764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6444269816997484629, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
@@ -3399,7 +3416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615885876949034221, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalScale.x
@@ -3901,7 +3918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615885876949034221, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalScale.x
@@ -4808,7 +4825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615885876949034221, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalScale.x
@@ -6587,7 +6604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 615885876949034221, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalScale.x
