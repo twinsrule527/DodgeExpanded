@@ -144,6 +144,10 @@ public class BorderMovement : MonoBehaviour
                 IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
                 StartCoroutine(writeTextCoroutine);
             }
+            else {
+                myTextEffect.enabled = false;
+                GameTextBox.enabled = false;
+            }
         }
         //Moves the Border as needed
         while(curTime < myTransition.changeTime) {
