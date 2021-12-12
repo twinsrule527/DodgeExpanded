@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float speed;
 
     public AudioSource hitSound;
+    public AudioSource wallSound;
     public List<Sprite> arraySprites;
 
     public Sprite face1;
@@ -139,8 +140,8 @@ public class Player : MonoBehaviour
         }
         //If the wall is supposed to kill the player, it resets their position
         if(wallKills && collision.CompareTag("Border")) {
-            if(hitSound != null) {
-                hitSound.Play();
+            if(wallSound != null) {
+                wallSound.Play();
             }
             BorderMovement.Instance.ResetRoom();
             hitPoints = 0;
