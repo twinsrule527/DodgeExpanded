@@ -80,6 +80,9 @@ public class BorderMovement : MonoBehaviour
         IEnumerator myEffect = myTextEffect.BuildText(GameTextBox, gameStartText.text);
         myTextEffect.StartCoroutine(myEffect);
         gameStartB.StartBulletHell();
+        IEnumerator playerFrozen = FreezePlayer(gameStartB.playerFreezeTime);
+        Debug.Log(gameStartB.playerFreezeTime);
+        StartCoroutine(playerFrozen);
     }
 
     void Update()
@@ -98,7 +101,6 @@ public class BorderMovement : MonoBehaviour
             StartCoroutine(BorderShake(2, 0.5f));
         }
     }
-
     private IEnumerator MoveBorder(BorderTransition myTransition) {
         //Player becomes frozen for the length of the transition
         player.frozen = true;
