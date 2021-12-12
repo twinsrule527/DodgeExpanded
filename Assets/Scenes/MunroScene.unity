@@ -5001,6 +5001,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 776532294203827497, guid: 50d7deadba76c1d4d9eefc8612ecb69a, type: 3}
+      propertyPath: timeToChangeSprite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 776532294203827497, guid: 50d7deadba76c1d4d9eefc8612ecb69a, type: 3}
       propertyPath: maxTimeInCheckpoint
       value: 2
       objectReference: {fileID: 0}
