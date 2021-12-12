@@ -17,14 +17,15 @@ MonoBehaviour:
     size: {x: 40.818, y: 8.262}
     shape: 0
     width: 0.5
-    checkpointPos: {x: -12.48497, y: -8.917553}
-    checkpointSize: {x: 4, y: 4}
-    checkpointSprite: {fileID: 21300000, guid: 2d6978b3cfbabe34b87195ac2f09df69, type: 3}
-    checkpointFinalSprite: {fileID: 21300000, guid: 2d6978b3cfbabe34b87195ac2f09df69, type: 3}
-    playerStart: {x: 23.92503, y: -7.087553, z: 0}
+    checkpointPos: {x: -13.047739, y: -11.0928}
+    checkpointSize: {x: 5.245536, y: 6.630496}
+    checkpointSprite: {fileID: 21300000, guid: 7bbd8a28aeb2476478e31643b011714c, type: 3}
+    checkpointFinalSprite: {fileID: 21300000, guid: d22a017f84925d34fbea82d27391fa1d, type: 3}
+    checkpointFinalSize: {x: 4.6095123, y: 4.9950986}
+    playerStart: {x: 22.51503, y: -7.087553, z: 0}
     playerFreezeTime: 5
     BulletHell:
-    - spawnPos: {x: 24.115028, y: -6.8175526, z: -1}
+    - spawnPos: {x: 22.615028, y: -6.917553, z: -1}
       spawnRotation: 0
       startDelay: 0
       delay: 1000
@@ -36,51 +37,38 @@ MonoBehaviour:
     RoomText:
       text: What are you doing? The day's half gone.
       textSize: 0
-      pos: {x: -26.83091, y: 62.802536}
-      size: {x: 426.33292, y: 133.37105}
-  - pos: {x: -17.742008, y: -10.221283}
-    size: {x: 15.51417, y: 26.207495}
+      pos: {x: -26.253336, y: 61.45062}
+      size: {x: 417.1555, y: 130.50005}
+  - pos: {x: -17.742008, y: -10.221102}
+    size: {x: 15.51417, y: 27.955534}
     shape: 0
     width: 0.5
-    checkpointPos: {x: -17.753275, y: 10.215288}
-    checkpointSize: {x: 4.2367034, y: 5.8543525}
-    checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-    checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+    checkpointPos: {x: -17.014923, y: 12.182465}
+    checkpointSize: {x: 7.24, y: 4.86}
+    checkpointSprite: {fileID: 21300000, guid: 50eac44872186524bbb9ed3cac2284e3, type: 3}
+    checkpointFinalSprite: {fileID: 21300000, guid: fa65f671daf201949bd82de516d918a1, type: 3}
+    checkpointFinalSize: {x: 7.24, y: 5.02}
     playerStart: {x: -10.084924, y: -7.257536, z: 0}
     playerFreezeTime: 0.5
     BulletHell:
-    - spawnPos: {x: -23.307144, y: 2.5824642, z: -1}
-      spawnRotation: 0
-      startDelay: 0
-      delay: 1000
-      bulletSpeed: 0
-      bulletLifetime: 1000
-      bullet: {fileID: 5277609779144288772, guid: 59c2acb591c3c431bac93bc740e45bb4, type: 3}
-    - spawnPos: {x: 7.115076, y: -4.217535, z: -1}
-      spawnRotation: 0
-      startDelay: 0
-      delay: 1000
-      bulletSpeed: 0
-      bulletLifetime: 1000
-      bullet: {fileID: 5277609779144288772, guid: ebde4e13bc657472d969161b55f93613, type: 3}
     - spawnPos: {x: 0.4150753, y: 8.182465, z: -1}
       spawnRotation: 90
       startDelay: 0
-      delay: 0.55
+      delay: 0.65
       bulletSpeed: 10
       bulletLifetime: 5
       bullet: {fileID: 5277609779144288772, guid: 6e5aeee71d3bc49b982cc964d6d4b546, type: 3}
     - spawnPos: {x: -20.584925, y: 2.3424644, z: -1}
       spawnRotation: 270
       startDelay: 0
-      delay: 0.7
+      delay: 0.9
       bulletSpeed: 10
       bulletLifetime: 5
       bullet: {fileID: 5277609779144288772, guid: 6e5aeee71d3bc49b982cc964d6d4b546, type: 3}
     - spawnPos: {x: 0.61507607, y: -4.057535, z: -1}
       spawnRotation: 90
       startDelay: 0
-      delay: 0.8
+      delay: 1
       bulletSpeed: 10
       bulletLifetime: 5
       bullet: {fileID: 5277609779144288772, guid: 6e5aeee71d3bc49b982cc964d6d4b546, type: 3}
@@ -88,13 +76,11 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
     RoomText:
       text: You should probably get to work.
       textSize: 0
-      pos: {x: 55.294598, y: -171.19727}
-      size: {x: 317.44748, y: 70.1437}
+      pos: {x: 54.1043, y: -167.512}
+      size: {x: 310.61398, y: 68.63375}
   - pos: {x: -17.742207, y: 5.296529}
     size: {x: 49.404873, y: 10.690037}
     shape: 0
@@ -103,6 +89,7 @@ MonoBehaviour:
     checkpointSize: {x: 3.5232425, y: 10.848701}
     checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+    checkpointFinalSize: {x: 4.4922, y: 2}
     playerStart: {x: -15.58497, y: 10.582447, z: 0}
     playerFreezeTime: 0.5
     BulletHell:
@@ -218,49 +205,56 @@ MonoBehaviour:
       bulletSpeed: 20
       bulletLifetime: 8
       bullet: {fileID: 5277609779144288772, guid: 0e2aedc50ac2a4cd9a521be6a3cce86b, type: 3}
-    - spawnPos: {x: 24.26033, y: -14.252974, z: -1}
+    - spawnPos: {x: 30.415031, y: -8.817553, z: -1}
       spawnRotation: 0
       startDelay: 0
       delay: 1000
       bulletSpeed: 0
       bulletLifetime: 1000
       bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-    - spawnPos: {x: -15.502023, y: -1.5220404, z: -1}
+    - spawnPos: {x: 9.215031, y: -17.017553, z: -1}
+      spawnRotation: 180
+      startDelay: 0
+      delay: 1000
+      bulletSpeed: 0
+      bulletLifetime: 1000
+      bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
+    - spawnPos: {x: 7.315029, y: -15.317553, z: -1}
       spawnRotation: 0
       startDelay: 0
       delay: 1000
       bulletSpeed: 0
       bulletLifetime: 1000
       bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-    - spawnPos: {x: -33.290443, y: -12.160215, z: -1}
+    - spawnPos: {x: -12.68497, y: -14.517553, z: -1}
+      spawnRotation: 180
+      startDelay: 0
+      delay: 1000
+      bulletSpeed: 0
+      bulletLifetime: 1000
+      bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
+    - spawnPos: {x: -28.08497, y: -0.017552376, z: -1}
+      spawnRotation: 180
+      startDelay: 0
+      delay: 1000
+      bulletSpeed: 0
+      bulletLifetime: 1000
+      bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
+    - spawnPos: {x: -28.64497, y: 3.6223478, z: -1}
       spawnRotation: 0
       startDelay: 0
       delay: 1000
       bulletSpeed: 0
       bulletLifetime: 1000
       bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-    - spawnPos: {x: 12.51503, y: -10.117552, z: -1}
+    - spawnPos: {x: 30.115028, y: -7.5175533, z: -1}
       spawnRotation: 0
       startDelay: 0
       delay: 1000
       bulletSpeed: 0
       bulletLifetime: 1000
       bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-    - spawnPos: {x: 28.40754, y: -1.9860954, z: -1}
-      spawnRotation: 0
-      startDelay: 0
-      delay: 1000
-      bulletSpeed: 0
-      bulletLifetime: 1000
-      bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-    - spawnPos: {x: -11.138798, y: -13.259489, z: -1}
-      spawnRotation: 0
-      startDelay: 0
-      delay: 1000
-      bulletSpeed: 0
-      bulletLifetime: 1000
-      bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-    - spawnPos: {x: -30.822496, y: 3.382187, z: -1}
+    - spawnPos: {x: -12.08497, y: -11.617552, z: -1}
       spawnRotation: 0
       startDelay: 0
       delay: 1000
@@ -268,6 +262,7 @@ MonoBehaviour:
       bulletLifetime: 1000
       bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
     BulletHell2:
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -294,8 +289,8 @@ MonoBehaviour:
     RoomText:
       text: But what about that other thing?
       textSize: 0
-      pos: {x: 83.41908, y: -0.19746423}
-      size: {x: 317.44748, y: 70.1437}
+      pos: {x: 81.62337, y: -0.19321352}
+      size: {x: 310.61398, y: 68.63375}
   - pos: {x: -28.674208, y: -14.923316}
     size: {x: 33.178474, y: 30.936127}
     shape: 0
@@ -304,6 +299,7 @@ MonoBehaviour:
     checkpointSize: {x: 1.8580298, y: 1.9719285}
     checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+    checkpointFinalSize: {x: 4.4922, y: 2}
     playerStart: {x: -0.7849703, y: -9.117552, z: 0}
     playerFreezeTime: 2
     BulletHell:
@@ -319,8 +315,8 @@ MonoBehaviour:
     RoomText:
       text: "You\u2019re the only person here. Aren\u2019t you going to help?"
       textSize: 0
-      pos: {x: 229.19547, y: 84.177536}
-      size: {x: 305.40002, y: 116.642586}
+      pos: {x: 224.2617, y: 82.36549}
+      size: {x: 298.82584, y: 114.13168}
   - pos: {x: -1.339508, y: -14.923316}
     size: {x: 33.178474, y: 30.936127}
     shape: 0
@@ -329,6 +325,7 @@ MonoBehaviour:
     checkpointSize: {x: 2.5113375, y: 2.566319}
     checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+    checkpointFinalSize: {x: 4.4922, y: 2}
     playerStart: {x: 29.01503, y: 12.382447, z: 0}
     playerFreezeTime: 0.5
     BulletHell:
@@ -682,16 +679,17 @@ MonoBehaviour:
     RoomText:
       text: "Now\u2019s not the time. Get it together. Clear your head."
       textSize: 0
-      pos: {x: -174.20592, y: -121.697464}
-      size: {x: 226.62631, y: 144.98767}
+      pos: {x: -170.45589, y: -119.07775}
+      size: {x: 221.74786, y: 141.86661}
   - pos: {x: -25.210892, y: -9.803747}
     size: {x: 38.123585, y: 26.207495}
     shape: 0
     width: 0.5
-    checkpointPos: {x: 4.3999996, y: -6.2}
-    checkpointSize: {x: 3, y: 3}
-    checkpointSprite: {fileID: 21300000, guid: 42ae08f274592c143902caa4c6277c84, type: 3}
-    checkpointFinalSprite: {fileID: 21300000, guid: bc91cdb50b6a9b548b13009b9bfc0d1e, type: 3}
+    checkpointPos: {x: 3.696237, y: -7.8768277}
+    checkpointSize: {x: 4.1475267, y: 6.573657}
+    checkpointSprite: {fileID: 21300000, guid: 26406a754e494594b9eb421d2392b76f, type: 3}
+    checkpointFinalSprite: {fileID: 21300000, guid: 20426e09112f9da40890ec0829c7768e, type: 3}
+    checkpointFinalSize: {x: 7.866855, y: 6.185214}
     playerStart: {x: -21.000002, y: -6.6400003, z: 0}
     playerFreezeTime: 1.5
     BulletHell:
@@ -1098,8 +1096,8 @@ MonoBehaviour:
     RoomText:
       text: "I\u2019m just trying to help you."
       textSize: 0
-      pos: {x: -39.375, y: -203.62498}
-      size: {x: 317.44748, y: 70.1437}
+      pos: {x: -38.527397, y: -199.24165}
+      size: {x: 310.61398, y: 68.63375}
   - pos: {x: -5.2864466, y: -6.2941065}
     size: {x: 20.80295, y: 18.353107}
     shape: 0
@@ -1108,6 +1106,7 @@ MonoBehaviour:
     checkpointSize: {x: 1, y: 1}
     checkpointSprite: {fileID: 21300000, guid: 2a097e77f6227d44893ac4fce7a1d03f, type: 3}
     checkpointFinalSprite: {fileID: 21300000, guid: 2a097e77f6227d44893ac4fce7a1d03f, type: 3}
+    checkpointFinalSize: {x: 4.4922, y: 2}
     playerStart: {x: 12.315029, y: 9.582447, z: -2}
     playerFreezeTime: 0.5
     BulletHell:
@@ -1123,57 +1122,50 @@ MonoBehaviour:
     RoomText:
       text: Just. Breathe.
       textSize: 0
-      pos: {x: -85.33091, y: 77.42753}
-      size: {x: 317.44748, y: 70.1437}
-  - pos: {x: -17.741974, y: 7.5061426}
-    size: {x: 49.17061, y: 8.098116}
+      pos: {x: -83.49404, y: 75.760796}
+      size: {x: 310.61398, y: 68.63375}
+  - pos: {x: -17.842056, y: 0.52536297}
+    size: {x: 15.51417, y: 15.51417}
     shape: 0
     width: 0.5
-    checkpointPos: {x: 27.89682, y: 9.975453}
-    checkpointSize: {x: 2.636421, y: 2.6490943}
-    checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-    checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-    playerStart: {x: -15.68497, y: 10.5, z: 0}
-    playerFreezeTime: 0.5
-    BulletHell: []
-    BulletHell2:
-    - {fileID: 0}
-    RoomText:
-      text: 
-      textSize: 0
-      pos: {x: 73.29408, y: 18.000004}
-      size: {x: 317.44748, y: 70.1437}
-  - pos: {x: -17.742054, y: -10.2213}
-    size: {x: 15.51417, y: 26.207495}
-    shape: 0
-    width: 0.5
-    checkpointPos: {x: -17.753374, y: 10.215271}
+    checkpointPos: {x: -40.794273, y: -8.244729}
     checkpointSize: {x: 15.6186075, y: 5.8543525}
     checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-    playerStart: {x: -10.0849695, y: -7.257553, z: 0}
+    checkpointFinalSize: {x: 4.4922, y: 2}
+    playerStart: {x: -13.98497, y: 12.682447, z: -1}
     playerFreezeTime: 0.5
-    BulletHell: []
-    BulletHell2: []
+    BulletHell:
+    - spawnPos: {x: -11.48497, y: 11.682447, z: 0}
+      spawnRotation: 0
+      startDelay: 0
+      delay: 0
+      bulletSpeed: 0
+      bulletLifetime: 0
+      bullet: {fileID: 0}
+    BulletHell2:
+    - {fileID: 0}
+    - {fileID: 0}
     RoomText:
       text: END OF DEMO
       textSize: 0
-      pos: {x: 55.294083, y: -171.19746}
-      size: {x: 317.44748, y: 70.1437}
+      pos: {x: 271.44565, y: -106.677444}
+      size: {x: 225.72318, y: 190.30766}
   BorderTransitions:
   - startBorder:
       pos: {x: -13.024971, y: -11.2697525}
       size: {x: 40.818, y: 8.262}
       shape: 0
       width: 0.5
-      checkpointPos: {x: -12.48497, y: -8.917553}
-      checkpointSize: {x: 4, y: 4}
-      checkpointSprite: {fileID: 21300000, guid: 2d6978b3cfbabe34b87195ac2f09df69, type: 3}
-      checkpointFinalSprite: {fileID: 21300000, guid: 2d6978b3cfbabe34b87195ac2f09df69, type: 3}
-      playerStart: {x: 23.92503, y: -7.087553, z: 0}
+      checkpointPos: {x: -13.047739, y: -11.0928}
+      checkpointSize: {x: 5.245536, y: 6.630496}
+      checkpointSprite: {fileID: 21300000, guid: 7bbd8a28aeb2476478e31643b011714c, type: 3}
+      checkpointFinalSprite: {fileID: 21300000, guid: d22a017f84925d34fbea82d27391fa1d, type: 3}
+      checkpointFinalSize: {x: 4.6095123, y: 4.9950986}
+      playerStart: {x: 22.51503, y: -7.087553, z: 0}
       playerFreezeTime: 5
       BulletHell:
-      - spawnPos: {x: 24.115028, y: -6.8175526, z: -1}
+      - spawnPos: {x: 22.615028, y: -6.917553, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
@@ -1185,52 +1177,39 @@ MonoBehaviour:
       RoomText:
         text: What are you doing? The day's half gone.
         textSize: 0
-        pos: {x: -26.83091, y: 62.802536}
-        size: {x: 426.33292, y: 133.37105}
+        pos: {x: -26.253336, y: 61.45062}
+        size: {x: 417.1555, y: 130.50005}
     endBorder:
-      pos: {x: -17.742008, y: -10.221283}
-      size: {x: 15.51417, y: 26.207495}
+      pos: {x: -17.742008, y: -10.221102}
+      size: {x: 15.51417, y: 27.955534}
       shape: 0
       width: 0.5
-      checkpointPos: {x: -17.753275, y: 10.215288}
-      checkpointSize: {x: 4.2367034, y: 5.8543525}
-      checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-      checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      checkpointPos: {x: -17.014923, y: 12.182465}
+      checkpointSize: {x: 7.24, y: 4.86}
+      checkpointSprite: {fileID: 21300000, guid: 50eac44872186524bbb9ed3cac2284e3, type: 3}
+      checkpointFinalSprite: {fileID: 21300000, guid: fa65f671daf201949bd82de516d918a1, type: 3}
+      checkpointFinalSize: {x: 7.24, y: 5.02}
       playerStart: {x: -10.084924, y: -7.257536, z: 0}
       playerFreezeTime: 0.5
       BulletHell:
-      - spawnPos: {x: -23.307144, y: 2.5824642, z: -1}
-        spawnRotation: 0
-        startDelay: 0
-        delay: 1000
-        bulletSpeed: 0
-        bulletLifetime: 1000
-        bullet: {fileID: 5277609779144288772, guid: 59c2acb591c3c431bac93bc740e45bb4, type: 3}
-      - spawnPos: {x: 7.115076, y: -4.217535, z: -1}
-        spawnRotation: 0
-        startDelay: 0
-        delay: 1000
-        bulletSpeed: 0
-        bulletLifetime: 1000
-        bullet: {fileID: 5277609779144288772, guid: ebde4e13bc657472d969161b55f93613, type: 3}
       - spawnPos: {x: 0.4150753, y: 8.182465, z: -1}
         spawnRotation: 90
         startDelay: 0
-        delay: 0.55
+        delay: 0.65
         bulletSpeed: 10
         bulletLifetime: 5
         bullet: {fileID: 5277609779144288772, guid: 6e5aeee71d3bc49b982cc964d6d4b546, type: 3}
       - spawnPos: {x: -20.584925, y: 2.3424644, z: -1}
         spawnRotation: 270
         startDelay: 0
-        delay: 0.7
+        delay: 0.9
         bulletSpeed: 10
         bulletLifetime: 5
         bullet: {fileID: 5277609779144288772, guid: 6e5aeee71d3bc49b982cc964d6d4b546, type: 3}
       - spawnPos: {x: 0.61507607, y: -4.057535, z: -1}
         spawnRotation: 90
         startDelay: 0
-        delay: 0.8
+        delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
         bullet: {fileID: 5277609779144288772, guid: 6e5aeee71d3bc49b982cc964d6d4b546, type: 3}
@@ -1238,58 +1217,43 @@ MonoBehaviour:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
       RoomText:
         text: You should probably get to work.
         textSize: 0
-        pos: {x: 55.294598, y: -171.19727}
-        size: {x: 317.44748, y: 70.1437}
+        pos: {x: 54.1043, y: -167.512}
+        size: {x: 310.61398, y: 68.63375}
     changeTime: 3
   - startBorder:
-      pos: {x: -17.742008, y: -10.221283}
-      size: {x: 15.51417, y: 26.207495}
+      pos: {x: -17.742008, y: -10.221102}
+      size: {x: 15.51417, y: 27.955534}
       shape: 0
       width: 0.5
-      checkpointPos: {x: -17.753275, y: 10.215288}
-      checkpointSize: {x: 4.2367034, y: 5.8543525}
-      checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-      checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      checkpointPos: {x: -17.014923, y: 12.182465}
+      checkpointSize: {x: 7.24, y: 4.86}
+      checkpointSprite: {fileID: 21300000, guid: 50eac44872186524bbb9ed3cac2284e3, type: 3}
+      checkpointFinalSprite: {fileID: 21300000, guid: fa65f671daf201949bd82de516d918a1, type: 3}
+      checkpointFinalSize: {x: 7.24, y: 5.02}
       playerStart: {x: -10.084924, y: -7.257536, z: 0}
       playerFreezeTime: 0.5
       BulletHell:
-      - spawnPos: {x: -23.307144, y: 2.5824642, z: -1}
-        spawnRotation: 0
-        startDelay: 0
-        delay: 1000
-        bulletSpeed: 0
-        bulletLifetime: 1000
-        bullet: {fileID: 5277609779144288772, guid: 59c2acb591c3c431bac93bc740e45bb4, type: 3}
-      - spawnPos: {x: 7.115076, y: -4.217535, z: -1}
-        spawnRotation: 0
-        startDelay: 0
-        delay: 1000
-        bulletSpeed: 0
-        bulletLifetime: 1000
-        bullet: {fileID: 5277609779144288772, guid: ebde4e13bc657472d969161b55f93613, type: 3}
       - spawnPos: {x: 0.4150753, y: 8.182465, z: -1}
         spawnRotation: 90
         startDelay: 0
-        delay: 0.55
+        delay: 0.65
         bulletSpeed: 10
         bulletLifetime: 5
         bullet: {fileID: 5277609779144288772, guid: 6e5aeee71d3bc49b982cc964d6d4b546, type: 3}
       - spawnPos: {x: -20.584925, y: 2.3424644, z: -1}
         spawnRotation: 270
         startDelay: 0
-        delay: 0.7
+        delay: 0.9
         bulletSpeed: 10
         bulletLifetime: 5
         bullet: {fileID: 5277609779144288772, guid: 6e5aeee71d3bc49b982cc964d6d4b546, type: 3}
       - spawnPos: {x: 0.61507607, y: -4.057535, z: -1}
         spawnRotation: 90
         startDelay: 0
-        delay: 0.8
+        delay: 1
         bulletSpeed: 10
         bulletLifetime: 5
         bullet: {fileID: 5277609779144288772, guid: 6e5aeee71d3bc49b982cc964d6d4b546, type: 3}
@@ -1297,13 +1261,11 @@ MonoBehaviour:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
-      - {fileID: 0}
-      - {fileID: 0}
       RoomText:
         text: You should probably get to work.
         textSize: 0
-        pos: {x: 55.294598, y: -171.19727}
-        size: {x: 317.44748, y: 70.1437}
+        pos: {x: 54.1043, y: -167.512}
+        size: {x: 310.61398, y: 68.63375}
     endBorder:
       pos: {x: -17.742207, y: 5.296529}
       size: {x: 49.404873, y: 10.690037}
@@ -1313,6 +1275,7 @@ MonoBehaviour:
       checkpointSize: {x: 3.5232425, y: 10.848701}
       checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
       checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      checkpointFinalSize: {x: 4.4922, y: 2}
       playerStart: {x: -15.58497, y: 10.582447, z: 0}
       playerFreezeTime: 0.5
       BulletHell:
@@ -1428,49 +1391,56 @@ MonoBehaviour:
         bulletSpeed: 20
         bulletLifetime: 8
         bullet: {fileID: 5277609779144288772, guid: 0e2aedc50ac2a4cd9a521be6a3cce86b, type: 3}
-      - spawnPos: {x: 24.26033, y: -14.252974, z: -1}
+      - spawnPos: {x: 30.415031, y: -8.817553, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
         bulletSpeed: 0
         bulletLifetime: 1000
         bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: -15.502023, y: -1.5220404, z: -1}
+      - spawnPos: {x: 9.215031, y: -17.017553, z: -1}
+        spawnRotation: 180
+        startDelay: 0
+        delay: 1000
+        bulletSpeed: 0
+        bulletLifetime: 1000
+        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
+      - spawnPos: {x: 7.315029, y: -15.317553, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
         bulletSpeed: 0
         bulletLifetime: 1000
         bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: -33.290443, y: -12.160215, z: -1}
+      - spawnPos: {x: -12.68497, y: -14.517553, z: -1}
+        spawnRotation: 180
+        startDelay: 0
+        delay: 1000
+        bulletSpeed: 0
+        bulletLifetime: 1000
+        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
+      - spawnPos: {x: -28.08497, y: -0.017552376, z: -1}
+        spawnRotation: 180
+        startDelay: 0
+        delay: 1000
+        bulletSpeed: 0
+        bulletLifetime: 1000
+        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
+      - spawnPos: {x: -28.64497, y: 3.6223478, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
         bulletSpeed: 0
         bulletLifetime: 1000
         bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: 12.51503, y: -10.117552, z: -1}
+      - spawnPos: {x: 30.115028, y: -7.5175533, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
         bulletSpeed: 0
         bulletLifetime: 1000
         bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: 28.40754, y: -1.9860954, z: -1}
-        spawnRotation: 0
-        startDelay: 0
-        delay: 1000
-        bulletSpeed: 0
-        bulletLifetime: 1000
-        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: -11.138798, y: -13.259489, z: -1}
-        spawnRotation: 0
-        startDelay: 0
-        delay: 1000
-        bulletSpeed: 0
-        bulletLifetime: 1000
-        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: -30.822496, y: 3.382187, z: -1}
+      - spawnPos: {x: -12.08497, y: -11.617552, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
@@ -1501,11 +1471,12 @@ MonoBehaviour:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
+      - {fileID: 0}
       RoomText:
         text: But what about that other thing?
         textSize: 0
-        pos: {x: 83.41908, y: -0.19746423}
-        size: {x: 317.44748, y: 70.1437}
+        pos: {x: 81.62337, y: -0.19321352}
+        size: {x: 310.61398, y: 68.63375}
     changeTime: 3
   - startBorder:
       pos: {x: -17.742207, y: 5.296529}
@@ -1516,6 +1487,7 @@ MonoBehaviour:
       checkpointSize: {x: 3.5232425, y: 10.848701}
       checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
       checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      checkpointFinalSize: {x: 4.4922, y: 2}
       playerStart: {x: -15.58497, y: 10.582447, z: 0}
       playerFreezeTime: 0.5
       BulletHell:
@@ -1631,49 +1603,56 @@ MonoBehaviour:
         bulletSpeed: 20
         bulletLifetime: 8
         bullet: {fileID: 5277609779144288772, guid: 0e2aedc50ac2a4cd9a521be6a3cce86b, type: 3}
-      - spawnPos: {x: 24.26033, y: -14.252974, z: -1}
+      - spawnPos: {x: 30.415031, y: -8.817553, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
         bulletSpeed: 0
         bulletLifetime: 1000
         bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: -15.502023, y: -1.5220404, z: -1}
+      - spawnPos: {x: 9.215031, y: -17.017553, z: -1}
+        spawnRotation: 180
+        startDelay: 0
+        delay: 1000
+        bulletSpeed: 0
+        bulletLifetime: 1000
+        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
+      - spawnPos: {x: 7.315029, y: -15.317553, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
         bulletSpeed: 0
         bulletLifetime: 1000
         bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: -33.290443, y: -12.160215, z: -1}
+      - spawnPos: {x: -12.68497, y: -14.517553, z: -1}
+        spawnRotation: 180
+        startDelay: 0
+        delay: 1000
+        bulletSpeed: 0
+        bulletLifetime: 1000
+        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
+      - spawnPos: {x: -28.08497, y: -0.017552376, z: -1}
+        spawnRotation: 180
+        startDelay: 0
+        delay: 1000
+        bulletSpeed: 0
+        bulletLifetime: 1000
+        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
+      - spawnPos: {x: -28.64497, y: 3.6223478, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
         bulletSpeed: 0
         bulletLifetime: 1000
         bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: 12.51503, y: -10.117552, z: -1}
+      - spawnPos: {x: 30.115028, y: -7.5175533, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
         bulletSpeed: 0
         bulletLifetime: 1000
         bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: 28.40754, y: -1.9860954, z: -1}
-        spawnRotation: 0
-        startDelay: 0
-        delay: 1000
-        bulletSpeed: 0
-        bulletLifetime: 1000
-        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: -11.138798, y: -13.259489, z: -1}
-        spawnRotation: 0
-        startDelay: 0
-        delay: 1000
-        bulletSpeed: 0
-        bulletLifetime: 1000
-        bullet: {fileID: 5277609779144288772, guid: 0aff08606bf104b47b61eb517595df07, type: 3}
-      - spawnPos: {x: -30.822496, y: 3.382187, z: -1}
+      - spawnPos: {x: -12.08497, y: -11.617552, z: -1}
         spawnRotation: 0
         startDelay: 0
         delay: 1000
@@ -1704,11 +1683,12 @@ MonoBehaviour:
       - {fileID: 0}
       - {fileID: 0}
       - {fileID: 0}
+      - {fileID: 0}
       RoomText:
         text: But what about that other thing?
         textSize: 0
-        pos: {x: 83.41908, y: -0.19746423}
-        size: {x: 317.44748, y: 70.1437}
+        pos: {x: 81.62337, y: -0.19321352}
+        size: {x: 310.61398, y: 68.63375}
     endBorder:
       pos: {x: -28.674208, y: -14.923316}
       size: {x: 33.178474, y: 30.936127}
@@ -1718,6 +1698,7 @@ MonoBehaviour:
       checkpointSize: {x: 1.8580298, y: 1.9719285}
       checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
       checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      checkpointFinalSize: {x: 4.4922, y: 2}
       playerStart: {x: -0.7849703, y: -9.117552, z: 0}
       playerFreezeTime: 2
       BulletHell:
@@ -1733,8 +1714,8 @@ MonoBehaviour:
       RoomText:
         text: "You\u2019re the only person here. Aren\u2019t you going to help?"
         textSize: 0
-        pos: {x: 229.19547, y: 84.177536}
-        size: {x: 305.40002, y: 116.642586}
+        pos: {x: 224.2617, y: 82.36549}
+        size: {x: 298.82584, y: 114.13168}
     changeTime: 4
   - startBorder:
       pos: {x: -28.674208, y: -14.923316}
@@ -1745,6 +1726,7 @@ MonoBehaviour:
       checkpointSize: {x: 1.8580298, y: 1.9719285}
       checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
       checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      checkpointFinalSize: {x: 4.4922, y: 2}
       playerStart: {x: -0.7849703, y: -9.117552, z: 0}
       playerFreezeTime: 2
       BulletHell:
@@ -1760,8 +1742,8 @@ MonoBehaviour:
       RoomText:
         text: "You\u2019re the only person here. Aren\u2019t you going to help?"
         textSize: 0
-        pos: {x: 229.19547, y: 84.177536}
-        size: {x: 305.40002, y: 116.642586}
+        pos: {x: 224.2617, y: 82.36549}
+        size: {x: 298.82584, y: 114.13168}
     endBorder:
       pos: {x: -1.339508, y: -14.923316}
       size: {x: 33.178474, y: 30.936127}
@@ -1771,6 +1753,7 @@ MonoBehaviour:
       checkpointSize: {x: 2.5113375, y: 2.566319}
       checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
       checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      checkpointFinalSize: {x: 4.4922, y: 2}
       playerStart: {x: 29.01503, y: 12.382447, z: 0}
       playerFreezeTime: 0.5
       BulletHell:
@@ -2124,8 +2107,8 @@ MonoBehaviour:
       RoomText:
         text: "Now\u2019s not the time. Get it together. Clear your head."
         textSize: 0
-        pos: {x: -174.20592, y: -121.697464}
-        size: {x: 226.62631, y: 144.98767}
+        pos: {x: -170.45589, y: -119.07775}
+        size: {x: 221.74786, y: 141.86661}
     changeTime: 2
   - startBorder:
       pos: {x: -1.339508, y: -14.923316}
@@ -2136,6 +2119,7 @@ MonoBehaviour:
       checkpointSize: {x: 2.5113375, y: 2.566319}
       checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
       checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      checkpointFinalSize: {x: 4.4922, y: 2}
       playerStart: {x: 29.01503, y: 12.382447, z: 0}
       playerFreezeTime: 0.5
       BulletHell:
@@ -2489,17 +2473,18 @@ MonoBehaviour:
       RoomText:
         text: "Now\u2019s not the time. Get it together. Clear your head."
         textSize: 0
-        pos: {x: -174.20592, y: -121.697464}
-        size: {x: 226.62631, y: 144.98767}
+        pos: {x: -170.45589, y: -119.07775}
+        size: {x: 221.74786, y: 141.86661}
     endBorder:
       pos: {x: -25.210892, y: -9.803747}
       size: {x: 38.123585, y: 26.207495}
       shape: 0
       width: 0.5
-      checkpointPos: {x: 4.3999996, y: -6.2}
-      checkpointSize: {x: 3, y: 3}
-      checkpointSprite: {fileID: 21300000, guid: 42ae08f274592c143902caa4c6277c84, type: 3}
-      checkpointFinalSprite: {fileID: 21300000, guid: bc91cdb50b6a9b548b13009b9bfc0d1e, type: 3}
+      checkpointPos: {x: 3.696237, y: -7.8768277}
+      checkpointSize: {x: 4.1475267, y: 6.573657}
+      checkpointSprite: {fileID: 21300000, guid: 26406a754e494594b9eb421d2392b76f, type: 3}
+      checkpointFinalSprite: {fileID: 21300000, guid: 20426e09112f9da40890ec0829c7768e, type: 3}
+      checkpointFinalSize: {x: 7.866855, y: 6.185214}
       playerStart: {x: -21.000002, y: -6.6400003, z: 0}
       playerFreezeTime: 1.5
       BulletHell:
@@ -2906,18 +2891,19 @@ MonoBehaviour:
       RoomText:
         text: "I\u2019m just trying to help you."
         textSize: 0
-        pos: {x: -39.375, y: -203.62498}
-        size: {x: 317.44748, y: 70.1437}
+        pos: {x: -38.527397, y: -199.24165}
+        size: {x: 310.61398, y: 68.63375}
     changeTime: 2
   - startBorder:
       pos: {x: -25.210892, y: -9.803747}
       size: {x: 38.123585, y: 26.207495}
       shape: 0
       width: 0.5
-      checkpointPos: {x: 4.3999996, y: -6.2}
-      checkpointSize: {x: 3, y: 3}
-      checkpointSprite: {fileID: 21300000, guid: 42ae08f274592c143902caa4c6277c84, type: 3}
-      checkpointFinalSprite: {fileID: 21300000, guid: bc91cdb50b6a9b548b13009b9bfc0d1e, type: 3}
+      checkpointPos: {x: 3.696237, y: -7.8768277}
+      checkpointSize: {x: 4.1475267, y: 6.573657}
+      checkpointSprite: {fileID: 21300000, guid: 26406a754e494594b9eb421d2392b76f, type: 3}
+      checkpointFinalSprite: {fileID: 21300000, guid: 20426e09112f9da40890ec0829c7768e, type: 3}
+      checkpointFinalSize: {x: 7.866855, y: 6.185214}
       playerStart: {x: -21.000002, y: -6.6400003, z: 0}
       playerFreezeTime: 1.5
       BulletHell:
@@ -3324,8 +3310,8 @@ MonoBehaviour:
       RoomText:
         text: "I\u2019m just trying to help you."
         textSize: 0
-        pos: {x: -39.375, y: -203.62498}
-        size: {x: 317.44748, y: 70.1437}
+        pos: {x: -38.527397, y: -199.24165}
+        size: {x: 310.61398, y: 68.63375}
     endBorder:
       pos: {x: -5.2864466, y: -6.2941065}
       size: {x: 20.80295, y: 18.353107}
@@ -3335,6 +3321,7 @@ MonoBehaviour:
       checkpointSize: {x: 1, y: 1}
       checkpointSprite: {fileID: 21300000, guid: 2a097e77f6227d44893ac4fce7a1d03f, type: 3}
       checkpointFinalSprite: {fileID: 21300000, guid: 2a097e77f6227d44893ac4fce7a1d03f, type: 3}
+      checkpointFinalSize: {x: 4.4922, y: 2}
       playerStart: {x: 12.315029, y: 9.582447, z: -2}
       playerFreezeTime: 0.5
       BulletHell:
@@ -3350,8 +3337,8 @@ MonoBehaviour:
       RoomText:
         text: Just. Breathe.
         textSize: 0
-        pos: {x: -85.33091, y: 77.42753}
-        size: {x: 317.44748, y: 70.1437}
+        pos: {x: -83.49404, y: 75.760796}
+        size: {x: 310.61398, y: 68.63375}
     changeTime: 2
   - startBorder:
       pos: {x: -5.2864466, y: -6.2941065}
@@ -3362,6 +3349,7 @@ MonoBehaviour:
       checkpointSize: {x: 1, y: 1}
       checkpointSprite: {fileID: 21300000, guid: 2a097e77f6227d44893ac4fce7a1d03f, type: 3}
       checkpointFinalSprite: {fileID: 21300000, guid: 2a097e77f6227d44893ac4fce7a1d03f, type: 3}
+      checkpointFinalSize: {x: 4.4922, y: 2}
       playerStart: {x: 12.315029, y: 9.582447, z: -2}
       playerFreezeTime: 0.5
       BulletHell:
@@ -3377,77 +3365,47 @@ MonoBehaviour:
       RoomText:
         text: Just. Breathe.
         textSize: 0
-        pos: {x: -85.33091, y: 77.42753}
-        size: {x: 317.44748, y: 70.1437}
+        pos: {x: -83.49404, y: 75.760796}
+        size: {x: 310.61398, y: 68.63375}
     endBorder:
-      pos: {x: -17.741974, y: 7.5061426}
-      size: {x: 49.17061, y: 8.098116}
+      pos: {x: -17.842056, y: 0.52536297}
+      size: {x: 15.51417, y: 15.51417}
       shape: 0
       width: 0.5
-      checkpointPos: {x: 27.89682, y: 9.975453}
-      checkpointSize: {x: 2.636421, y: 2.6490943}
-      checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-      checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-      playerStart: {x: -15.68497, y: 10.5, z: 0}
-      playerFreezeTime: 0.5
-      BulletHell: []
-      BulletHell2:
-      - {fileID: 0}
-      RoomText:
-        text: 
-        textSize: 0
-        pos: {x: 73.29408, y: 18.000004}
-        size: {x: 317.44748, y: 70.1437}
-    changeTime: 2
-  - startBorder:
-      pos: {x: -17.741974, y: 7.5061426}
-      size: {x: 49.17061, y: 8.098116}
-      shape: 0
-      width: 0.5
-      checkpointPos: {x: 27.89682, y: 9.975453}
-      checkpointSize: {x: 2.636421, y: 2.6490943}
-      checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-      checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-      playerStart: {x: -15.68497, y: 10.5, z: 0}
-      playerFreezeTime: 0.5
-      BulletHell: []
-      BulletHell2:
-      - {fileID: 0}
-      RoomText:
-        text: 
-        textSize: 0
-        pos: {x: 73.29408, y: 18.000004}
-        size: {x: 317.44748, y: 70.1437}
-    endBorder:
-      pos: {x: -17.742054, y: -10.2213}
-      size: {x: 15.51417, y: 26.207495}
-      shape: 0
-      width: 0.5
-      checkpointPos: {x: -17.753374, y: 10.215271}
+      checkpointPos: {x: -40.794273, y: -8.244729}
       checkpointSize: {x: 15.6186075, y: 5.8543525}
       checkpointSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
       checkpointFinalSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-      playerStart: {x: -10.0849695, y: -7.257553, z: 0}
+      checkpointFinalSize: {x: 4.4922, y: 2}
+      playerStart: {x: -13.98497, y: 12.682447, z: -1}
       playerFreezeTime: 0.5
-      BulletHell: []
-      BulletHell2: []
+      BulletHell:
+      - spawnPos: {x: -11.48497, y: 11.682447, z: 0}
+        spawnRotation: 0
+        startDelay: 0
+        delay: 0
+        bulletSpeed: 0
+        bulletLifetime: 0
+        bullet: {fileID: 0}
+      BulletHell2:
+      - {fileID: 0}
+      - {fileID: 0}
       RoomText:
         text: END OF DEMO
         textSize: 0
-        pos: {x: 55.294083, y: -171.19746}
-        size: {x: 317.44748, y: 70.1437}
+        pos: {x: 271.44565, y: -106.677444}
+        size: {x: 225.72318, y: 190.30766}
     changeTime: 2
   transitionTimes:
   - 3
   - 3
   - 4
-  - 2
+  - 3
   - 2
   - 2
   - 2
   - 2
   BorderCreation:
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
