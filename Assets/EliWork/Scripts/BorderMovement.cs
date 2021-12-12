@@ -71,8 +71,11 @@ public class BorderMovement : MonoBehaviour
         checkPointBox.transform.position = gameStartB.checkpointPos + gameStartB.checkpointSize / 2f;
         checkPointBox.transform.position += Vector3.forward;
         CheckpointSprite.sprite = gameStartB.checkpointSprite;
-        checkPointBox.GetComponent<CheckpointTransition>().endSprite = gameStartB.checkpointFinalSprite;
-        checkPointBox.GetComponent<CheckpointTransition>().startSprite = gameStartB.checkpointSprite;
+        CheckpointTransition transition = checkPointBox.GetComponent<CheckpointTransition>();
+        transition.endSprite = gameStartB.checkpointFinalSprite;
+        transition.startSprite = gameStartB.checkpointSprite;
+        transition.baseScale = gameStartB.checkpointSize;
+        transition.endScale = gameStartB.checkpointFinalSize;
         //Sets the starting TextBox
         TextBox gameStartText = gameStartB.RoomText;
         TextBoxTransform.anchoredPosition = gameStartText.pos;
@@ -144,6 +147,10 @@ public class BorderMovement : MonoBehaviour
                 IEnumerator writeTextCoroutine = myTextEffect.BuildText(GameTextBox, endB.RoomText.text);
                 StartCoroutine(writeTextCoroutine);
             }
+            else {
+                myTextEffect.enabled = false;
+                GameTextBox.enabled = false;
+            }
         }
         //Moves the Border as needed
         while(curTime < myTransition.changeTime) {
@@ -172,8 +179,11 @@ public class BorderMovement : MonoBehaviour
         checkPointBox.transform.position = endB.checkpointPos + endB.checkpointSize / 2f;
         checkPointBox.transform.position += Vector3.forward;
         CheckpointSprite.sprite = endB.checkpointSprite;
-        checkPointBox.GetComponent<CheckpointTransition>().endSprite = endB.checkpointFinalSprite;
-        checkPointBox.GetComponent<CheckpointTransition>().startSprite = endB.checkpointSprite;
+        CheckpointTransition transition = checkPointBox.GetComponent<CheckpointTransition>();
+        transition.endSprite = endB.checkpointFinalSprite;
+        transition.startSprite = endB.checkpointSprite;
+        transition.baseScale = endB.checkpointSize;
+        transition.endScale = endB.checkpointFinalSize;
         //CurBorder needs to happen before bullet hell, bc Bullet Hell depends on current border
         curBorder++;
         endB.StartBulletHell();
