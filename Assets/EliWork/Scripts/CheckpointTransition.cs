@@ -13,7 +13,9 @@ public class CheckpointTransition : MonoBehaviour
     [SerializeField] private Color fullColor;
     [SerializeField] private float timeToChangeSprite = 1.5f;
     public Sprite startSprite;
+    public Vector2 baseScale;
     public Sprite endSprite;
+    public Vector2 endScale;
 
 
     private SpriteRenderer mySprite;
@@ -40,9 +42,11 @@ public class CheckpointTransition : MonoBehaviour
             mySprite.color = Color.Lerp(emptyColor, fullColor, timeInCheckpoint / maxTimeInCheckpoint);
             if(timeInCheckpoint >= timeToChangeSprite) {
                 mySprite.sprite = endSprite;
+                transform.localScale = new Vector3(endScale.x, endScale.y, 1);
             }
             else {
                 mySprite.sprite = startSprite;
+                transform.localScale = new Vector3(baseScale.x, baseScale.y, 1);
             }
             if(timeInCheckpoint >= maxTimeInCheckpoint) {
                 mySprite.color = fullColor;
@@ -60,9 +64,11 @@ public class CheckpointTransition : MonoBehaviour
             }
             if(timeInCheckpoint >= timeToChangeSprite) {
                 mySprite.sprite = endSprite;
+                transform.localScale = new Vector3(endScale.x, endScale.y, 1);
             }
             else {
                 mySprite.sprite = startSprite;
+                transform.localScale = new Vector3(baseScale.x, baseScale.y, 1);
             }
         }
     }

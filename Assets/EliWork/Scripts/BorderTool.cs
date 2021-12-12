@@ -40,6 +40,7 @@ public class BorderTool : MonoBehaviour
         myBorder.checkpointSize = myCheckPointBox.localScale;
         myBorder.checkpointSprite = myCheckPointBox.GetComponent<SpriteRenderer>().sprite;
         myBorder.checkpointFinalSprite = checkPointEndSprite.sprite;
+        myBorder.checkpointFinalSize = checkPointEndSprite.transform.localScale;
         Debug.Log(myBorder.checkpointSprite.name);
         myBorder.playerStart = myPlayerStartSpot.position;
         myBorder.playerFreezeTime = playerStartFreezeTime;
