@@ -139,7 +139,7 @@ public class Player : MonoBehaviour
             }
             hitPoints++;
             //When player gets hit by bullet, increases the hit tracker
-            PlayerHitTracker.Instance.PlayerHit(collision.GetComponent<BulletMovement>());
+            //PlayerHitTracker.Instance.PlayerHit(collision.GetComponent<BulletMovement>());
             collision.GetComponent<BulletMovement>().DealDamage(this);
         }
         //If the wall is supposed to kill the player, it resets their position
