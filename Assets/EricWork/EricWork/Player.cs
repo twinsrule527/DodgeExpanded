@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public Sprite face1;
     public Sprite face2;
     public Sprite face3;
+
+    public ParticleSystem ps;
     
 
     [HideInInspector] public Rigidbody2D rigidbody;
@@ -132,6 +134,8 @@ public class Player : MonoBehaviour
         {
             if(hitSound != null) {
                 hitSound.Play();
+                Instantiate(ps, transform.position, transform.rotation);
+
             }
             hitPoints++;
             //When player gets hit by bullet, increases the hit tracker
