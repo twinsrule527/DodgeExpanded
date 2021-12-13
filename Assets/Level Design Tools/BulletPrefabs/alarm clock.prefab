@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5277609779144288772}
   - component: {fileID: 5502910569811305089}
   - component: {fileID: -7775208708161758327}
-  - component: {fileID: 4106206916047528129}
   m_Layer: 0
   m_Name: alarm clock
   m_TagString: Untagged
@@ -144,7 +143,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4652259d552294c38896af17f8b92941, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.98
+  m_Volume: 0.65
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -228,20 +227,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4106206916047528129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2494640728241298054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d7a0e79823f0ba4395800b5c3794495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Source: {fileID: 0}
-  player: {fileID: 0}
-  minDist: 1
-  maxDist: 30
-  volumeMax: 0.7
