@@ -297,6 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   hitSound: {fileID: 3443883665212069314}
+  wallSound: {fileID: 0}
   arraySprites:
   - {fileID: 21300000, guid: 974d0368be3f0304f875ad685c9e2922, type: 3}
   - {fileID: 21300000, guid: d8441612828dc864e93671f5a43e217b, type: 3}
@@ -306,6 +307,7 @@ MonoBehaviour:
   face1: {fileID: 21300000, guid: 974d0368be3f0304f875ad685c9e2922, type: 3}
   face2: {fileID: 21300000, guid: d8441612828dc864e93671f5a43e217b, type: 3}
   face3: {fileID: 21300000, guid: 8de8ff9b9d3f6864bb92bb90035f6d54, type: 3}
+  ps: {fileID: 3881254855966875733, guid: 6f892c52bf1e787489fa0b5606482d52, type: 3}
   rigidbody: {fileID: 0}
   hitPoints: 0
   hitMax: 5
