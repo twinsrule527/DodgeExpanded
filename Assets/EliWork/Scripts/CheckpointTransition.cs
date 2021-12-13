@@ -16,7 +16,8 @@ public class CheckpointTransition : MonoBehaviour
     public Vector2 baseScale;
     public Sprite endSprite;
     public Vector2 endScale;
-
+    [SerializeField] private AudioSource transitionSound;
+    [SerializeField] private GameObject fadeToBlackObj;
 
     private SpriteRenderer mySprite;
     void Start()
@@ -38,6 +39,12 @@ public class CheckpointTransition : MonoBehaviour
         }
         //If the player is in the box, advances the checkpoint counter
         if(playerInBox) {
+            //If in the last room, it fades to black 
+            if(BorderMovement.Instance.CurBorder == BorderMovement.Instance.Level.Borders.Count - 1) {
+                fadeToBlackObj.SetActive(true);
+                enabled = false;
+                //gameObject.SetActive(false);
+            }
             timeInCheckpoint += Time.deltaTime;
             mySprite.color = Color.Lerp(emptyColor, fullColor, timeInCheckpoint / maxTimeInCheckpoint);
             if(timeInCheckpoint >= timeToChangeSprite) {
@@ -51,6 +58,7 @@ public class CheckpointTransition : MonoBehaviour
             if(timeInCheckpoint >= maxTimeInCheckpoint) {
                 mySprite.color = fullColor;
                 //Goes to the next transition
+                transitionSound.Play();
                 BorderMovement.Instance.StartNewBorderTransition();
                 timeInCheckpoint = 0;
                 mySprite.color = emptyColor;
