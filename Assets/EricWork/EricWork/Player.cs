@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
         if(hitPoints >= hitMax)
         {
             //Add reset position code here
-            transform.position = BorderMovement.Instance.Level.Borders[BorderMovement.Instance.CurBorder].playerStart;
+            BorderMovement.Instance.ResetRoom();
             hitPoints = 0;
         }
     }
