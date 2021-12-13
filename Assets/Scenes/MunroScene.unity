@@ -483,11 +483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.33
+      value: 12.69
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -24.49
+      value: -24.13
       objectReference: {fileID: 0}
     - target: {fileID: 661723415077623000, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2017,7 +2017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: d4543b47d545b49f0b4f189b95b131be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: d4543b47d545b49f0b4f189b95b131be, type: 3}
       propertyPath: m_RootOrder
@@ -2025,11 +2025,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: d4543b47d545b49f0b4f189b95b131be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.4
+      value: -14.9
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: d4543b47d545b49f0b4f189b95b131be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.1
+      value: 12.8
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: d4543b47d545b49f0b4f189b95b131be, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2425,7 +2425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: 448efc901143449359ad2af9a3748fb6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: 448efc901143449359ad2af9a3748fb6, type: 3}
       propertyPath: m_RootOrder
@@ -2433,11 +2433,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: 448efc901143449359ad2af9a3748fb6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.008636
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: 448efc901143449359ad2af9a3748fb6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.163344
+      value: 16.3
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: 448efc901143449359ad2af9a3748fb6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2868,7 +2868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8102252497400837143, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: _number
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8102252497400837143, guid: d7bcb8fe9b4637a469704d4a58cec04f, type: 3}
       propertyPath: textSize
@@ -3887,7 +3887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: b1d45c297d88b4770bed82b67da42d71, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: b1d45c297d88b4770bed82b67da42d71, type: 3}
       propertyPath: m_RootOrder
@@ -3895,11 +3895,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: b1d45c297d88b4770bed82b67da42d71, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.38497
+      value: 10.48
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: b1d45c297d88b4770bed82b67da42d71, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.782448
+      value: -15.1
       objectReference: {fileID: 0}
     - target: {fileID: 8265119849574470708, guid: b1d45c297d88b4770bed82b67da42d71, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7074,7 +7074,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2f6cd504c1497459696262388329eacf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9180,7 +9180,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 40807c10e4eb34405a4c82192dcab73e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 64cd14a6e75b84c12aaa545e0504115f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
