@@ -693,7 +693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -836,7 +836,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6506358687222161033, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: startDelay
-      value: 6.5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: m_Name
@@ -1857,7 +1857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -2356,7 +2356,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6506358687222161033, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: startDelay
-      value: 3.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: m_Name
@@ -2648,6 +2648,10 @@ PrefabInstance:
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletLife
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
+      propertyPath: startDelay
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -3410,7 +3414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -3680,7 +3684,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6506358687222161033, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: startDelay
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: m_Name
@@ -3815,6 +3819,10 @@ PrefabInstance:
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletLife
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
+      propertyPath: startDelay
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -4276,7 +4284,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6506358687222161033, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: startDelay
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: m_Name
@@ -4353,7 +4361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -4430,7 +4438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -4576,7 +4584,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6506358687222161033, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: startDelay
-      value: 5.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: m_Name
@@ -5150,6 +5158,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
+      propertyPath: startDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
       value: 4
       objectReference: {fileID: 0}
@@ -5359,7 +5371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -5436,7 +5448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -5513,7 +5525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -6101,7 +6113,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6506358687222161033, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: startDelay
-      value: 8.5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: m_Name
@@ -6319,7 +6331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -6791,6 +6803,10 @@ PrefabInstance:
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletLife
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
+      propertyPath: startDelay
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -7374,7 +7390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -7758,7 +7774,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6506358687222161033, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: startDelay
-      value: 7.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: m_Name
@@ -8147,7 +8163,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6506358687222161033, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: startDelay
-      value: 4.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6532507423835345387, guid: 32a1f7108a92a47269a426c0049e9299, type: 3}
       propertyPath: m_Name
@@ -8220,7 +8236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 3
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
@@ -8362,7 +8378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: startDelay
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6506358687222161033, guid: ee5dbcb1f444f8e4db798c21264e35b0, type: 3}
       propertyPath: bulletDelay
